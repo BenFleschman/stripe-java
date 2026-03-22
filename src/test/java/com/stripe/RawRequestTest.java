@@ -1,7 +1,6 @@
 package com.stripe;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -118,7 +117,8 @@ public class RawRequestTest extends BaseStripeTest {
     RecordedRequest request = server.takeRequest();
     assertEquals(null, request.getHeaders().get("Content-Type"));
     assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
-    assertNull(request.getBody());
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -255,7 +255,8 @@ public class RawRequestTest extends BaseStripeTest {
     RecordedRequest request = server.takeRequest();
     assertEquals(null, request.getHeaders().get("Content-Type"));
     assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
-    assertNull(request.getBody());
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());

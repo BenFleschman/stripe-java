@@ -29,14 +29,17 @@ public final class PaymentRecordService extends ApiService {
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves a Payment Record with the given ID. */
   public PaymentRecord retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (PaymentRecordRetrieveParams) null, options);
   }
+
   /** Retrieves a Payment Record with the given ID. */
   public PaymentRecord retrieve(String id) throws StripeException {
     return retrieve(id, (PaymentRecordRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Payment Record with the given ID. */
   public PaymentRecord retrieve(
       String id, PaymentRecordRetrieveParams params, RequestOptions options)
@@ -51,6 +54,7 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /**
    * Report a new payment attempt on the specified Payment Record. A new payment attempt can only be
    * specified if all other payment attempts are canceled or failed.
@@ -59,6 +63,7 @@ public final class PaymentRecordService extends ApiService {
       String id, PaymentRecordReportPaymentAttemptParams params) throws StripeException {
     return reportPaymentAttempt(id, params, (RequestOptions) null);
   }
+
   /**
    * Report a new payment attempt on the specified Payment Record. A new payment attempt can only be
    * specified if all other payment attempts are canceled or failed.
@@ -77,11 +82,13 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was canceled. */
   public PaymentRecord reportPaymentAttemptCanceled(
       String id, PaymentRecordReportPaymentAttemptCanceledParams params) throws StripeException {
     return reportPaymentAttemptCanceled(id, params, (RequestOptions) null);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was canceled. */
   public PaymentRecord reportPaymentAttemptCanceled(
       String id, PaymentRecordReportPaymentAttemptCanceledParams params, RequestOptions options)
@@ -98,6 +105,7 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /**
    * Report that the most recent payment attempt on the specified Payment Record failed or errored.
    */
@@ -105,6 +113,7 @@ public final class PaymentRecordService extends ApiService {
       String id, PaymentRecordReportPaymentAttemptFailedParams params) throws StripeException {
     return reportPaymentAttemptFailed(id, params, (RequestOptions) null);
   }
+
   /**
    * Report that the most recent payment attempt on the specified Payment Record failed or errored.
    */
@@ -123,11 +132,13 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was guaranteed. */
   public PaymentRecord reportPaymentAttemptGuaranteed(
       String id, PaymentRecordReportPaymentAttemptGuaranteedParams params) throws StripeException {
     return reportPaymentAttemptGuaranteed(id, params, (RequestOptions) null);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was guaranteed. */
   public PaymentRecord reportPaymentAttemptGuaranteed(
       String id, PaymentRecordReportPaymentAttemptGuaranteedParams params, RequestOptions options)
@@ -145,23 +156,27 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /** Report informational updates on the specified Payment Record. */
   public PaymentRecord reportPaymentAttemptInformational(
       String id, PaymentRecordReportPaymentAttemptInformationalParams params)
       throws StripeException {
     return reportPaymentAttemptInformational(id, params, (RequestOptions) null);
   }
+
   /** Report informational updates on the specified Payment Record. */
   public PaymentRecord reportPaymentAttemptInformational(String id, RequestOptions options)
       throws StripeException {
     return reportPaymentAttemptInformational(
         id, (PaymentRecordReportPaymentAttemptInformationalParams) null, options);
   }
+
   /** Report informational updates on the specified Payment Record. */
   public PaymentRecord reportPaymentAttemptInformational(String id) throws StripeException {
     return reportPaymentAttemptInformational(
         id, (PaymentRecordReportPaymentAttemptInformationalParams) null, (RequestOptions) null);
   }
+
   /** Report informational updates on the specified Payment Record. */
   public PaymentRecord reportPaymentAttemptInformational(
       String id,
@@ -181,11 +196,13 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was refunded. */
   public PaymentRecord reportRefund(String id, PaymentRecordReportRefundParams params)
       throws StripeException {
     return reportRefund(id, params, (RequestOptions) null);
   }
+
   /** Report that the most recent payment attempt on the specified Payment Record was refunded. */
   public PaymentRecord reportRefund(
       String id, PaymentRecordReportRefundParams params, RequestOptions options)
@@ -201,6 +218,7 @@ public final class PaymentRecordService extends ApiService {
             options);
     return this.request(request, PaymentRecord.class);
   }
+
   /**
    * Report a new Payment Record. You may report a Payment Record as it is initialized and later
    * report updates through the other report_* methods, or report Payment Records in a terminal
@@ -210,6 +228,7 @@ public final class PaymentRecordService extends ApiService {
       throws StripeException {
     return reportPayment(params, (RequestOptions) null);
   }
+
   /**
    * Report a new Payment Record. You may report a Payment Record as it is initialized and later
    * report updates through the other report_* methods, or report Payment Records in a terminal

@@ -22,6 +22,7 @@ public final class CustomerService extends ApiService {
       String customer, CustomerFundCashBalanceParams params) throws StripeException {
     return fundCashBalance(customer, params, (RequestOptions) null);
   }
+
   /** Create an incoming testmode bank transfer. */
   public CustomerCashBalanceTransaction fundCashBalance(
       String customer, CustomerFundCashBalanceParams params, RequestOptions options)

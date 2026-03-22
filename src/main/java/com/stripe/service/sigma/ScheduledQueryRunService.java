@@ -25,14 +25,17 @@ public final class ScheduledQueryRunService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of scheduled query runs. */
   public StripeCollection<ScheduledQueryRun> list(RequestOptions options) throws StripeException {
     return list((ScheduledQueryRunListParams) null, options);
   }
+
   /** Returns a list of scheduled query runs. */
   public StripeCollection<ScheduledQueryRun> list() throws StripeException {
     return list((ScheduledQueryRunListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of scheduled query runs. */
   public StripeCollection<ScheduledQueryRun> list(
       ScheduledQueryRunListParams params, RequestOptions options) throws StripeException {
@@ -46,21 +49,25 @@ public final class ScheduledQueryRunService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ScheduledQueryRun>>() {}.getType());
   }
+
   /** Retrieves the details of an scheduled query run. */
   public ScheduledQueryRun retrieve(
       String scheduledQueryRun, ScheduledQueryRunRetrieveParams params) throws StripeException {
     return retrieve(scheduledQueryRun, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an scheduled query run. */
   public ScheduledQueryRun retrieve(String scheduledQueryRun, RequestOptions options)
       throws StripeException {
     return retrieve(scheduledQueryRun, (ScheduledQueryRunRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an scheduled query run. */
   public ScheduledQueryRun retrieve(String scheduledQueryRun) throws StripeException {
     return retrieve(
         scheduledQueryRun, (ScheduledQueryRunRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an scheduled query run. */
   public ScheduledQueryRun retrieve(
       String scheduledQueryRun, ScheduledQueryRunRetrieveParams params, RequestOptions options)

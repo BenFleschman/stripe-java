@@ -25,6 +25,7 @@ public final class ValueListItemService extends ApiService {
   public ValueListItem delete(String item) throws StripeException {
     return delete(item, (RequestOptions) null);
   }
+
   /** Deletes a {@code ValueListItem} object, removing it from its parent value list. */
   public ValueListItem delete(String item, RequestOptions options) throws StripeException {
     String path = String.format("/v1/radar/value_list_items/%s", ApiResource.urlEncodeId(item));
@@ -32,19 +33,23 @@ public final class ValueListItemService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, ValueListItem.class);
   }
+
   /** Retrieves a {@code ValueListItem} object. */
   public ValueListItem retrieve(String item, ValueListItemRetrieveParams params)
       throws StripeException {
     return retrieve(item, params, (RequestOptions) null);
   }
+
   /** Retrieves a {@code ValueListItem} object. */
   public ValueListItem retrieve(String item, RequestOptions options) throws StripeException {
     return retrieve(item, (ValueListItemRetrieveParams) null, options);
   }
+
   /** Retrieves a {@code ValueListItem} object. */
   public ValueListItem retrieve(String item) throws StripeException {
     return retrieve(item, (ValueListItemRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a {@code ValueListItem} object. */
   public ValueListItem retrieve(
       String item, ValueListItemRetrieveParams params, RequestOptions options)
@@ -59,6 +64,7 @@ public final class ValueListItemService extends ApiService {
             options);
     return this.request(request, ValueListItem.class);
   }
+
   /**
    * Returns a list of {@code ValueListItem} objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -67,6 +73,7 @@ public final class ValueListItemService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of {@code ValueListItem} objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -83,12 +90,14 @@ public final class ValueListItemService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ValueListItem>>() {}.getType());
   }
+
   /**
    * Creates a new {@code ValueListItem} object, which is added to the specified parent value list.
    */
   public ValueListItem create(ValueListItemCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new {@code ValueListItem} object, which is added to the specified parent value list.
    */

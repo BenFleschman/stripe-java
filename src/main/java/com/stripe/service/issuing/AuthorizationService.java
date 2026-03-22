@@ -31,6 +31,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Authorization} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -38,6 +39,7 @@ public final class AuthorizationService extends ApiService {
   public StripeCollection<Authorization> list(RequestOptions options) throws StripeException {
     return list((AuthorizationListParams) null, options);
   }
+
   /**
    * Returns a list of Issuing {@code Authorization} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -45,6 +47,7 @@ public final class AuthorizationService extends ApiService {
   public StripeCollection<Authorization> list() throws StripeException {
     return list((AuthorizationListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Authorization} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -61,20 +64,24 @@ public final class AuthorizationService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Authorization>>() {}.getType());
   }
+
   /** Retrieves an Issuing {@code Authorization} object. */
   public Authorization retrieve(String authorization, AuthorizationRetrieveParams params)
       throws StripeException {
     return retrieve(authorization, params, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Authorization} object. */
   public Authorization retrieve(String authorization, RequestOptions options)
       throws StripeException {
     return retrieve(authorization, (AuthorizationRetrieveParams) null, options);
   }
+
   /** Retrieves an Issuing {@code Authorization} object. */
   public Authorization retrieve(String authorization) throws StripeException {
     return retrieve(authorization, (AuthorizationRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Authorization} object. */
   public Authorization retrieve(
       String authorization, AuthorizationRetrieveParams params, RequestOptions options)
@@ -90,6 +97,7 @@ public final class AuthorizationService extends ApiService {
             options);
     return this.request(request, Authorization.class);
   }
+
   /**
    * Updates the specified Issuing {@code Authorization} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -98,6 +106,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return update(authorization, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Authorization} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -105,6 +114,7 @@ public final class AuthorizationService extends ApiService {
   public Authorization update(String authorization, RequestOptions options) throws StripeException {
     return update(authorization, (AuthorizationUpdateParams) null, options);
   }
+
   /**
    * Updates the specified Issuing {@code Authorization} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -112,6 +122,7 @@ public final class AuthorizationService extends ApiService {
   public Authorization update(String authorization) throws StripeException {
     return update(authorization, (AuthorizationUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Authorization} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -130,6 +141,7 @@ public final class AuthorizationService extends ApiService {
             options);
     return this.request(request, Authorization.class);
   }
+
   /**
    * [Deprecated] Approves a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -142,6 +154,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return approve(authorization, params, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] Approves a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -154,6 +167,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return approve(authorization, (AuthorizationApproveParams) null, options);
   }
+
   /**
    * [Deprecated] Approves a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -165,6 +179,7 @@ public final class AuthorizationService extends ApiService {
   public Authorization approve(String authorization) throws StripeException {
     return approve(authorization, (AuthorizationApproveParams) null, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] Approves a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -188,6 +203,7 @@ public final class AuthorizationService extends ApiService {
             options);
     return this.request(request, Authorization.class);
   }
+
   /**
    * [Deprecated] Declines a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -200,6 +216,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return decline(authorization, params, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] Declines a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -212,6 +229,7 @@ public final class AuthorizationService extends ApiService {
       throws StripeException {
     return decline(authorization, (AuthorizationDeclineParams) null, options);
   }
+
   /**
    * [Deprecated] Declines a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a
@@ -223,6 +241,7 @@ public final class AuthorizationService extends ApiService {
   public Authorization decline(String authorization) throws StripeException {
     return decline(authorization, (AuthorizationDeclineParams) null, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] Declines a pending Issuing {@code Authorization} object. This request should be
    * made within the timeout window of the <a

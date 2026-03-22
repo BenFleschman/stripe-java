@@ -34,6 +34,7 @@ public final class ReaderService extends ApiService {
   public Reader delete(String reader) throws StripeException {
     return delete(reader, (RequestOptions) null);
   }
+
   /** Deletes a {@code Reader} object. */
   public Reader delete(String reader, RequestOptions options) throws StripeException {
     String path = String.format("/v1/terminal/readers/%s", ApiResource.urlEncodeId(reader));
@@ -41,18 +42,22 @@ public final class ReaderService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Reader.class);
   }
+
   /** Retrieves a {@code Reader} object. */
   public Reader retrieve(String reader, ReaderRetrieveParams params) throws StripeException {
     return retrieve(reader, params, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Reader} object. */
   public Reader retrieve(String reader, RequestOptions options) throws StripeException {
     return retrieve(reader, (ReaderRetrieveParams) null, options);
   }
+
   /** Retrieves a {@code Reader} object. */
   public Reader retrieve(String reader) throws StripeException {
     return retrieve(reader, (ReaderRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Reader} object. */
   public Reader retrieve(String reader, ReaderRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -66,6 +71,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Updates a {@code Reader} object by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -73,6 +79,7 @@ public final class ReaderService extends ApiService {
   public Reader update(String reader, ReaderUpdateParams params) throws StripeException {
     return update(reader, params, (RequestOptions) null);
   }
+
   /**
    * Updates a {@code Reader} object by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -80,6 +87,7 @@ public final class ReaderService extends ApiService {
   public Reader update(String reader, RequestOptions options) throws StripeException {
     return update(reader, (ReaderUpdateParams) null, options);
   }
+
   /**
    * Updates a {@code Reader} object by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -87,6 +95,7 @@ public final class ReaderService extends ApiService {
   public Reader update(String reader) throws StripeException {
     return update(reader, (ReaderUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a {@code Reader} object by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -103,18 +112,22 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /** Returns a list of {@code Reader} objects. */
   public StripeCollection<Reader> list(ReaderListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of {@code Reader} objects. */
   public StripeCollection<Reader> list(RequestOptions options) throws StripeException {
     return list((ReaderListParams) null, options);
   }
+
   /** Returns a list of {@code Reader} objects. */
   public StripeCollection<Reader> list() throws StripeException {
     return list((ReaderListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of {@code Reader} objects. */
   public StripeCollection<Reader> list(ReaderListParams params, RequestOptions options)
       throws StripeException {
@@ -128,10 +141,12 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Reader>>() {}.getType());
   }
+
   /** Creates a new {@code Reader} object. */
   public Reader create(ReaderCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new {@code Reader} object. */
   public Reader create(ReaderCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/terminal/readers";
@@ -144,6 +159,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Cancels the current reader action. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">Programmatic
@@ -153,6 +169,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return cancelAction(reader, params, (RequestOptions) null);
   }
+
   /**
    * Cancels the current reader action. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">Programmatic
@@ -161,6 +178,7 @@ public final class ReaderService extends ApiService {
   public Reader cancelAction(String reader, RequestOptions options) throws StripeException {
     return cancelAction(reader, (ReaderCancelActionParams) null, options);
   }
+
   /**
    * Cancels the current reader action. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">Programmatic
@@ -169,6 +187,7 @@ public final class ReaderService extends ApiService {
   public Reader cancelAction(String reader) throws StripeException {
     return cancelAction(reader, (ReaderCancelActionParams) null, (RequestOptions) null);
   }
+
   /**
    * Cancels the current reader action. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">Programmatic
@@ -187,6 +206,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Initiates an <a href="https://stripe.com/docs/terminal/features/collect-inputs">input
    * collection flow</a> on a Reader to display input forms and collect information from your
@@ -196,6 +216,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return collectInputs(reader, params, (RequestOptions) null);
   }
+
   /**
    * Initiates an <a href="https://stripe.com/docs/terminal/features/collect-inputs">input
    * collection flow</a> on a Reader to display input forms and collect information from your
@@ -215,6 +236,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Initiates a payment flow on a Reader and updates the PaymentIntent with card details before
    * manual confirmation. See <a
@@ -225,6 +247,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return collectPaymentMethod(reader, params, (RequestOptions) null);
   }
+
   /**
    * Initiates a payment flow on a Reader and updates the PaymentIntent with card details before
    * manual confirmation. See <a
@@ -246,6 +269,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Finalizes a payment on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">Confirming
@@ -255,6 +279,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return confirmPaymentIntent(reader, params, (RequestOptions) null);
   }
+
   /**
    * Finalizes a payment on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">Confirming
@@ -275,6 +300,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Initiates a payment flow on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">process
@@ -284,6 +310,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return processPaymentIntent(reader, params, (RequestOptions) null);
   }
+
   /**
    * Initiates a payment flow on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">process
@@ -304,6 +331,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Initiates a SetupIntent flow on a Reader. See <a
    * href="https://stripe.com/docs/terminal/features/saving-payment-details/save-directly">Save
@@ -313,6 +341,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return processSetupIntent(reader, params, (RequestOptions) null);
   }
+
   /**
    * Initiates a SetupIntent flow on a Reader. See <a
    * href="https://stripe.com/docs/terminal/features/saving-payment-details/save-directly">Save
@@ -333,6 +362,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Initiates an in-person refund on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">Refund
@@ -342,6 +372,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return refundPayment(reader, params, (RequestOptions) null);
   }
+
   /**
    * Initiates an in-person refund on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">Refund
@@ -350,6 +381,7 @@ public final class ReaderService extends ApiService {
   public Reader refundPayment(String reader, RequestOptions options) throws StripeException {
     return refundPayment(reader, (ReaderRefundPaymentParams) null, options);
   }
+
   /**
    * Initiates an in-person refund on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">Refund
@@ -358,6 +390,7 @@ public final class ReaderService extends ApiService {
   public Reader refundPayment(String reader) throws StripeException {
     return refundPayment(reader, (ReaderRefundPaymentParams) null, (RequestOptions) null);
   }
+
   /**
    * Initiates an in-person refund on a Reader. See <a
    * href="https://stripe.com/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">Refund
@@ -377,6 +410,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Sets the reader display to show <a
    * href="https://stripe.com/docs/terminal/features/display">cart details</a>.
@@ -385,6 +419,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return setReaderDisplay(reader, params, (RequestOptions) null);
   }
+
   /**
    * Sets the reader display to show <a
    * href="https://stripe.com/docs/terminal/features/display">cart details</a>.

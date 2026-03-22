@@ -30,6 +30,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * List all templates, ordered by creation date, with the most recently created template appearing
    * first.
@@ -38,6 +39,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       throws StripeException {
     return list((InvoiceRenderingTemplateListParams) null, options);
   }
+
   /**
    * List all templates, ordered by creation date, with the most recently created template appearing
    * first.
@@ -45,6 +47,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
   public StripeCollection<InvoiceRenderingTemplate> list() throws StripeException {
     return list((InvoiceRenderingTemplateListParams) null, (RequestOptions) null);
   }
+
   /**
    * List all templates, ordered by creation date, with the most recently created template appearing
    * first.
@@ -62,6 +65,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<InvoiceRenderingTemplate>>() {}.getType());
   }
+
   /**
    * Retrieves an invoice rendering template with the given ID. It by default returns the latest
    * version of the template. Optionally, specify a version to see previous versions.
@@ -70,6 +74,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       String template, InvoiceRenderingTemplateRetrieveParams params) throws StripeException {
     return retrieve(template, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves an invoice rendering template with the given ID. It by default returns the latest
    * version of the template. Optionally, specify a version to see previous versions.
@@ -78,6 +83,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       throws StripeException {
     return retrieve(template, (InvoiceRenderingTemplateRetrieveParams) null, options);
   }
+
   /**
    * Retrieves an invoice rendering template with the given ID. It by default returns the latest
    * version of the template. Optionally, specify a version to see previous versions.
@@ -85,6 +91,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
   public InvoiceRenderingTemplate retrieve(String template) throws StripeException {
     return retrieve(template, (InvoiceRenderingTemplateRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves an invoice rendering template with the given ID. It by default returns the latest
    * version of the template. Optionally, specify a version to see previous versions.
@@ -103,6 +110,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
             options);
     return this.request(request, InvoiceRenderingTemplate.class);
   }
+
   /**
    * Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects
    * (customers, invoices, etc.) can reference it. The template can also no longer be updated.
@@ -113,6 +121,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       String template, InvoiceRenderingTemplateArchiveParams params) throws StripeException {
     return archive(template, params, (RequestOptions) null);
   }
+
   /**
    * Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects
    * (customers, invoices, etc.) can reference it. The template can also no longer be updated.
@@ -123,6 +132,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
       throws StripeException {
     return archive(template, (InvoiceRenderingTemplateArchiveParams) null, options);
   }
+
   /**
    * Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects
    * (customers, invoices, etc.) can reference it. The template can also no longer be updated.
@@ -132,6 +142,7 @@ public final class InvoiceRenderingTemplateService extends ApiService {
   public InvoiceRenderingTemplate archive(String template) throws StripeException {
     return archive(template, (InvoiceRenderingTemplateArchiveParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects
    * (customers, invoices, etc.) can reference it. The template can also no longer be updated.
@@ -153,21 +164,25 @@ public final class InvoiceRenderingTemplateService extends ApiService {
             options);
     return this.request(request, InvoiceRenderingTemplate.class);
   }
+
   /** Unarchive an invoice rendering template so it can be used on new Stripe objects again. */
   public InvoiceRenderingTemplate unarchive(
       String template, InvoiceRenderingTemplateUnarchiveParams params) throws StripeException {
     return unarchive(template, params, (RequestOptions) null);
   }
+
   /** Unarchive an invoice rendering template so it can be used on new Stripe objects again. */
   public InvoiceRenderingTemplate unarchive(String template, RequestOptions options)
       throws StripeException {
     return unarchive(template, (InvoiceRenderingTemplateUnarchiveParams) null, options);
   }
+
   /** Unarchive an invoice rendering template so it can be used on new Stripe objects again. */
   public InvoiceRenderingTemplate unarchive(String template) throws StripeException {
     return unarchive(
         template, (InvoiceRenderingTemplateUnarchiveParams) null, (RequestOptions) null);
   }
+
   /** Unarchive an invoice rendering template so it can be used on new Stripe objects again. */
   public InvoiceRenderingTemplate unarchive(
       String template, InvoiceRenderingTemplateUnarchiveParams params, RequestOptions options)

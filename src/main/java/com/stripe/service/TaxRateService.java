@@ -29,6 +29,7 @@ public final class TaxRateService extends ApiService {
   public StripeCollection<TaxRate> list(TaxRateListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most
    * recently created tax rates appearing first.
@@ -36,6 +37,7 @@ public final class TaxRateService extends ApiService {
   public StripeCollection<TaxRate> list(RequestOptions options) throws StripeException {
     return list((TaxRateListParams) null, options);
   }
+
   /**
    * Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most
    * recently created tax rates appearing first.
@@ -43,6 +45,7 @@ public final class TaxRateService extends ApiService {
   public StripeCollection<TaxRate> list() throws StripeException {
     return list((TaxRateListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most
    * recently created tax rates appearing first.
@@ -59,10 +62,12 @@ public final class TaxRateService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<TaxRate>>() {}.getType());
   }
+
   /** Creates a new tax rate. */
   public TaxRate create(TaxRateCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new tax rate. */
   public TaxRate create(TaxRateCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/tax_rates";
@@ -75,18 +80,22 @@ public final class TaxRateService extends ApiService {
             options);
     return this.request(request, TaxRate.class);
   }
+
   /** Retrieves a tax rate with the given ID. */
   public TaxRate retrieve(String taxRate, TaxRateRetrieveParams params) throws StripeException {
     return retrieve(taxRate, params, (RequestOptions) null);
   }
+
   /** Retrieves a tax rate with the given ID. */
   public TaxRate retrieve(String taxRate, RequestOptions options) throws StripeException {
     return retrieve(taxRate, (TaxRateRetrieveParams) null, options);
   }
+
   /** Retrieves a tax rate with the given ID. */
   public TaxRate retrieve(String taxRate) throws StripeException {
     return retrieve(taxRate, (TaxRateRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a tax rate with the given ID. */
   public TaxRate retrieve(String taxRate, TaxRateRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -100,18 +109,22 @@ public final class TaxRateService extends ApiService {
             options);
     return this.request(request, TaxRate.class);
   }
+
   /** Updates an existing tax rate. */
   public TaxRate update(String taxRate, TaxRateUpdateParams params) throws StripeException {
     return update(taxRate, params, (RequestOptions) null);
   }
+
   /** Updates an existing tax rate. */
   public TaxRate update(String taxRate, RequestOptions options) throws StripeException {
     return update(taxRate, (TaxRateUpdateParams) null, options);
   }
+
   /** Updates an existing tax rate. */
   public TaxRate update(String taxRate) throws StripeException {
     return update(taxRate, (TaxRateUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing tax rate. */
   public TaxRate update(String taxRate, TaxRateUpdateParams params, RequestOptions options)
       throws StripeException {

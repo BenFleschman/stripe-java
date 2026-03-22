@@ -25,6 +25,7 @@ public final class MeterEventService extends ApiService {
   public MeterEvent create(MeterEventCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a meter event. Events are validated synchronously, but are processed asynchronously.
    * Supports up to 1,000 events per second in livemode. For higher rate-limits, please use meter

@@ -24,14 +24,17 @@ public final class TransactionService extends ApiService {
       throws StripeException {
     return refund(transaction, params, (RequestOptions) null);
   }
+
   /** Refund a test-mode Transaction. */
   public Transaction refund(String transaction, RequestOptions options) throws StripeException {
     return refund(transaction, (TransactionRefundParams) null, options);
   }
+
   /** Refund a test-mode Transaction. */
   public Transaction refund(String transaction) throws StripeException {
     return refund(transaction, (TransactionRefundParams) null, (RequestOptions) null);
   }
+
   /** Refund a test-mode Transaction. */
   public Transaction refund(
       String transaction, TransactionRefundParams params, RequestOptions options)
@@ -49,11 +52,13 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, Transaction.class);
   }
+
   /** Allows the user to capture an arbitrary amount, also known as a forced capture. */
   public Transaction createForceCapture(TransactionCreateForceCaptureParams params)
       throws StripeException {
     return createForceCapture(params, (RequestOptions) null);
   }
+
   /** Allows the user to capture an arbitrary amount, also known as a forced capture. */
   public Transaction createForceCapture(
       TransactionCreateForceCaptureParams params, RequestOptions options) throws StripeException {
@@ -67,11 +72,13 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, Transaction.class);
   }
+
   /** Allows the user to refund an arbitrary amount, also known as a unlinked refund. */
   public Transaction createUnlinkedRefund(TransactionCreateUnlinkedRefundParams params)
       throws StripeException {
     return createUnlinkedRefund(params, (RequestOptions) null);
   }
+
   /** Allows the user to refund an arbitrary amount, also known as a unlinked refund. */
   public Transaction createUnlinkedRefund(
       TransactionCreateUnlinkedRefundParams params, RequestOptions options) throws StripeException {

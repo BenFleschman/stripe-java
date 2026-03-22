@@ -28,6 +28,7 @@ public final class AccountLoginLinkService extends ApiService {
       throws StripeException {
     return create(account, params, (RequestOptions) null);
   }
+
   /**
    * Creates a login link for a connected account to access the Express Dashboard.
    *
@@ -38,6 +39,7 @@ public final class AccountLoginLinkService extends ApiService {
   public LoginLink create(String account, RequestOptions options) throws StripeException {
     return create(account, (AccountLoginLinkCreateParams) null, options);
   }
+
   /**
    * Creates a login link for a connected account to access the Express Dashboard.
    *
@@ -48,6 +50,7 @@ public final class AccountLoginLinkService extends ApiService {
   public LoginLink create(String account) throws StripeException {
     return create(account, (AccountLoginLinkCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a login link for a connected account to access the Express Dashboard.
    *

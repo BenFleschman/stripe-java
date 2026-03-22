@@ -138,12 +138,12 @@ public class ErrorTest extends BaseStripeTest {
     try {
       InvalidClientException exception = null;
       @Cleanup MockWebServer server = new MockWebServer();
+      server.start();
       server.enqueue(
           new MockResponse.Builder()
               .code(401)
               .body(getResourceAsString("/oauth_fixtures/error_invalid_client.json"))
               .build());
-      server.start();
 
       Stripe.overrideConnectBase(server.url("").toString());
 

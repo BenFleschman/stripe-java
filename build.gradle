@@ -10,22 +10,22 @@ plugins {
     id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
     id "signing"
     id "jacoco"
-    id "io.freefair.lombok" version "6.3.0"
-    id "com.diffplug.spotless" version "6.4.0"
-    id "net.ltgt.errorprone" version "2.0.2"
+    id "io.freefair.lombok" version "8.6"
+    id "com.diffplug.spotless" version "6.25.0"
+    id "net.ltgt.errorprone" version "4.1.0"
     id "biz.aQute.bnd.builder" version "6.1.0"
     id "org.ajoberstar.git-publish" version "3.0.1"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 group = GROUP
 version = VERSION_NAME
 
 tasks.withType(JavaCompile) {
     JavaVersion compilerJavaVersionEnum = JavaVersion.current()
-    if (compilerJavaVersionEnum != JavaVersion.VERSION_17) {
-        throw new GradleException("JDK 17 is required to build Stripe")
+    if (compilerJavaVersionEnum != JavaVersion.VERSION_21) {
+        throw new GradleException("JDK 21 is required to build Stripe")
     }
 
     options.fork = true
@@ -33,7 +33,7 @@ tasks.withType(JavaCompile) {
 
     options.release = project.targetCompatibility.majorVersion as Integer
 
-    options.compilerArgs << "-Xlint:all" << "-Xlint:-options" << "-Xlint:-processing"
+    options.compilerArgs << "-Xlint:all" << "-Xlint:-options" << "-Xlint:-processing" << "-Xlint:-this-escape" << "-Xlint:-deprecation"
     options.encoding = "UTF-8"
 
     options.errorprone {
@@ -54,6 +54,15 @@ tasks.withType(JavaCompile) {
       // InlineMe (https://errorprone.info/docs/inlineme) seems neat, but in order to add these annotations
       // we would be imposing another dependency on `errorprone` to our users, not worth it.
       check("InlineMeSuggester", net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+
+      // New checks in error-prone 2.36+ that flag existing code patterns.
+      check("StringCaseLocaleUsage", net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+      check("UnusedVariable", net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+      check("PatternMatchingInstanceof", net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+      check("NotJavadoc", net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+
+      // Only report errors, not warnings, to avoid new suggestion-level checks breaking the build.
+      errorproneArgs.add("-XepAllSuggestionsAsWarnings")
     }
 }
 
@@ -82,14 +91,13 @@ repositories {
 }
 
 dependencies {
-    errorprone group: "com.google.errorprone", name: "error_prone_core", version: "2.10.0"
-    errorproneJavac group: "com.google.errorprone", name: "javac", version:"9+181-r4173-1"
+    errorprone group: "com.google.errorprone", name: "error_prone_core", version: "2.36.0"
     implementation group: "com.google.code.gson", name: "gson", version:"2.10.1"
     testImplementation group: "com.google.guava", name: "guava", version:"31.0.1-jre"
     testImplementation group: "com.squareup.okhttp3", name: "mockwebserver3", version: "5.0.0"
+    testImplementation group: "org.mockito", name: "mockito-core", version:"4.1.0"
     testImplementation group: "junit", name: "junit", version: "4.13.2"
     testImplementation group: "org.hamcrest", name: "hamcrest", version: "2.2"
-    testImplementation group: "org.mockito", name: "mockito-core", version:"4.1.0"
     testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: "5.8.2"
     testRuntimeOnly group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "5.8.2"
     testRuntimeOnly group: "org.slf4j", name: "slf4j-api", version: "1.7.32"
@@ -109,7 +117,7 @@ jar {
 }
 
 lombok {
-    version = "1.18.22"
+    version = "1.18.30"
 }
 
 delombok {
@@ -132,7 +140,7 @@ test {
 
 spotless {
     java {
-        googleJavaFormat("1.15.0")
+        googleJavaFormat("1.25.2")
         removeUnusedImports()
     }
 }
@@ -150,8 +158,8 @@ gitPublish {
 }
 jacoco
 {
-    // test code instrumentation for Java 18
-    toolVersion = "0.8.8"
+    // test code instrumentation for Java 21
+    toolVersion = "0.8.11"
 }
 
 

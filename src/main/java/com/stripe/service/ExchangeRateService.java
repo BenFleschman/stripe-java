@@ -31,6 +31,7 @@ public final class ExchangeRateService extends ApiService {
   public StripeCollection<ExchangeRate> list(ExchangeRateListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -42,6 +43,7 @@ public final class ExchangeRateService extends ApiService {
   public StripeCollection<ExchangeRate> list(RequestOptions options) throws StripeException {
     return list((ExchangeRateListParams) null, options);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -53,6 +55,7 @@ public final class ExchangeRateService extends ApiService {
   public StripeCollection<ExchangeRate> list() throws StripeException {
     return list((ExchangeRateListParams) null, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -73,6 +76,7 @@ public final class ExchangeRateService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ExchangeRate>>() {}.getType());
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -84,6 +88,7 @@ public final class ExchangeRateService extends ApiService {
       throws StripeException {
     return retrieve(rateId, params, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -94,6 +99,7 @@ public final class ExchangeRateService extends ApiService {
   public ExchangeRate retrieve(String rateId, RequestOptions options) throws StripeException {
     return retrieve(rateId, (ExchangeRateRetrieveParams) null, options);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes
@@ -104,6 +110,7 @@ public final class ExchangeRateService extends ApiService {
   public ExchangeRate retrieve(String rateId) throws StripeException {
     return retrieve(rateId, (ExchangeRateRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * [Deprecated] The {@code ExchangeRate} APIs are deprecated. Please use the <a
    * href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">FX Quotes

@@ -28,6 +28,7 @@ public final class SessionLineItemService extends ApiService {
       throws StripeException {
     return list(session, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a Checkout Session, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the
@@ -37,6 +38,7 @@ public final class SessionLineItemService extends ApiService {
       throws StripeException {
     return list(session, (SessionLineItemListParams) null, options);
   }
+
   /**
    * When retrieving a Checkout Session, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the
@@ -45,6 +47,7 @@ public final class SessionLineItemService extends ApiService {
   public StripeCollection<LineItem> list(String session) throws StripeException {
     return list(session, (SessionLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving a Checkout Session, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the

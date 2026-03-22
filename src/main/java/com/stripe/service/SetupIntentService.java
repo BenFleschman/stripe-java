@@ -29,14 +29,17 @@ public final class SetupIntentService extends ApiService {
   public StripeCollection<SetupIntent> list(SetupIntentListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of SetupIntents. */
   public StripeCollection<SetupIntent> list(RequestOptions options) throws StripeException {
     return list((SetupIntentListParams) null, options);
   }
+
   /** Returns a list of SetupIntents. */
   public StripeCollection<SetupIntent> list() throws StripeException {
     return list((SetupIntentListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of SetupIntents. */
   public StripeCollection<SetupIntent> list(SetupIntentListParams params, RequestOptions options)
       throws StripeException {
@@ -50,6 +53,7 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<SetupIntent>>() {}.getType());
   }
+
   /**
    * Creates a SetupIntent object.
    *
@@ -60,6 +64,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent create(SetupIntentCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a SetupIntent object.
    *
@@ -70,6 +75,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent create(RequestOptions options) throws StripeException {
     return create((SetupIntentCreateParams) null, options);
   }
+
   /**
    * Creates a SetupIntent object.
    *
@@ -80,6 +86,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent create() throws StripeException {
     return create((SetupIntentCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a SetupIntent object.
    *
@@ -99,6 +106,7 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, SetupIntent.class);
   }
+
   /**
    * Retrieves the details of a SetupIntent that has previously been created.
    *
@@ -113,6 +121,7 @@ public final class SetupIntentService extends ApiService {
       throws StripeException {
     return retrieve(intent, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a SetupIntent that has previously been created.
    *
@@ -126,6 +135,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent retrieve(String intent, RequestOptions options) throws StripeException {
     return retrieve(intent, (SetupIntentRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of a SetupIntent that has previously been created.
    *
@@ -139,6 +149,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent retrieve(String intent) throws StripeException {
     return retrieve(intent, (SetupIntentRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a SetupIntent that has previously been created.
    *
@@ -162,18 +173,22 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, SetupIntent.class);
   }
+
   /** Updates a SetupIntent object. */
   public SetupIntent update(String intent, SetupIntentUpdateParams params) throws StripeException {
     return update(intent, params, (RequestOptions) null);
   }
+
   /** Updates a SetupIntent object. */
   public SetupIntent update(String intent, RequestOptions options) throws StripeException {
     return update(intent, (SetupIntentUpdateParams) null, options);
   }
+
   /** Updates a SetupIntent object. */
   public SetupIntent update(String intent) throws StripeException {
     return update(intent, (SetupIntentUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates a SetupIntent object. */
   public SetupIntent update(String intent, SetupIntentUpdateParams params, RequestOptions options)
       throws StripeException {
@@ -187,6 +202,7 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, SetupIntent.class);
   }
+
   /**
    * You can cancel a SetupIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_confirmation}, or {@code requires_action}.
@@ -199,6 +215,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent cancel(String intent, SetupIntentCancelParams params) throws StripeException {
     return cancel(intent, params, (RequestOptions) null);
   }
+
   /**
    * You can cancel a SetupIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_confirmation}, or {@code requires_action}.
@@ -211,6 +228,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent cancel(String intent, RequestOptions options) throws StripeException {
     return cancel(intent, (SetupIntentCancelParams) null, options);
   }
+
   /**
    * You can cancel a SetupIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_confirmation}, or {@code requires_action}.
@@ -223,6 +241,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent cancel(String intent) throws StripeException {
     return cancel(intent, (SetupIntentCancelParams) null, (RequestOptions) null);
   }
+
   /**
    * You can cancel a SetupIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_confirmation}, or {@code requires_action}.
@@ -244,6 +263,7 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, SetupIntent.class);
   }
+
   /**
    * Confirm that your customer intends to set up the current or provided payment method. For
    * example, you would confirm a SetupIntent when a customer hits the “Save” button on a payment
@@ -261,6 +281,7 @@ public final class SetupIntentService extends ApiService {
       throws StripeException {
     return confirm(intent, params, (RequestOptions) null);
   }
+
   /**
    * Confirm that your customer intends to set up the current or provided payment method. For
    * example, you would confirm a SetupIntent when a customer hits the “Save” button on a payment
@@ -277,6 +298,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent confirm(String intent, RequestOptions options) throws StripeException {
     return confirm(intent, (SetupIntentConfirmParams) null, options);
   }
+
   /**
    * Confirm that your customer intends to set up the current or provided payment method. For
    * example, you would confirm a SetupIntent when a customer hits the “Save” button on a payment
@@ -293,6 +315,7 @@ public final class SetupIntentService extends ApiService {
   public SetupIntent confirm(String intent) throws StripeException {
     return confirm(intent, (SetupIntentConfirmParams) null, (RequestOptions) null);
   }
+
   /**
    * Confirm that your customer intends to set up the current or provided payment method. For
    * example, you would confirm a SetupIntent when a customer hits the “Save” button on a payment
@@ -318,21 +341,25 @@ public final class SetupIntentService extends ApiService {
             options);
     return this.request(request, SetupIntent.class);
   }
+
   /** Verifies microdeposits on a SetupIntent object. */
   public SetupIntent verifyMicrodeposits(String intent, SetupIntentVerifyMicrodepositsParams params)
       throws StripeException {
     return verifyMicrodeposits(intent, params, (RequestOptions) null);
   }
+
   /** Verifies microdeposits on a SetupIntent object. */
   public SetupIntent verifyMicrodeposits(String intent, RequestOptions options)
       throws StripeException {
     return verifyMicrodeposits(intent, (SetupIntentVerifyMicrodepositsParams) null, options);
   }
+
   /** Verifies microdeposits on a SetupIntent object. */
   public SetupIntent verifyMicrodeposits(String intent) throws StripeException {
     return verifyMicrodeposits(
         intent, (SetupIntentVerifyMicrodepositsParams) null, (RequestOptions) null);
   }
+
   /** Verifies microdeposits on a SetupIntent object. */
   public SetupIntent verifyMicrodeposits(
       String intent, SetupIntentVerifyMicrodepositsParams params, RequestOptions options)

@@ -32,6 +32,7 @@ public final class BalanceTransactionService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that have contributed to the Stripe account balance (e.g.,
    * charges, transfers, and so forth). The transactions are returned in sorted order, with the most
@@ -43,6 +44,7 @@ public final class BalanceTransactionService extends ApiService {
   public StripeCollection<BalanceTransaction> list(RequestOptions options) throws StripeException {
     return list((BalanceTransactionListParams) null, options);
   }
+
   /**
    * Returns a list of transactions that have contributed to the Stripe account balance (e.g.,
    * charges, transfers, and so forth). The transactions are returned in sorted order, with the most
@@ -54,6 +56,7 @@ public final class BalanceTransactionService extends ApiService {
   public StripeCollection<BalanceTransaction> list() throws StripeException {
     return list((BalanceTransactionListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that have contributed to the Stripe account balance (e.g.,
    * charges, transfers, and so forth). The transactions are returned in sorted order, with the most
@@ -75,6 +78,7 @@ public final class BalanceTransactionService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<BalanceTransaction>>() {}.getType());
   }
+
   /**
    * Retrieves the balance transaction with the given ID.
    *
@@ -84,6 +88,7 @@ public final class BalanceTransactionService extends ApiService {
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the balance transaction with the given ID.
    *
@@ -92,6 +97,7 @@ public final class BalanceTransactionService extends ApiService {
   public BalanceTransaction retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (BalanceTransactionRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the balance transaction with the given ID.
    *
@@ -100,6 +106,7 @@ public final class BalanceTransactionService extends ApiService {
   public BalanceTransaction retrieve(String id) throws StripeException {
     return retrieve(id, (BalanceTransactionRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the balance transaction with the given ID.
    *

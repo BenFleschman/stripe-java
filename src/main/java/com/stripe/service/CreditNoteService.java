@@ -28,14 +28,17 @@ public final class CreditNoteService extends ApiService {
   public StripeCollection<CreditNote> list(CreditNoteListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of credit notes. */
   public StripeCollection<CreditNote> list(RequestOptions options) throws StripeException {
     return list((CreditNoteListParams) null, options);
   }
+
   /** Returns a list of credit notes. */
   public StripeCollection<CreditNote> list() throws StripeException {
     return list((CreditNoteListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of credit notes. */
   public StripeCollection<CreditNote> list(CreditNoteListParams params, RequestOptions options)
       throws StripeException {
@@ -49,6 +52,7 @@ public final class CreditNoteService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<CreditNote>>() {}.getType());
   }
+
   /**
    * Issue a credit note to adjust the amount of a finalized invoice. A credit note will first
    * reduce the invoice’s {@code amount_remaining} (and {@code amount_due}), but not below zero.
@@ -77,6 +81,7 @@ public final class CreditNoteService extends ApiService {
   public CreditNote create(CreditNoteCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Issue a credit note to adjust the amount of a finalized invoice. A credit note will first
    * reduce the invoice’s {@code amount_remaining} (and {@code amount_due}), but not below zero.
@@ -114,18 +119,22 @@ public final class CreditNoteService extends ApiService {
             options);
     return this.request(request, CreditNote.class);
   }
+
   /** Retrieves the credit note object with the given identifier. */
   public CreditNote retrieve(String id, CreditNoteRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves the credit note object with the given identifier. */
   public CreditNote retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (CreditNoteRetrieveParams) null, options);
   }
+
   /** Retrieves the credit note object with the given identifier. */
   public CreditNote retrieve(String id) throws StripeException {
     return retrieve(id, (CreditNoteRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the credit note object with the given identifier. */
   public CreditNote retrieve(String id, CreditNoteRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -139,18 +148,22 @@ public final class CreditNoteService extends ApiService {
             options);
     return this.request(request, CreditNote.class);
   }
+
   /** Updates an existing credit note. */
   public CreditNote update(String id, CreditNoteUpdateParams params) throws StripeException {
     return update(id, params, (RequestOptions) null);
   }
+
   /** Updates an existing credit note. */
   public CreditNote update(String id, RequestOptions options) throws StripeException {
     return update(id, (CreditNoteUpdateParams) null, options);
   }
+
   /** Updates an existing credit note. */
   public CreditNote update(String id) throws StripeException {
     return update(id, (CreditNoteUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing credit note. */
   public CreditNote update(String id, CreditNoteUpdateParams params, RequestOptions options)
       throws StripeException {
@@ -164,10 +177,12 @@ public final class CreditNoteService extends ApiService {
             options);
     return this.request(request, CreditNote.class);
   }
+
   /** Get a preview of a credit note without creating it. */
   public CreditNote preview(CreditNotePreviewParams params) throws StripeException {
     return preview(params, (RequestOptions) null);
   }
+
   /** Get a preview of a credit note without creating it. */
   public CreditNote preview(CreditNotePreviewParams params, RequestOptions options)
       throws StripeException {
@@ -181,6 +196,7 @@ public final class CreditNoteService extends ApiService {
             options);
     return this.request(request, CreditNote.class);
   }
+
   /**
    * Marks a credit note as void. Learn more about <a
    * href="https://stripe.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.
@@ -189,6 +205,7 @@ public final class CreditNoteService extends ApiService {
       throws StripeException {
     return voidCreditNote(id, params, (RequestOptions) null);
   }
+
   /**
    * Marks a credit note as void. Learn more about <a
    * href="https://stripe.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.
@@ -196,6 +213,7 @@ public final class CreditNoteService extends ApiService {
   public CreditNote voidCreditNote(String id, RequestOptions options) throws StripeException {
     return voidCreditNote(id, (CreditNoteVoidCreditNoteParams) null, options);
   }
+
   /**
    * Marks a credit note as void. Learn more about <a
    * href="https://stripe.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.
@@ -203,6 +221,7 @@ public final class CreditNoteService extends ApiService {
   public CreditNote voidCreditNote(String id) throws StripeException {
     return voidCreditNote(id, (CreditNoteVoidCreditNoteParams) null, (RequestOptions) null);
   }
+
   /**
    * Marks a credit note as void. Learn more about <a
    * href="https://stripe.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.

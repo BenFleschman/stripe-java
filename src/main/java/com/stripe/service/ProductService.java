@@ -32,6 +32,7 @@ public final class ProductService extends ApiService {
   public Product delete(String id) throws StripeException {
     return delete(id, (RequestOptions) null);
   }
+
   /**
    * Delete a product. Deleting a product is only possible if it has no prices associated with it.
    * Additionally, deleting a product with {@code type=good} is only possible if it has no SKUs
@@ -43,6 +44,7 @@ public final class ProductService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Product.class);
   }
+
   /**
    * Retrieves the details of an existing product. Supply the unique product ID from either a
    * product creation request or the product list, and Stripe will return the corresponding product
@@ -51,6 +53,7 @@ public final class ProductService extends ApiService {
   public Product retrieve(String id, ProductRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing product. Supply the unique product ID from either a
    * product creation request or the product list, and Stripe will return the corresponding product
@@ -59,6 +62,7 @@ public final class ProductService extends ApiService {
   public Product retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (ProductRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing product. Supply the unique product ID from either a
    * product creation request or the product list, and Stripe will return the corresponding product
@@ -67,6 +71,7 @@ public final class ProductService extends ApiService {
   public Product retrieve(String id) throws StripeException {
     return retrieve(id, (ProductRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing product. Supply the unique product ID from either a
    * product creation request or the product list, and Stripe will return the corresponding product
@@ -84,6 +89,7 @@ public final class ProductService extends ApiService {
             options);
     return this.request(request, Product.class);
   }
+
   /**
    * Updates the specific product by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -91,6 +97,7 @@ public final class ProductService extends ApiService {
   public Product update(String id, ProductUpdateParams params) throws StripeException {
     return update(id, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specific product by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -98,6 +105,7 @@ public final class ProductService extends ApiService {
   public Product update(String id, RequestOptions options) throws StripeException {
     return update(id, (ProductUpdateParams) null, options);
   }
+
   /**
    * Updates the specific product by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -105,6 +113,7 @@ public final class ProductService extends ApiService {
   public Product update(String id) throws StripeException {
     return update(id, (ProductUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specific product by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -121,6 +130,7 @@ public final class ProductService extends ApiService {
             options);
     return this.request(request, Product.class);
   }
+
   /**
    * Returns a list of your products. The products are returned sorted by creation date, with the
    * most recently created products appearing first.
@@ -128,6 +138,7 @@ public final class ProductService extends ApiService {
   public StripeCollection<Product> list(ProductListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your products. The products are returned sorted by creation date, with the
    * most recently created products appearing first.
@@ -135,6 +146,7 @@ public final class ProductService extends ApiService {
   public StripeCollection<Product> list(RequestOptions options) throws StripeException {
     return list((ProductListParams) null, options);
   }
+
   /**
    * Returns a list of your products. The products are returned sorted by creation date, with the
    * most recently created products appearing first.
@@ -142,6 +154,7 @@ public final class ProductService extends ApiService {
   public StripeCollection<Product> list() throws StripeException {
     return list((ProductListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your products. The products are returned sorted by creation date, with the
    * most recently created products appearing first.
@@ -158,10 +171,12 @@ public final class ProductService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Product>>() {}.getType());
   }
+
   /** Creates a new product object. */
   public Product create(ProductCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new product object. */
   public Product create(ProductCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/products";
@@ -174,6 +189,7 @@ public final class ProductService extends ApiService {
             options);
     return this.request(request, Product.class);
   }
+
   /**
    * Search for products you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -185,6 +201,7 @@ public final class ProductService extends ApiService {
   public StripeSearchResult<Product> search(ProductSearchParams params) throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for products you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t

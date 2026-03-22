@@ -26,6 +26,7 @@ public final class AccountLinkService extends ApiService {
       throws StripeException, RateLimitException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates an AccountLink object that includes a single-use URL that an account can use to access
    * a Stripe-hosted flow for collecting or updating required information.

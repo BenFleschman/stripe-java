@@ -26,14 +26,17 @@ public final class FileLinkService extends ApiService {
   public StripeCollection<FileLink> list(FileLinkListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of file links. */
   public StripeCollection<FileLink> list(RequestOptions options) throws StripeException {
     return list((FileLinkListParams) null, options);
   }
+
   /** Returns a list of file links. */
   public StripeCollection<FileLink> list() throws StripeException {
     return list((FileLinkListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of file links. */
   public StripeCollection<FileLink> list(FileLinkListParams params, RequestOptions options)
       throws StripeException {
@@ -47,10 +50,12 @@ public final class FileLinkService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<FileLink>>() {}.getType());
   }
+
   /** Creates a new file link object. */
   public FileLink create(FileLinkCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new file link object. */
   public FileLink create(FileLinkCreateParams params, RequestOptions options)
       throws StripeException {
@@ -64,18 +69,22 @@ public final class FileLinkService extends ApiService {
             options);
     return this.request(request, FileLink.class);
   }
+
   /** Retrieves the file link with the given ID. */
   public FileLink retrieve(String link, FileLinkRetrieveParams params) throws StripeException {
     return retrieve(link, params, (RequestOptions) null);
   }
+
   /** Retrieves the file link with the given ID. */
   public FileLink retrieve(String link, RequestOptions options) throws StripeException {
     return retrieve(link, (FileLinkRetrieveParams) null, options);
   }
+
   /** Retrieves the file link with the given ID. */
   public FileLink retrieve(String link) throws StripeException {
     return retrieve(link, (FileLinkRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the file link with the given ID. */
   public FileLink retrieve(String link, FileLinkRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -89,18 +98,22 @@ public final class FileLinkService extends ApiService {
             options);
     return this.request(request, FileLink.class);
   }
+
   /** Updates an existing file link object. Expired links can no longer be updated. */
   public FileLink update(String link, FileLinkUpdateParams params) throws StripeException {
     return update(link, params, (RequestOptions) null);
   }
+
   /** Updates an existing file link object. Expired links can no longer be updated. */
   public FileLink update(String link, RequestOptions options) throws StripeException {
     return update(link, (FileLinkUpdateParams) null, options);
   }
+
   /** Updates an existing file link object. Expired links can no longer be updated. */
   public FileLink update(String link) throws StripeException {
     return update(link, (FileLinkUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing file link object. Expired links can no longer be updated. */
   public FileLink update(String link, FileLinkUpdateParams params, RequestOptions options)
       throws StripeException {

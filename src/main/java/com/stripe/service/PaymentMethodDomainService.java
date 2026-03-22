@@ -28,14 +28,17 @@ public final class PaymentMethodDomainService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Lists the details of existing payment method domains. */
   public StripeCollection<PaymentMethodDomain> list(RequestOptions options) throws StripeException {
     return list((PaymentMethodDomainListParams) null, options);
   }
+
   /** Lists the details of existing payment method domains. */
   public StripeCollection<PaymentMethodDomain> list() throws StripeException {
     return list((PaymentMethodDomainListParams) null, (RequestOptions) null);
   }
+
   /** Lists the details of existing payment method domains. */
   public StripeCollection<PaymentMethodDomain> list(
       PaymentMethodDomainListParams params, RequestOptions options) throws StripeException {
@@ -50,10 +53,12 @@ public final class PaymentMethodDomainService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<PaymentMethodDomain>>() {}.getType());
   }
+
   /** Creates a payment method domain. */
   public PaymentMethodDomain create(PaymentMethodDomainCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a payment method domain. */
   public PaymentMethodDomain create(PaymentMethodDomainCreateParams params, RequestOptions options)
       throws StripeException {
@@ -67,21 +72,25 @@ public final class PaymentMethodDomainService extends ApiService {
             options);
     return this.request(request, PaymentMethodDomain.class);
   }
+
   /** Retrieves the details of an existing payment method domain. */
   public PaymentMethodDomain retrieve(
       String paymentMethodDomain, PaymentMethodDomainRetrieveParams params) throws StripeException {
     return retrieve(paymentMethodDomain, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing payment method domain. */
   public PaymentMethodDomain retrieve(String paymentMethodDomain, RequestOptions options)
       throws StripeException {
     return retrieve(paymentMethodDomain, (PaymentMethodDomainRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an existing payment method domain. */
   public PaymentMethodDomain retrieve(String paymentMethodDomain) throws StripeException {
     return retrieve(
         paymentMethodDomain, (PaymentMethodDomainRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing payment method domain. */
   public PaymentMethodDomain retrieve(
       String paymentMethodDomain, PaymentMethodDomainRetrieveParams params, RequestOptions options)
@@ -98,21 +107,25 @@ public final class PaymentMethodDomainService extends ApiService {
             options);
     return this.request(request, PaymentMethodDomain.class);
   }
+
   /** Updates an existing payment method domain. */
   public PaymentMethodDomain update(
       String paymentMethodDomain, PaymentMethodDomainUpdateParams params) throws StripeException {
     return update(paymentMethodDomain, params, (RequestOptions) null);
   }
+
   /** Updates an existing payment method domain. */
   public PaymentMethodDomain update(String paymentMethodDomain, RequestOptions options)
       throws StripeException {
     return update(paymentMethodDomain, (PaymentMethodDomainUpdateParams) null, options);
   }
+
   /** Updates an existing payment method domain. */
   public PaymentMethodDomain update(String paymentMethodDomain) throws StripeException {
     return update(
         paymentMethodDomain, (PaymentMethodDomainUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing payment method domain. */
   public PaymentMethodDomain update(
       String paymentMethodDomain, PaymentMethodDomainUpdateParams params, RequestOptions options)
@@ -129,6 +142,7 @@ public final class PaymentMethodDomainService extends ApiService {
             options);
     return this.request(request, PaymentMethodDomain.class);
   }
+
   /**
    * Some payment methods might require additional steps to register a domain. If the requirements
    * weren’t satisfied when the domain was created, the payment method will be inactive on the
@@ -147,6 +161,7 @@ public final class PaymentMethodDomainService extends ApiService {
       String paymentMethodDomain, PaymentMethodDomainValidateParams params) throws StripeException {
     return validate(paymentMethodDomain, params, (RequestOptions) null);
   }
+
   /**
    * Some payment methods might require additional steps to register a domain. If the requirements
    * weren’t satisfied when the domain was created, the payment method will be inactive on the
@@ -165,6 +180,7 @@ public final class PaymentMethodDomainService extends ApiService {
       throws StripeException {
     return validate(paymentMethodDomain, (PaymentMethodDomainValidateParams) null, options);
   }
+
   /**
    * Some payment methods might require additional steps to register a domain. If the requirements
    * weren’t satisfied when the domain was created, the payment method will be inactive on the
@@ -183,6 +199,7 @@ public final class PaymentMethodDomainService extends ApiService {
     return validate(
         paymentMethodDomain, (PaymentMethodDomainValidateParams) null, (RequestOptions) null);
   }
+
   /**
    * Some payment methods might require additional steps to register a domain. If the requirements
    * weren’t satisfied when the domain was created, the payment method will be inactive on the

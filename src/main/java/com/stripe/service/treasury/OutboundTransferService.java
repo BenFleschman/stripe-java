@@ -27,6 +27,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of OutboundTransfers sent from the specified FinancialAccount. */
   public StripeCollection<OutboundTransfer> list(
       OutboundTransferListParams params, RequestOptions options) throws StripeException {
@@ -40,10 +41,12 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<OutboundTransfer>>() {}.getType());
   }
+
   /** Creates an OutboundTransfer. */
   public OutboundTransfer create(OutboundTransferCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates an OutboundTransfer. */
   public OutboundTransfer create(OutboundTransferCreateParams params, RequestOptions options)
       throws StripeException {
@@ -57,6 +60,7 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, OutboundTransfer.class);
   }
+
   /**
    * Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID
    * from either the OutboundTransfer creation request or OutboundTransfer list.
@@ -65,6 +69,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return retrieve(outboundTransfer, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID
    * from either the OutboundTransfer creation request or OutboundTransfer list.
@@ -73,6 +78,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return retrieve(outboundTransfer, (OutboundTransferRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID
    * from either the OutboundTransfer creation request or OutboundTransfer list.
@@ -80,6 +86,7 @@ public final class OutboundTransferService extends ApiService {
   public OutboundTransfer retrieve(String outboundTransfer) throws StripeException {
     return retrieve(outboundTransfer, (OutboundTransferRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID
    * from either the OutboundTransfer creation request or OutboundTransfer list.
@@ -99,20 +106,24 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, OutboundTransfer.class);
   }
+
   /** An OutboundTransfer can be canceled if the funds have not yet been paid out. */
   public OutboundTransfer cancel(String outboundTransfer, OutboundTransferCancelParams params)
       throws StripeException {
     return cancel(outboundTransfer, params, (RequestOptions) null);
   }
+
   /** An OutboundTransfer can be canceled if the funds have not yet been paid out. */
   public OutboundTransfer cancel(String outboundTransfer, RequestOptions options)
       throws StripeException {
     return cancel(outboundTransfer, (OutboundTransferCancelParams) null, options);
   }
+
   /** An OutboundTransfer can be canceled if the funds have not yet been paid out. */
   public OutboundTransfer cancel(String outboundTransfer) throws StripeException {
     return cancel(outboundTransfer, (OutboundTransferCancelParams) null, (RequestOptions) null);
   }
+
   /** An OutboundTransfer can be canceled if the funds have not yet been paid out. */
   public OutboundTransfer cancel(
       String outboundTransfer, OutboundTransferCancelParams params, RequestOptions options)

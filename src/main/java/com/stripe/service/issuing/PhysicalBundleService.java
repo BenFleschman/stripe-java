@@ -28,6 +28,7 @@ public final class PhysicalBundleService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of physical bundle objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -35,6 +36,7 @@ public final class PhysicalBundleService extends ApiService {
   public StripeCollection<PhysicalBundle> list(RequestOptions options) throws StripeException {
     return list((PhysicalBundleListParams) null, options);
   }
+
   /**
    * Returns a list of physical bundle objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -42,6 +44,7 @@ public final class PhysicalBundleService extends ApiService {
   public StripeCollection<PhysicalBundle> list() throws StripeException {
     return list((PhysicalBundleListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of physical bundle objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -58,20 +61,24 @@ public final class PhysicalBundleService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<PhysicalBundle>>() {}.getType());
   }
+
   /** Retrieves a physical bundle object. */
   public PhysicalBundle retrieve(String physicalBundle, PhysicalBundleRetrieveParams params)
       throws StripeException {
     return retrieve(physicalBundle, params, (RequestOptions) null);
   }
+
   /** Retrieves a physical bundle object. */
   public PhysicalBundle retrieve(String physicalBundle, RequestOptions options)
       throws StripeException {
     return retrieve(physicalBundle, (PhysicalBundleRetrieveParams) null, options);
   }
+
   /** Retrieves a physical bundle object. */
   public PhysicalBundle retrieve(String physicalBundle) throws StripeException {
     return retrieve(physicalBundle, (PhysicalBundleRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a physical bundle object. */
   public PhysicalBundle retrieve(
       String physicalBundle, PhysicalBundleRetrieveParams params, RequestOptions options)

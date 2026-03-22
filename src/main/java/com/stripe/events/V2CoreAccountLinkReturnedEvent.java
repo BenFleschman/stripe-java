@@ -19,9 +19,11 @@ public final class V2CoreAccountLinkReturnedEvent extends Event {
     /** The ID of the v2 account. */
     @SerializedName("account_id")
     String accountId;
+
     /** Configurations on the Account that was onboarded via the account link. */
     @SerializedName("configurations")
     List<String> configurations;
+
     /**
      * Open Enum. The use case type of the account link that has been completed.
      *

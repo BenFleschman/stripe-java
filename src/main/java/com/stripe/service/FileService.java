@@ -28,6 +28,7 @@ public final class FileService extends ApiService {
   public StripeCollection<File> list(FileListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of the files that your account has access to. Stripe sorts and returns the files
    * by their creation dates, placing the most recently created files at the top.
@@ -35,6 +36,7 @@ public final class FileService extends ApiService {
   public StripeCollection<File> list(RequestOptions options) throws StripeException {
     return list((FileListParams) null, options);
   }
+
   /**
    * Returns a list of the files that your account has access to. Stripe sorts and returns the files
    * by their creation dates, placing the most recently created files at the top.
@@ -42,6 +44,7 @@ public final class FileService extends ApiService {
   public StripeCollection<File> list() throws StripeException {
     return list((FileListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of the files that your account has access to. Stripe sorts and returns the files
    * by their creation dates, placing the most recently created files at the top.
@@ -58,6 +61,7 @@ public final class FileService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<File>>() {}.getType());
   }
+
   /**
    * To upload a file to Stripe, you need to send a request of type {@code multipart/form-data}.
    * Include the file you want to upload in the request, and the parameters for creating a file.
@@ -68,6 +72,7 @@ public final class FileService extends ApiService {
   public File create(FileCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * To upload a file to Stripe, you need to send a request of type {@code multipart/form-data}.
    * Include the file you want to upload in the request, and the parameters for creating a file.
@@ -86,6 +91,7 @@ public final class FileService extends ApiService {
             options);
     return this.request(request, File.class);
   }
+
   /**
    * Retrieves the details of an existing file object. After you supply a unique file ID, Stripe
    * returns the corresponding file object. Learn how to <a
@@ -94,6 +100,7 @@ public final class FileService extends ApiService {
   public File retrieve(String file, FileRetrieveParams params) throws StripeException {
     return retrieve(file, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing file object. After you supply a unique file ID, Stripe
    * returns the corresponding file object. Learn how to <a
@@ -102,6 +109,7 @@ public final class FileService extends ApiService {
   public File retrieve(String file, RequestOptions options) throws StripeException {
     return retrieve(file, (FileRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing file object. After you supply a unique file ID, Stripe
    * returns the corresponding file object. Learn how to <a
@@ -110,6 +118,7 @@ public final class FileService extends ApiService {
   public File retrieve(String file) throws StripeException {
     return retrieve(file, (FileRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing file object. After you supply a unique file ID, Stripe
    * returns the corresponding file object. Learn how to <a

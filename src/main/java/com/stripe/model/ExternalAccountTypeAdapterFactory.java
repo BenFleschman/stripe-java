@@ -84,6 +84,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
     public String getId() {
       return this.id;
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount delete(Map<String, Object> params, RequestOptions options)
@@ -95,6 +96,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
                   + "Please contact support@stripe.com for assistance.",
               this.id, this.object));
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount delete() throws StripeException {
@@ -105,6 +107,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
                   + "Please contact support@stripe.com for assistance.",
               this.id, this.object));
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount delete(RequestOptions options) throws StripeException {
@@ -115,6 +118,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
                   + "Please contact support@stripe.com for assistance.",
               this.id, this.object));
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount delete(Map<String, Object> params) throws StripeException {
@@ -125,6 +129,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
                   + "Please contact support@stripe.com for assistance.",
               this.id, this.object));
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount update(Map<String, Object> params, RequestOptions options)
@@ -136,6 +141,7 @@ public class ExternalAccountTypeAdapterFactory implements TypeAdapterFactory {
                   + "Please contact support@stripe.com for assistance.",
               this.id, this.object));
     }
+
     /** Unsupported operation for unknown subtype. */
     @Override
     public ExternalAccount update(Map<String, Object> params) throws StripeException {

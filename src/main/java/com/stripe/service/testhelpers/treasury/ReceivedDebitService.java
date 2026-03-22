@@ -24,6 +24,7 @@ public final class ReceivedDebitService extends ApiService {
   public ReceivedDebit create(ReceivedDebitCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live
    * mode, you can’t directly create ReceivedDebits initiated by third parties.

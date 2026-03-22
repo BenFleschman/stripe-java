@@ -25,15 +25,18 @@ public final class CustomerPaymentMethodService extends ApiService {
       String customer, CustomerPaymentMethodListParams params) throws StripeException {
     return list(customer, params, (RequestOptions) null);
   }
+
   /** Returns a list of PaymentMethods for a given Customer. */
   public StripeCollection<PaymentMethod> list(String customer, RequestOptions options)
       throws StripeException {
     return list(customer, (CustomerPaymentMethodListParams) null, options);
   }
+
   /** Returns a list of PaymentMethods for a given Customer. */
   public StripeCollection<PaymentMethod> list(String customer) throws StripeException {
     return list(customer, (CustomerPaymentMethodListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of PaymentMethods for a given Customer. */
   public StripeCollection<PaymentMethod> list(
       String customer, CustomerPaymentMethodListParams params, RequestOptions options)
@@ -49,22 +52,26 @@ public final class CustomerPaymentMethodService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<PaymentMethod>>() {}.getType());
   }
+
   /** Retrieves a PaymentMethod object for a given Customer. */
   public PaymentMethod retrieve(
       String customer, String paymentMethod, CustomerPaymentMethodRetrieveParams params)
       throws StripeException {
     return retrieve(customer, paymentMethod, params, (RequestOptions) null);
   }
+
   /** Retrieves a PaymentMethod object for a given Customer. */
   public PaymentMethod retrieve(String customer, String paymentMethod, RequestOptions options)
       throws StripeException {
     return retrieve(customer, paymentMethod, (CustomerPaymentMethodRetrieveParams) null, options);
   }
+
   /** Retrieves a PaymentMethod object for a given Customer. */
   public PaymentMethod retrieve(String customer, String paymentMethod) throws StripeException {
     return retrieve(
         customer, paymentMethod, (CustomerPaymentMethodRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a PaymentMethod object for a given Customer. */
   public PaymentMethod retrieve(
       String customer,

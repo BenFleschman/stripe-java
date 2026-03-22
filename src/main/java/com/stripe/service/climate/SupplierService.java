@@ -24,14 +24,17 @@ public final class SupplierService extends ApiService {
   public StripeCollection<Supplier> list(SupplierListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Lists all available Climate supplier objects. */
   public StripeCollection<Supplier> list(RequestOptions options) throws StripeException {
     return list((SupplierListParams) null, options);
   }
+
   /** Lists all available Climate supplier objects. */
   public StripeCollection<Supplier> list() throws StripeException {
     return list((SupplierListParams) null, (RequestOptions) null);
   }
+
   /** Lists all available Climate supplier objects. */
   public StripeCollection<Supplier> list(SupplierListParams params, RequestOptions options)
       throws StripeException {
@@ -45,18 +48,22 @@ public final class SupplierService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Supplier>>() {}.getType());
   }
+
   /** Retrieves a Climate supplier object. */
   public Supplier retrieve(String supplier, SupplierRetrieveParams params) throws StripeException {
     return retrieve(supplier, params, (RequestOptions) null);
   }
+
   /** Retrieves a Climate supplier object. */
   public Supplier retrieve(String supplier, RequestOptions options) throws StripeException {
     return retrieve(supplier, (SupplierRetrieveParams) null, options);
   }
+
   /** Retrieves a Climate supplier object. */
   public Supplier retrieve(String supplier) throws StripeException {
     return retrieve(supplier, (SupplierRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Climate supplier object. */
   public Supplier retrieve(String supplier, SupplierRetrieveParams params, RequestOptions options)
       throws StripeException {

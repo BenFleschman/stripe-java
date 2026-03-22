@@ -21,6 +21,7 @@ public final class MeterEventService extends ApiService {
   public MeterEvent create(MeterEventCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a billing meter event. */
   public MeterEvent create(MeterEventCreateParams params, RequestOptions options)
       throws StripeException {

@@ -26,6 +26,7 @@ public final class PlanService extends ApiService {
   public Plan delete(String plan) throws StripeException {
     return delete(plan, (RequestOptions) null);
   }
+
   /** Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected. */
   public Plan delete(String plan, RequestOptions options) throws StripeException {
     String path = String.format("/v1/plans/%s", ApiResource.urlEncodeId(plan));
@@ -33,18 +34,22 @@ public final class PlanService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Plan.class);
   }
+
   /** Retrieves the plan with the given ID. */
   public Plan retrieve(String plan, PlanRetrieveParams params) throws StripeException {
     return retrieve(plan, params, (RequestOptions) null);
   }
+
   /** Retrieves the plan with the given ID. */
   public Plan retrieve(String plan, RequestOptions options) throws StripeException {
     return retrieve(plan, (PlanRetrieveParams) null, options);
   }
+
   /** Retrieves the plan with the given ID. */
   public Plan retrieve(String plan) throws StripeException {
     return retrieve(plan, (PlanRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the plan with the given ID. */
   public Plan retrieve(String plan, PlanRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -58,6 +63,7 @@ public final class PlanService extends ApiService {
             options);
     return this.request(request, Plan.class);
   }
+
   /**
    * Updates the specified plan by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or
@@ -66,6 +72,7 @@ public final class PlanService extends ApiService {
   public Plan update(String plan, PlanUpdateParams params) throws StripeException {
     return update(plan, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified plan by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or
@@ -74,6 +81,7 @@ public final class PlanService extends ApiService {
   public Plan update(String plan, RequestOptions options) throws StripeException {
     return update(plan, (PlanUpdateParams) null, options);
   }
+
   /**
    * Updates the specified plan by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or
@@ -82,6 +90,7 @@ public final class PlanService extends ApiService {
   public Plan update(String plan) throws StripeException {
     return update(plan, (PlanUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified plan by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or
@@ -99,18 +108,22 @@ public final class PlanService extends ApiService {
             options);
     return this.request(request, Plan.class);
   }
+
   /** Returns a list of your plans. */
   public StripeCollection<Plan> list(PlanListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your plans. */
   public StripeCollection<Plan> list(RequestOptions options) throws StripeException {
     return list((PlanListParams) null, options);
   }
+
   /** Returns a list of your plans. */
   public StripeCollection<Plan> list() throws StripeException {
     return list((PlanListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your plans. */
   public StripeCollection<Plan> list(PlanListParams params, RequestOptions options)
       throws StripeException {
@@ -124,6 +137,7 @@ public final class PlanService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Plan>>() {}.getType());
   }
+
   /**
    * You can now model subscriptions more flexibly using the <a
    * href="https://stripe.com/docs/api#prices">Prices API</a>. It replaces the Plans API and is
@@ -132,6 +146,7 @@ public final class PlanService extends ApiService {
   public Plan create(PlanCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * You can now model subscriptions more flexibly using the <a
    * href="https://stripe.com/docs/api#prices">Prices API</a>. It replaces the Plans API and is

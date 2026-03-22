@@ -30,6 +30,7 @@ public final class WebhookEndpointService extends ApiService {
   public WebhookEndpoint delete(String webhookEndpoint) throws StripeException {
     return delete(webhookEndpoint, (RequestOptions) null);
   }
+
   /**
    * You can also delete webhook endpoints via the <a
    * href="https://dashboard.stripe.com/account/webhooks">webhook endpoint management</a> page of
@@ -43,20 +44,24 @@ public final class WebhookEndpointService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, WebhookEndpoint.class);
   }
+
   /** Retrieves the webhook endpoint with the given ID. */
   public WebhookEndpoint retrieve(String webhookEndpoint, WebhookEndpointRetrieveParams params)
       throws StripeException {
     return retrieve(webhookEndpoint, params, (RequestOptions) null);
   }
+
   /** Retrieves the webhook endpoint with the given ID. */
   public WebhookEndpoint retrieve(String webhookEndpoint, RequestOptions options)
       throws StripeException {
     return retrieve(webhookEndpoint, (WebhookEndpointRetrieveParams) null, options);
   }
+
   /** Retrieves the webhook endpoint with the given ID. */
   public WebhookEndpoint retrieve(String webhookEndpoint) throws StripeException {
     return retrieve(webhookEndpoint, (WebhookEndpointRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the webhook endpoint with the given ID. */
   public WebhookEndpoint retrieve(
       String webhookEndpoint, WebhookEndpointRetrieveParams params, RequestOptions options)
@@ -72,6 +77,7 @@ public final class WebhookEndpointService extends ApiService {
             options);
     return this.request(request, WebhookEndpoint.class);
   }
+
   /**
    * Updates the webhook endpoint. You may edit the {@code url}, the list of {@code enabled_events},
    * and the status of your endpoint.
@@ -80,6 +86,7 @@ public final class WebhookEndpointService extends ApiService {
       throws StripeException {
     return update(webhookEndpoint, params, (RequestOptions) null);
   }
+
   /**
    * Updates the webhook endpoint. You may edit the {@code url}, the list of {@code enabled_events},
    * and the status of your endpoint.
@@ -88,6 +95,7 @@ public final class WebhookEndpointService extends ApiService {
       throws StripeException {
     return update(webhookEndpoint, (WebhookEndpointUpdateParams) null, options);
   }
+
   /**
    * Updates the webhook endpoint. You may edit the {@code url}, the list of {@code enabled_events},
    * and the status of your endpoint.
@@ -95,6 +103,7 @@ public final class WebhookEndpointService extends ApiService {
   public WebhookEndpoint update(String webhookEndpoint) throws StripeException {
     return update(webhookEndpoint, (WebhookEndpointUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the webhook endpoint. You may edit the {@code url}, the list of {@code enabled_events},
    * and the status of your endpoint.
@@ -113,19 +122,23 @@ public final class WebhookEndpointService extends ApiService {
             options);
     return this.request(request, WebhookEndpoint.class);
   }
+
   /** Returns a list of your webhook endpoints. */
   public StripeCollection<WebhookEndpoint> list(WebhookEndpointListParams params)
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your webhook endpoints. */
   public StripeCollection<WebhookEndpoint> list(RequestOptions options) throws StripeException {
     return list((WebhookEndpointListParams) null, options);
   }
+
   /** Returns a list of your webhook endpoints. */
   public StripeCollection<WebhookEndpoint> list() throws StripeException {
     return list((WebhookEndpointListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your webhook endpoints. */
   public StripeCollection<WebhookEndpoint> list(
       WebhookEndpointListParams params, RequestOptions options) throws StripeException {
@@ -139,6 +152,7 @@ public final class WebhookEndpointService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<WebhookEndpoint>>() {}.getType());
   }
+
   /**
    * A webhook endpoint must have a {@code url} and a list of {@code enabled_events}. You may
    * optionally specify the Boolean {@code connect} parameter. If set to true, then a Connect
@@ -151,6 +165,7 @@ public final class WebhookEndpointService extends ApiService {
   public WebhookEndpoint create(WebhookEndpointCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * A webhook endpoint must have a {@code url} and a list of {@code enabled_events}. You may
    * optionally specify the Boolean {@code connect} parameter. If set to true, then a Connect

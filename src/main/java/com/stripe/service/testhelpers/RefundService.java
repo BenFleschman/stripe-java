@@ -21,14 +21,17 @@ public final class RefundService extends ApiService {
   public Refund expire(String refund, RefundExpireParams params) throws StripeException {
     return expire(refund, params, (RequestOptions) null);
   }
+
   /** Expire a refund with a status of {@code requires_action}. */
   public Refund expire(String refund, RequestOptions options) throws StripeException {
     return expire(refund, (RefundExpireParams) null, options);
   }
+
   /** Expire a refund with a status of {@code requires_action}. */
   public Refund expire(String refund) throws StripeException {
     return expire(refund, (RefundExpireParams) null, (RequestOptions) null);
   }
+
   /** Expire a refund with a status of {@code requires_action}. */
   public Refund expire(String refund, RefundExpireParams params, RequestOptions options)
       throws StripeException {

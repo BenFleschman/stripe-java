@@ -29,15 +29,18 @@ public final class AccountService extends ApiService {
       throws StripeException, RateLimitException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Accounts. */
   public StripeCollection<Account> list(RequestOptions options)
       throws StripeException, RateLimitException {
     return list((AccountListParams) null, options);
   }
+
   /** Returns a list of Accounts. */
   public StripeCollection<Account> list() throws StripeException, RateLimitException {
     return list((AccountListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of Accounts. */
   public StripeCollection<Account> list(AccountListParams params, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -51,6 +54,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Account>>() {}.getType());
   }
+
   /**
    * An Account is a representation of a company, individual or other entity that a user interacts
    * with. Accounts contain identifying information about the entity, and configurations that store
@@ -60,6 +64,7 @@ public final class AccountService extends ApiService {
   public Account create(AccountCreateParams params) throws StripeException, RateLimitException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * An Account is a representation of a company, individual or other entity that a user interacts
    * with. Accounts contain identifying information about the entity, and configurations that store
@@ -69,6 +74,7 @@ public final class AccountService extends ApiService {
   public Account create(RequestOptions options) throws StripeException, RateLimitException {
     return create((AccountCreateParams) null, options);
   }
+
   /**
    * An Account is a representation of a company, individual or other entity that a user interacts
    * with. Accounts contain identifying information about the entity, and configurations that store
@@ -78,6 +84,7 @@ public final class AccountService extends ApiService {
   public Account create() throws StripeException, RateLimitException {
     return create((AccountCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * An Account is a representation of a company, individual or other entity that a user interacts
    * with. Accounts contain identifying information about the entity, and configurations that store
@@ -96,20 +103,24 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /** Retrieves the details of an Account. */
   public Account retrieve(String id, AccountRetrieveParams params)
       throws StripeException, RateLimitException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an Account. */
   public Account retrieve(String id, RequestOptions options)
       throws StripeException, RateLimitException {
     return retrieve(id, (AccountRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an Account. */
   public Account retrieve(String id) throws StripeException, RateLimitException {
     return retrieve(id, (AccountRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an Account. */
   public Account retrieve(String id, AccountRetrieveParams params, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -123,20 +134,24 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /** Updates the details of an Account. */
   public Account update(String id, AccountUpdateParams params)
       throws StripeException, RateLimitException {
     return update(id, params, (RequestOptions) null);
   }
+
   /** Updates the details of an Account. */
   public Account update(String id, RequestOptions options)
       throws StripeException, RateLimitException {
     return update(id, (AccountUpdateParams) null, options);
   }
+
   /** Updates the details of an Account. */
   public Account update(String id) throws StripeException, RateLimitException {
     return update(id, (AccountUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates the details of an Account. */
   public Account update(String id, AccountUpdateParams params, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -150,6 +165,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Removes access to the Account and its associated resources. Closed Accounts can no longer be
    * operated on, but limited information can still be retrieved through the API in order to be able
@@ -159,6 +175,7 @@ public final class AccountService extends ApiService {
       throws StripeException, RateLimitException {
     return close(id, params, (RequestOptions) null);
   }
+
   /**
    * Removes access to the Account and its associated resources. Closed Accounts can no longer be
    * operated on, but limited information can still be retrieved through the API in order to be able
@@ -168,6 +185,7 @@ public final class AccountService extends ApiService {
       throws StripeException, RateLimitException {
     return close(id, (AccountCloseParams) null, options);
   }
+
   /**
    * Removes access to the Account and its associated resources. Closed Accounts can no longer be
    * operated on, but limited information can still be retrieved through the API in order to be able
@@ -176,6 +194,7 @@ public final class AccountService extends ApiService {
   public Account close(String id) throws StripeException, RateLimitException {
     return close(id, (AccountCloseParams) null, (RequestOptions) null);
   }
+
   /**
    * Removes access to the Account and its associated resources. Closed Accounts can no longer be
    * operated on, but limited information can still be retrieved through the API in order to be able

@@ -27,18 +27,21 @@ public final class CardService extends ApiService {
   public Card deliverCard(String card, CardDeliverCardParams params) throws StripeException {
     return deliverCard(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code delivered}.
    */
   public Card deliverCard(String card, RequestOptions options) throws StripeException {
     return deliverCard(card, (CardDeliverCardParams) null, options);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code delivered}.
    */
   public Card deliverCard(String card) throws StripeException {
     return deliverCard(card, (CardDeliverCardParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code delivered}.
    */
@@ -56,24 +59,28 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code failure}.
    */
   public Card failCard(String card, CardFailCardParams params) throws StripeException {
     return failCard(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code failure}.
    */
   public Card failCard(String card, RequestOptions options) throws StripeException {
     return failCard(card, (CardFailCardParams) null, options);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code failure}.
    */
   public Card failCard(String card) throws StripeException {
     return failCard(card, (CardFailCardParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code failure}.
    */
@@ -91,24 +98,28 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code returned}.
    */
   public Card returnCard(String card, CardReturnCardParams params) throws StripeException {
     return returnCard(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code returned}.
    */
   public Card returnCard(String card, RequestOptions options) throws StripeException {
     return returnCard(card, (CardReturnCardParams) null, options);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code returned}.
    */
   public Card returnCard(String card) throws StripeException {
     return returnCard(card, (CardReturnCardParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code returned}.
    */
@@ -126,24 +137,28 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code shipped}.
    */
   public Card shipCard(String card, CardShipCardParams params) throws StripeException {
     return shipCard(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code shipped}.
    */
   public Card shipCard(String card, RequestOptions options) throws StripeException {
     return shipCard(card, (CardShipCardParams) null, options);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code shipped}.
    */
   public Card shipCard(String card) throws StripeException {
     return shipCard(card, (CardShipCardParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code shipped}.
    */
@@ -161,6 +176,7 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code submitted}.
    * This method requires Stripe Version ‘2024-09-30.acacia’ or later.
@@ -168,6 +184,7 @@ public final class CardService extends ApiService {
   public Card submitCard(String card, CardSubmitCardParams params) throws StripeException {
     return submitCard(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code submitted}.
    * This method requires Stripe Version ‘2024-09-30.acacia’ or later.
@@ -175,6 +192,7 @@ public final class CardService extends ApiService {
   public Card submitCard(String card, RequestOptions options) throws StripeException {
     return submitCard(card, (CardSubmitCardParams) null, options);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code submitted}.
    * This method requires Stripe Version ‘2024-09-30.acacia’ or later.
@@ -182,6 +200,7 @@ public final class CardService extends ApiService {
   public Card submitCard(String card) throws StripeException {
     return submitCard(card, (CardSubmitCardParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the shipping status of the specified Issuing {@code Card} object to {@code submitted}.
    * This method requires Stripe Version ‘2024-09-30.acacia’ or later.

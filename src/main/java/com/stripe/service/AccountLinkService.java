@@ -24,6 +24,7 @@ public final class AccountLinkService extends ApiService {
   public AccountLink create(AccountLinkCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates an AccountLink object that includes a single-use Stripe URL that the platform can
    * redirect their user to in order to take them through the Connect Onboarding flow.
