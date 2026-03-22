@@ -29,6 +29,7 @@ public final class CardholderService extends ApiService {
   public StripeCollection<Cardholder> list(CardholderListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Cardholder} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -36,6 +37,7 @@ public final class CardholderService extends ApiService {
   public StripeCollection<Cardholder> list(RequestOptions options) throws StripeException {
     return list((CardholderListParams) null, options);
   }
+
   /**
    * Returns a list of Issuing {@code Cardholder} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -43,6 +45,7 @@ public final class CardholderService extends ApiService {
   public StripeCollection<Cardholder> list() throws StripeException {
     return list((CardholderListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Cardholder} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -59,10 +62,12 @@ public final class CardholderService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Cardholder>>() {}.getType());
   }
+
   /** Creates a new Issuing {@code Cardholder} object that can be issued cards. */
   public Cardholder create(CardholderCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new Issuing {@code Cardholder} object that can be issued cards. */
   public Cardholder create(CardholderCreateParams params, RequestOptions options)
       throws StripeException {
@@ -76,19 +81,23 @@ public final class CardholderService extends ApiService {
             options);
     return this.request(request, Cardholder.class);
   }
+
   /** Retrieves an Issuing {@code Cardholder} object. */
   public Cardholder retrieve(String cardholder, CardholderRetrieveParams params)
       throws StripeException {
     return retrieve(cardholder, params, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Cardholder} object. */
   public Cardholder retrieve(String cardholder, RequestOptions options) throws StripeException {
     return retrieve(cardholder, (CardholderRetrieveParams) null, options);
   }
+
   /** Retrieves an Issuing {@code Cardholder} object. */
   public Cardholder retrieve(String cardholder) throws StripeException {
     return retrieve(cardholder, (CardholderRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Cardholder} object. */
   public Cardholder retrieve(
       String cardholder, CardholderRetrieveParams params, RequestOptions options)
@@ -103,6 +112,7 @@ public final class CardholderService extends ApiService {
             options);
     return this.request(request, Cardholder.class);
   }
+
   /**
    * Updates the specified Issuing {@code Cardholder} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -111,6 +121,7 @@ public final class CardholderService extends ApiService {
       throws StripeException {
     return update(cardholder, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Cardholder} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -118,6 +129,7 @@ public final class CardholderService extends ApiService {
   public Cardholder update(String cardholder, RequestOptions options) throws StripeException {
     return update(cardholder, (CardholderUpdateParams) null, options);
   }
+
   /**
    * Updates the specified Issuing {@code Cardholder} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -125,6 +137,7 @@ public final class CardholderService extends ApiService {
   public Cardholder update(String cardholder) throws StripeException {
     return update(cardholder, (CardholderUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Cardholder} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.

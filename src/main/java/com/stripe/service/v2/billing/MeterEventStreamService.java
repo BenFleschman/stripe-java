@@ -27,6 +27,7 @@ public final class MeterEventStreamService extends ApiService {
       throws StripeException, TemporarySessionExpiredException {
     create(params, (RequestOptions) null);
   }
+
   /**
    * Creates meter events. Events are processed asynchronously, including validation. Requires a
    * meter event session for authentication. Supports up to 10,000 requests per second in livemode.

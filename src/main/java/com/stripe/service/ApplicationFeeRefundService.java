@@ -31,6 +31,7 @@ public final class ApplicationFeeRefundService extends ApiService {
       throws StripeException {
     return retrieve(fee, id, params, (RequestOptions) null);
   }
+
   /**
    * By default, you can see the 10 most recent refunds stored directly on the application fee
    * object, but you can also retrieve details about a specific refund stored on the application
@@ -39,6 +40,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund retrieve(String fee, String id, RequestOptions options) throws StripeException {
     return retrieve(fee, id, (ApplicationFeeRefundRetrieveParams) null, options);
   }
+
   /**
    * By default, you can see the 10 most recent refunds stored directly on the application fee
    * object, but you can also retrieve details about a specific refund stored on the application
@@ -47,6 +49,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund retrieve(String fee, String id) throws StripeException {
     return retrieve(fee, id, (ApplicationFeeRefundRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * By default, you can see the 10 most recent refunds stored directly on the application fee
    * object, but you can also retrieve details about a specific refund stored on the application
@@ -68,6 +71,7 @@ public final class ApplicationFeeRefundService extends ApiService {
             options);
     return this.request(request, FeeRefund.class);
   }
+
   /**
    * Updates the specified application fee refund by setting the values of the parameters passed.
    * Any parameters not provided will be left unchanged.
@@ -78,6 +82,7 @@ public final class ApplicationFeeRefundService extends ApiService {
       throws StripeException {
     return update(fee, id, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified application fee refund by setting the values of the parameters passed.
    * Any parameters not provided will be left unchanged.
@@ -87,6 +92,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund update(String fee, String id, RequestOptions options) throws StripeException {
     return update(fee, id, (ApplicationFeeRefundUpdateParams) null, options);
   }
+
   /**
    * Updates the specified application fee refund by setting the values of the parameters passed.
    * Any parameters not provided will be left unchanged.
@@ -96,6 +102,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund update(String fee, String id) throws StripeException {
     return update(fee, id, (ApplicationFeeRefundUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified application fee refund by setting the values of the parameters passed.
    * Any parameters not provided will be left unchanged.
@@ -118,6 +125,7 @@ public final class ApplicationFeeRefundService extends ApiService {
             options);
     return this.request(request, FeeRefund.class);
   }
+
   /**
    * You can see a list of the refunds belonging to a specific application fee. Note that the 10
    * most recent refunds are always available by default on the application fee object. If you need
@@ -128,6 +136,7 @@ public final class ApplicationFeeRefundService extends ApiService {
       throws StripeException {
     return list(id, params, (RequestOptions) null);
   }
+
   /**
    * You can see a list of the refunds belonging to a specific application fee. Note that the 10
    * most recent refunds are always available by default on the application fee object. If you need
@@ -138,6 +147,7 @@ public final class ApplicationFeeRefundService extends ApiService {
       throws StripeException {
     return list(id, (ApplicationFeeRefundListParams) null, options);
   }
+
   /**
    * You can see a list of the refunds belonging to a specific application fee. Note that the 10
    * most recent refunds are always available by default on the application fee object. If you need
@@ -147,6 +157,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public StripeCollection<FeeRefund> list(String id) throws StripeException {
     return list(id, (ApplicationFeeRefundListParams) null, (RequestOptions) null);
   }
+
   /**
    * You can see a list of the refunds belonging to a specific application fee. Note that the 10
    * most recent refunds are always available by default on the application fee object. If you need
@@ -166,6 +177,7 @@ public final class ApplicationFeeRefundService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<FeeRefund>>() {}.getType());
   }
+
   /**
    * Refunds an application fee that has previously been collected but not yet refunded. Funds will
    * be refunded to the Stripe account from which the fee was originally collected.
@@ -181,6 +193,7 @@ public final class ApplicationFeeRefundService extends ApiService {
       throws StripeException {
     return create(id, params, (RequestOptions) null);
   }
+
   /**
    * Refunds an application fee that has previously been collected but not yet refunded. Funds will
    * be refunded to the Stripe account from which the fee was originally collected.
@@ -195,6 +208,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund create(String id, RequestOptions options) throws StripeException {
     return create(id, (ApplicationFeeRefundCreateParams) null, options);
   }
+
   /**
    * Refunds an application fee that has previously been collected but not yet refunded. Funds will
    * be refunded to the Stripe account from which the fee was originally collected.
@@ -209,6 +223,7 @@ public final class ApplicationFeeRefundService extends ApiService {
   public FeeRefund create(String id) throws StripeException {
     return create(id, (ApplicationFeeRefundCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Refunds an application fee that has previously been collected but not yet refunded. Funds will
    * be refunded to the Stripe account from which the fee was originally collected.

@@ -24,14 +24,17 @@ public final class TransactionService extends ApiService {
       throws StripeException {
     return retrieve(transaction, params, (RequestOptions) null);
   }
+
   /** Retrieves a Tax {@code Transaction} object. */
   public Transaction retrieve(String transaction, RequestOptions options) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, options);
   }
+
   /** Retrieves a Tax {@code Transaction} object. */
   public Transaction retrieve(String transaction) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Tax {@code Transaction} object. */
   public Transaction retrieve(
       String transaction, TransactionRetrieveParams params, RequestOptions options)
@@ -46,6 +49,7 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, Transaction.class);
   }
+
   /**
    * Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations
    * expire after 90 days.
@@ -54,6 +58,7 @@ public final class TransactionService extends ApiService {
       throws StripeException {
     return createFromCalculation(params, (RequestOptions) null);
   }
+
   /**
    * Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations
    * expire after 90 days.
@@ -71,10 +76,12 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, Transaction.class);
   }
+
   /** Partially or fully reverses a previously created {@code Transaction}. */
   public Transaction createReversal(TransactionCreateReversalParams params) throws StripeException {
     return createReversal(params, (RequestOptions) null);
   }
+
   /** Partially or fully reverses a previously created {@code Transaction}. */
   public Transaction createReversal(TransactionCreateReversalParams params, RequestOptions options)
       throws StripeException {

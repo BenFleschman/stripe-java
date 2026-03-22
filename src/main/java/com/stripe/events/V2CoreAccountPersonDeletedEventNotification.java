@@ -19,6 +19,7 @@ public final class V2CoreAccountPersonDeletedEventNotification extends EventNoti
   public AccountPerson fetchRelatedObject() throws StripeException {
     return (AccountPerson) super.fetchRelatedObject(this.relatedObject);
   }
+
   /** Retrieve the corresponding full event from the Stripe API. */
   @Override
   public V2CoreAccountPersonDeletedEvent fetchEvent() throws StripeException {

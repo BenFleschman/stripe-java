@@ -28,6 +28,7 @@ public final class QuoteLineItemService extends ApiService {
       throws StripeException {
     return list(quote, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a quote, there is an includable <strong>line_items</strong> property containing
    * the first handful of those items. There is also a URL where you can retrieve the full
@@ -37,6 +38,7 @@ public final class QuoteLineItemService extends ApiService {
       throws StripeException {
     return list(quote, (QuoteLineItemListParams) null, options);
   }
+
   /**
    * When retrieving a quote, there is an includable <strong>line_items</strong> property containing
    * the first handful of those items. There is also a URL where you can retrieve the full
@@ -45,6 +47,7 @@ public final class QuoteLineItemService extends ApiService {
   public StripeCollection<LineItem> list(String quote) throws StripeException {
     return list(quote, (QuoteLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving a quote, there is an includable <strong>line_items</strong> property containing
    * the first handful of those items. There is also a URL where you can retrieve the full

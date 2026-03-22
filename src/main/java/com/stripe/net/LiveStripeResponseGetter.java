@@ -21,10 +21,15 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
-public class LiveStripeResponseGetter implements StripeResponseGetter {
+public class LiveStripeResponseGetter implements StripeResponseGetter, AutoCloseable {
   private final HttpClient httpClient;
   private final StripeResponseGetterOptions options;
+  private final ExecutorService executorService;
 
   private final RequestTelemetry requestTelemetry = new RequestTelemetry();
 
@@ -39,7 +44,20 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
 
     Stopwatch stopwatch = Stopwatch.startNew();
 
-    T response = send.apply(request);
+    T response;
+    try {
+      Future<T> future = executorService.submit(() -> send.apply(request));
+      response = future.get();
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof StripeException) {
+        throw (StripeException) cause;
+      }
+      throw new ApiConnectionException("Unexpected error executing request on virtual thread", e);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiConnectionException("Request interrupted", e);
+    }
 
     stopwatch.stop();
 
@@ -74,6 +92,21 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
   public LiveStripeResponseGetter(StripeResponseGetterOptions options, HttpClient httpClient) {
     this.options = options != null ? options : GlobalStripeResponseGetterOptions.INSTANCE;
     this.httpClient = (httpClient != null) ? httpClient : buildDefaultHttpClient();
+    this.executorService = Executors.newVirtualThreadPerTaskExecutor();
+  }
+
+  /**
+   * Returns the virtual thread executor service used by this response getter.
+   *
+   * @return the executor service backed by virtual threads
+   */
+  public ExecutorService getExecutorService() {
+    return executorService;
+  }
+
+  @Override
+  public void close() {
+    executorService.shutdown();
   }
 
   private StripeRequest toStripeRequest(ApiRequest apiRequest, RequestOptions mergedOptions)

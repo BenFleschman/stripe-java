@@ -25,14 +25,17 @@ public final class VerificationReportService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** List all verification reports. */
   public StripeCollection<VerificationReport> list(RequestOptions options) throws StripeException {
     return list((VerificationReportListParams) null, options);
   }
+
   /** List all verification reports. */
   public StripeCollection<VerificationReport> list() throws StripeException {
     return list((VerificationReportListParams) null, (RequestOptions) null);
   }
+
   /** List all verification reports. */
   public StripeCollection<VerificationReport> list(
       VerificationReportListParams params, RequestOptions options) throws StripeException {
@@ -47,19 +50,23 @@ public final class VerificationReportService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<VerificationReport>>() {}.getType());
   }
+
   /** Retrieves an existing VerificationReport. */
   public VerificationReport retrieve(String report, VerificationReportRetrieveParams params)
       throws StripeException {
     return retrieve(report, params, (RequestOptions) null);
   }
+
   /** Retrieves an existing VerificationReport. */
   public VerificationReport retrieve(String report, RequestOptions options) throws StripeException {
     return retrieve(report, (VerificationReportRetrieveParams) null, options);
   }
+
   /** Retrieves an existing VerificationReport. */
   public VerificationReport retrieve(String report) throws StripeException {
     return retrieve(report, (VerificationReportRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an existing VerificationReport. */
   public VerificationReport retrieve(
       String report, VerificationReportRetrieveParams params, RequestOptions options)

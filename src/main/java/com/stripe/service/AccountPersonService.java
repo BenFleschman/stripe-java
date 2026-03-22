@@ -31,6 +31,7 @@ public final class AccountPersonService extends ApiService {
   public Person delete(String account, String person) throws StripeException {
     return delete(account, person, (RequestOptions) null);
   }
+
   /**
    * Deletes an existing person’s relationship to the account’s legal entity. Any person with a
    * relationship for an account can be deleted through the API, except if the person is the {@code
@@ -47,20 +48,24 @@ public final class AccountPersonService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Person.class);
   }
+
   /** Retrieves an existing person. */
   public Person retrieve(String account, String person, AccountPersonRetrieveParams params)
       throws StripeException {
     return retrieve(account, person, params, (RequestOptions) null);
   }
+
   /** Retrieves an existing person. */
   public Person retrieve(String account, String person, RequestOptions options)
       throws StripeException {
     return retrieve(account, person, (AccountPersonRetrieveParams) null, options);
   }
+
   /** Retrieves an existing person. */
   public Person retrieve(String account, String person) throws StripeException {
     return retrieve(account, person, (AccountPersonRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an existing person. */
   public Person retrieve(
       String account, String person, AccountPersonRetrieveParams params, RequestOptions options)
@@ -78,20 +83,24 @@ public final class AccountPersonService extends ApiService {
             options);
     return this.request(request, Person.class);
   }
+
   /** Updates an existing person. */
   public Person update(String account, String person, AccountPersonUpdateParams params)
       throws StripeException {
     return update(account, person, params, (RequestOptions) null);
   }
+
   /** Updates an existing person. */
   public Person update(String account, String person, RequestOptions options)
       throws StripeException {
     return update(account, person, (AccountPersonUpdateParams) null, options);
   }
+
   /** Updates an existing person. */
   public Person update(String account, String person) throws StripeException {
     return update(account, person, (AccountPersonUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing person. */
   public Person update(
       String account, String person, AccountPersonUpdateParams params, RequestOptions options)
@@ -109,6 +118,7 @@ public final class AccountPersonService extends ApiService {
             options);
     return this.request(request, Person.class);
   }
+
   /**
    * Returns a list of people associated with the account’s legal entity. The people are returned
    * sorted by creation date, with the most recent people appearing first.
@@ -117,6 +127,7 @@ public final class AccountPersonService extends ApiService {
       throws StripeException {
     return list(account, params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of people associated with the account’s legal entity. The people are returned
    * sorted by creation date, with the most recent people appearing first.
@@ -125,6 +136,7 @@ public final class AccountPersonService extends ApiService {
       throws StripeException {
     return list(account, (AccountPersonListParams) null, options);
   }
+
   /**
    * Returns a list of people associated with the account’s legal entity. The people are returned
    * sorted by creation date, with the most recent people appearing first.
@@ -132,6 +144,7 @@ public final class AccountPersonService extends ApiService {
   public StripeCollection<Person> list(String account) throws StripeException {
     return list(account, (AccountPersonListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of people associated with the account’s legal entity. The people are returned
    * sorted by creation date, with the most recent people appearing first.
@@ -149,18 +162,22 @@ public final class AccountPersonService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Person>>() {}.getType());
   }
+
   /** Creates a new person. */
   public Person create(String account, AccountPersonCreateParams params) throws StripeException {
     return create(account, params, (RequestOptions) null);
   }
+
   /** Creates a new person. */
   public Person create(String account, RequestOptions options) throws StripeException {
     return create(account, (AccountPersonCreateParams) null, options);
   }
+
   /** Creates a new person. */
   public Person create(String account) throws StripeException {
     return create(account, (AccountPersonCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates a new person. */
   public Person create(String account, AccountPersonCreateParams params, RequestOptions options)
       throws StripeException {

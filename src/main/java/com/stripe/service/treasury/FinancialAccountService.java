@@ -28,14 +28,17 @@ public final class FinancialAccountService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of FinancialAccounts. */
   public StripeCollection<FinancialAccount> list(RequestOptions options) throws StripeException {
     return list((FinancialAccountListParams) null, options);
   }
+
   /** Returns a list of FinancialAccounts. */
   public StripeCollection<FinancialAccount> list() throws StripeException {
     return list((FinancialAccountListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of FinancialAccounts. */
   public StripeCollection<FinancialAccount> list(
       FinancialAccountListParams params, RequestOptions options) throws StripeException {
@@ -49,6 +52,7 @@ public final class FinancialAccountService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<FinancialAccount>>() {}.getType());
   }
+
   /**
    * Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts
    * by default.
@@ -56,6 +60,7 @@ public final class FinancialAccountService extends ApiService {
   public FinancialAccount create(FinancialAccountCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts
    * by default.
@@ -72,20 +77,24 @@ public final class FinancialAccountService extends ApiService {
             options);
     return this.request(request, FinancialAccount.class);
   }
+
   /** Retrieves the details of a FinancialAccount. */
   public FinancialAccount retrieve(String financialAccount, FinancialAccountRetrieveParams params)
       throws StripeException {
     return retrieve(financialAccount, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of a FinancialAccount. */
   public FinancialAccount retrieve(String financialAccount, RequestOptions options)
       throws StripeException {
     return retrieve(financialAccount, (FinancialAccountRetrieveParams) null, options);
   }
+
   /** Retrieves the details of a FinancialAccount. */
   public FinancialAccount retrieve(String financialAccount) throws StripeException {
     return retrieve(financialAccount, (FinancialAccountRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of a FinancialAccount. */
   public FinancialAccount retrieve(
       String financialAccount, FinancialAccountRetrieveParams params, RequestOptions options)
@@ -102,20 +111,24 @@ public final class FinancialAccountService extends ApiService {
             options);
     return this.request(request, FinancialAccount.class);
   }
+
   /** Updates the details of a FinancialAccount. */
   public FinancialAccount update(String financialAccount, FinancialAccountUpdateParams params)
       throws StripeException {
     return update(financialAccount, params, (RequestOptions) null);
   }
+
   /** Updates the details of a FinancialAccount. */
   public FinancialAccount update(String financialAccount, RequestOptions options)
       throws StripeException {
     return update(financialAccount, (FinancialAccountUpdateParams) null, options);
   }
+
   /** Updates the details of a FinancialAccount. */
   public FinancialAccount update(String financialAccount) throws StripeException {
     return update(financialAccount, (FinancialAccountUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates the details of a FinancialAccount. */
   public FinancialAccount update(
       String financialAccount, FinancialAccountUpdateParams params, RequestOptions options)
@@ -132,6 +145,7 @@ public final class FinancialAccountService extends ApiService {
             options);
     return this.request(request, FinancialAccount.class);
   }
+
   /**
    * Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has
    * no pending InboundTransfers, and has canceled all attached Issuing cards.
@@ -140,6 +154,7 @@ public final class FinancialAccountService extends ApiService {
       throws StripeException {
     return close(financialAccount, params, (RequestOptions) null);
   }
+
   /**
    * Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has
    * no pending InboundTransfers, and has canceled all attached Issuing cards.
@@ -148,6 +163,7 @@ public final class FinancialAccountService extends ApiService {
       throws StripeException {
     return close(financialAccount, (FinancialAccountCloseParams) null, options);
   }
+
   /**
    * Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has
    * no pending InboundTransfers, and has canceled all attached Issuing cards.
@@ -155,6 +171,7 @@ public final class FinancialAccountService extends ApiService {
   public FinancialAccount close(String financialAccount) throws StripeException {
     return close(financialAccount, (FinancialAccountCloseParams) null, (RequestOptions) null);
   }
+
   /**
    * Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has
    * no pending InboundTransfers, and has canceled all attached Issuing cards.

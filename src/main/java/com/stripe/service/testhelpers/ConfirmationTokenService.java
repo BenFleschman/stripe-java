@@ -21,14 +21,17 @@ public final class ConfirmationTokenService extends ApiService {
   public ConfirmationToken create(ConfirmationTokenCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a test mode Confirmation Token server side for your integration tests. */
   public ConfirmationToken create(RequestOptions options) throws StripeException {
     return create((ConfirmationTokenCreateParams) null, options);
   }
+
   /** Creates a test mode Confirmation Token server side for your integration tests. */
   public ConfirmationToken create() throws StripeException {
     return create((ConfirmationTokenCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates a test mode Confirmation Token server side for your integration tests. */
   public ConfirmationToken create(ConfirmationTokenCreateParams params, RequestOptions options)
       throws StripeException {

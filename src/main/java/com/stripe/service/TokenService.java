@@ -22,14 +22,17 @@ public final class TokenService extends ApiService {
   public Token retrieve(String token, TokenRetrieveParams params) throws StripeException {
     return retrieve(token, params, (RequestOptions) null);
   }
+
   /** Retrieves the token with the given ID. */
   public Token retrieve(String token, RequestOptions options) throws StripeException {
     return retrieve(token, (TokenRetrieveParams) null, options);
   }
+
   /** Retrieves the token with the given ID. */
   public Token retrieve(String token) throws StripeException {
     return retrieve(token, (TokenRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the token with the given ID. */
   public Token retrieve(String token, TokenRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -43,6 +46,7 @@ public final class TokenService extends ApiService {
             options);
     return this.request(request, Token.class);
   }
+
   /**
    * Creates a single-use token that represents a bank account’s details. You can use this token
    * with any v1 API method in place of a bank account dictionary. You can only use this token once.
@@ -54,6 +58,7 @@ public final class TokenService extends ApiService {
   public Token create(TokenCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a single-use token that represents a bank account’s details. You can use this token
    * with any v1 API method in place of a bank account dictionary. You can only use this token once.
@@ -65,6 +70,7 @@ public final class TokenService extends ApiService {
   public Token create(RequestOptions options) throws StripeException {
     return create((TokenCreateParams) null, options);
   }
+
   /**
    * Creates a single-use token that represents a bank account’s details. You can use this token
    * with any v1 API method in place of a bank account dictionary. You can only use this token once.
@@ -76,6 +82,7 @@ public final class TokenService extends ApiService {
   public Token create() throws StripeException {
     return create((TokenCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a single-use token that represents a bank account’s details. You can use this token
    * with any v1 API method in place of a bank account dictionary. You can only use this token once.

@@ -35,14 +35,17 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of PaymentIntents. */
   public StripeCollection<PaymentIntent> list(RequestOptions options) throws StripeException {
     return list((PaymentIntentListParams) null, options);
   }
+
   /** Returns a list of PaymentIntents. */
   public StripeCollection<PaymentIntent> list() throws StripeException {
     return list((PaymentIntentListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of PaymentIntents. */
   public StripeCollection<PaymentIntent> list(
       PaymentIntentListParams params, RequestOptions options) throws StripeException {
@@ -56,6 +59,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<PaymentIntent>>() {}.getType());
   }
+
   /**
    * Creates a PaymentIntent object.
    *
@@ -72,6 +76,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent create(PaymentIntentCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a PaymentIntent object.
    *
@@ -97,6 +102,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Retrieves the details of a PaymentIntent that has previously been created.
    *
@@ -111,6 +117,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return retrieve(intent, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a PaymentIntent that has previously been created.
    *
@@ -124,6 +131,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent retrieve(String intent, RequestOptions options) throws StripeException {
     return retrieve(intent, (PaymentIntentRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of a PaymentIntent that has previously been created.
    *
@@ -137,6 +145,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent retrieve(String intent) throws StripeException {
     return retrieve(intent, (PaymentIntentRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a PaymentIntent that has previously been created.
    *
@@ -160,6 +169,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Updates properties on a PaymentIntent object without confirming.
    *
@@ -173,6 +183,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return update(intent, params, (RequestOptions) null);
   }
+
   /**
    * Updates properties on a PaymentIntent object without confirming.
    *
@@ -185,6 +196,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent update(String intent, RequestOptions options) throws StripeException {
     return update(intent, (PaymentIntentUpdateParams) null, options);
   }
+
   /**
    * Updates properties on a PaymentIntent object without confirming.
    *
@@ -197,6 +209,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent update(String intent) throws StripeException {
     return update(intent, (PaymentIntentUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates properties on a PaymentIntent object without confirming.
    *
@@ -219,6 +232,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Search for PaymentIntents you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -231,6 +245,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for PaymentIntents you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -251,21 +266,25 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeSearchResult<PaymentIntent>>() {}.getType());
   }
+
   /** Manually reconcile the remaining amount for a {@code customer_balance} PaymentIntent. */
   public PaymentIntent applyCustomerBalance(
       String intent, PaymentIntentApplyCustomerBalanceParams params) throws StripeException {
     return applyCustomerBalance(intent, params, (RequestOptions) null);
   }
+
   /** Manually reconcile the remaining amount for a {@code customer_balance} PaymentIntent. */
   public PaymentIntent applyCustomerBalance(String intent, RequestOptions options)
       throws StripeException {
     return applyCustomerBalance(intent, (PaymentIntentApplyCustomerBalanceParams) null, options);
   }
+
   /** Manually reconcile the remaining amount for a {@code customer_balance} PaymentIntent. */
   public PaymentIntent applyCustomerBalance(String intent) throws StripeException {
     return applyCustomerBalance(
         intent, (PaymentIntentApplyCustomerBalanceParams) null, (RequestOptions) null);
   }
+
   /** Manually reconcile the remaining amount for a {@code customer_balance} PaymentIntent. */
   public PaymentIntent applyCustomerBalance(
       String intent, PaymentIntentApplyCustomerBalanceParams params, RequestOptions options)
@@ -282,6 +301,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * You can cancel a PaymentIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_capture}, {@code requires_confirmation}, {@code
@@ -300,6 +320,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return cancel(intent, params, (RequestOptions) null);
   }
+
   /**
    * You can cancel a PaymentIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_capture}, {@code requires_confirmation}, {@code
@@ -317,6 +338,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent cancel(String intent, RequestOptions options) throws StripeException {
     return cancel(intent, (PaymentIntentCancelParams) null, options);
   }
+
   /**
    * You can cancel a PaymentIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_capture}, {@code requires_confirmation}, {@code
@@ -334,6 +356,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent cancel(String intent) throws StripeException {
     return cancel(intent, (PaymentIntentCancelParams) null, (RequestOptions) null);
   }
+
   /**
    * You can cancel a PaymentIntent object when it’s in one of these statuses: {@code
    * requires_payment_method}, {@code requires_capture}, {@code requires_confirmation}, {@code
@@ -361,6 +384,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Capture the funds of an existing uncaptured PaymentIntent when its status is {@code
    * requires_capture}.
@@ -375,6 +399,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return capture(intent, params, (RequestOptions) null);
   }
+
   /**
    * Capture the funds of an existing uncaptured PaymentIntent when its status is {@code
    * requires_capture}.
@@ -388,6 +413,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent capture(String intent, RequestOptions options) throws StripeException {
     return capture(intent, (PaymentIntentCaptureParams) null, options);
   }
+
   /**
    * Capture the funds of an existing uncaptured PaymentIntent when its status is {@code
    * requires_capture}.
@@ -401,6 +427,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent capture(String intent) throws StripeException {
     return capture(intent, (PaymentIntentCaptureParams) null, (RequestOptions) null);
   }
+
   /**
    * Capture the funds of an existing uncaptured PaymentIntent when its status is {@code
    * requires_capture}.
@@ -424,6 +451,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Confirm that your customer intends to pay with current or provided payment method. Upon
    * confirmation, the PaymentIntent will attempt to initiate a payment.
@@ -457,6 +485,7 @@ public final class PaymentIntentService extends ApiService {
       throws StripeException {
     return confirm(intent, params, (RequestOptions) null);
   }
+
   /**
    * Confirm that your customer intends to pay with current or provided payment method. Upon
    * confirmation, the PaymentIntent will attempt to initiate a payment.
@@ -489,6 +518,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent confirm(String intent, RequestOptions options) throws StripeException {
     return confirm(intent, (PaymentIntentConfirmParams) null, options);
   }
+
   /**
    * Confirm that your customer intends to pay with current or provided payment method. Upon
    * confirmation, the PaymentIntent will attempt to initiate a payment.
@@ -521,6 +551,7 @@ public final class PaymentIntentService extends ApiService {
   public PaymentIntent confirm(String intent) throws StripeException {
     return confirm(intent, (PaymentIntentConfirmParams) null, (RequestOptions) null);
   }
+
   /**
    * Confirm that your customer intends to pay with current or provided payment method. Upon
    * confirmation, the PaymentIntent will attempt to initiate a payment.
@@ -563,6 +594,7 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /**
    * Perform an incremental authorization on an eligible <a
    * href="https://stripe.com/docs/api/payment_intents/object">PaymentIntent</a>. To be eligible,
@@ -594,6 +626,7 @@ public final class PaymentIntentService extends ApiService {
       String intent, PaymentIntentIncrementAuthorizationParams params) throws StripeException {
     return incrementAuthorization(intent, params, (RequestOptions) null);
   }
+
   /**
    * Perform an incremental authorization on an eligible <a
    * href="https://stripe.com/docs/api/payment_intents/object">PaymentIntent</a>. To be eligible,
@@ -636,21 +669,25 @@ public final class PaymentIntentService extends ApiService {
             options);
     return this.request(request, PaymentIntent.class);
   }
+
   /** Verifies microdeposits on a PaymentIntent object. */
   public PaymentIntent verifyMicrodeposits(
       String intent, PaymentIntentVerifyMicrodepositsParams params) throws StripeException {
     return verifyMicrodeposits(intent, params, (RequestOptions) null);
   }
+
   /** Verifies microdeposits on a PaymentIntent object. */
   public PaymentIntent verifyMicrodeposits(String intent, RequestOptions options)
       throws StripeException {
     return verifyMicrodeposits(intent, (PaymentIntentVerifyMicrodepositsParams) null, options);
   }
+
   /** Verifies microdeposits on a PaymentIntent object. */
   public PaymentIntent verifyMicrodeposits(String intent) throws StripeException {
     return verifyMicrodeposits(
         intent, (PaymentIntentVerifyMicrodepositsParams) null, (RequestOptions) null);
   }
+
   /** Verifies microdeposits on a PaymentIntent object. */
   public PaymentIntent verifyMicrodeposits(
       String intent, PaymentIntentVerifyMicrodepositsParams params, RequestOptions options)

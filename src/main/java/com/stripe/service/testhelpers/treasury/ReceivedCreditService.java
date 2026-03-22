@@ -24,6 +24,7 @@ public final class ReceivedCreditService extends ApiService {
   public ReceivedCredit create(ReceivedCreditCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live
    * mode, you can’t directly create ReceivedCredits initiated by third parties.

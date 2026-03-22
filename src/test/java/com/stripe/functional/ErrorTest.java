@@ -12,8 +12,8 @@ import com.stripe.net.*;
 import java.io.IOException;
 import java.util.Collections;
 import lombok.Cleanup;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import mockwebserver3.MockResponse;
+import mockwebserver3.MockWebServer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.stubbing.Answer;
@@ -49,6 +49,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     TemporarySessionExpiredException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -78,6 +79,7 @@ public class ErrorTest extends BaseStripeTest {
   public void testV2InvalidErrorEmpty() throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation -> new StripeResponse(404, HttpHeaders.of(Collections.emptyMap()), "{}"))
@@ -104,6 +106,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -135,10 +138,12 @@ public class ErrorTest extends BaseStripeTest {
     try {
       InvalidClientException exception = null;
       @Cleanup MockWebServer server = new MockWebServer();
+      server.start();
       server.enqueue(
-          new MockResponse()
-              .setResponseCode(401)
-              .setBody(getResourceAsString("/oauth_fixtures/error_invalid_client.json")));
+          new MockResponse.Builder()
+              .code(401)
+              .body(getResourceAsString("/oauth_fixtures/error_invalid_client.json"))
+              .build());
 
       Stripe.overrideConnectBase(server.url("").toString());
 

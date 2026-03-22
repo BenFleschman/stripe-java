@@ -19,8 +19,8 @@ import java.io.InputStream;
 import java.util.Map;
 import lombok.Cleanup;
 import lombok.Getter;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import mockwebserver3.MockResponse;
+import mockwebserver3.MockWebServer;
 import org.junit.jupiter.api.Test;
 
 public class StripeResponseStreamTest extends BaseStripeTest {
@@ -59,8 +59,8 @@ public class StripeResponseStreamTest extends BaseStripeTest {
   public void testStreamedResponseSuccess()
       throws StripeException, IOException, InterruptedException {
     @Cleanup MockWebServer server = new MockWebServer();
-    server.enqueue(new MockResponse().setBody("{\"id\": \"foo_123\"}"));
-    server.enqueue(new MockResponse().setBody("}this is a pdf, not valid json{"));
+    server.enqueue(new MockResponse.Builder().body("{\"id\": \"foo_123\"}").build());
+    server.enqueue(new MockResponse.Builder().body("}this is a pdf, not valid json{").build());
     server.start();
 
     Stripe.overrideApiBase(server.url("").toString());
@@ -75,18 +75,19 @@ public class StripeResponseStreamTest extends BaseStripeTest {
     final String body = StreamUtils.readToEnd(stream, ApiResource.CHARSET);
     stream.close();
     assertEquals("}this is a pdf, not valid json{", body);
-    server.shutdown();
+    server.close();
   }
 
   @Test
   public void testStreamedResponseFailure()
       throws StripeException, IOException, InterruptedException {
     @Cleanup MockWebServer server = new MockWebServer();
-    server.enqueue(new MockResponse().setBody("{\"id\": \"foo_123\"}"));
+    server.enqueue(new MockResponse.Builder().body("{\"id\": \"foo_123\"}").build());
     server.enqueue(
-        new MockResponse()
-            .setResponseCode(400)
-            .setBody("{\"error\": {\"message\": \"bad bad bad\"}}"));
+        new MockResponse.Builder()
+            .code(400)
+            .body("{\"error\": {\"message\": \"bad bad bad\"}}")
+            .build());
     server.start();
 
     Stripe.overrideApiBase(server.url("").toString());
@@ -101,6 +102,6 @@ public class StripeResponseStreamTest extends BaseStripeTest {
         () -> {
           r.pdf();
         });
-    server.shutdown();
+    server.close();
   }
 }

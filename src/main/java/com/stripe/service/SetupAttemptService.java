@@ -23,6 +23,7 @@ public final class SetupAttemptService extends ApiService {
   public StripeCollection<SetupAttempt> list(SetupAttemptListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of SetupAttempts that associate with a provided SetupIntent. */
   public StripeCollection<SetupAttempt> list(SetupAttemptListParams params, RequestOptions options)
       throws StripeException {

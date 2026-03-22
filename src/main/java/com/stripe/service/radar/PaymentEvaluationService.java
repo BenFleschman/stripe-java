@@ -24,6 +24,7 @@ public final class PaymentEvaluationService extends ApiService {
   public PaymentEvaluation create(PaymentEvaluationCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Request a Radar API fraud risk score from Stripe for a payment before sending it for external
    * processor authorization.

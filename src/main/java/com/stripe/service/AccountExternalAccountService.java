@@ -26,6 +26,7 @@ public final class AccountExternalAccountService extends ApiService {
   public ExternalAccount delete(String account, String id) throws StripeException {
     return delete(account, id, (RequestOptions) null);
   }
+
   /** Delete a specified external account for a given account. */
   public ExternalAccount delete(String account, String id, RequestOptions options)
       throws StripeException {
@@ -37,22 +38,26 @@ public final class AccountExternalAccountService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, ExternalAccount.class);
   }
+
   /** Retrieve a specified external account for a given account. */
   public ExternalAccount retrieve(
       String account, String id, AccountExternalAccountRetrieveParams params)
       throws StripeException {
     return retrieve(account, id, params, (RequestOptions) null);
   }
+
   /** Retrieve a specified external account for a given account. */
   public ExternalAccount retrieve(String account, String id, RequestOptions options)
       throws StripeException {
     return retrieve(account, id, (AccountExternalAccountRetrieveParams) null, options);
   }
+
   /** Retrieve a specified external account for a given account. */
   public ExternalAccount retrieve(String account, String id) throws StripeException {
     return retrieve(
         account, id, (AccountExternalAccountRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieve a specified external account for a given account. */
   public ExternalAccount retrieve(
       String account,
@@ -73,6 +78,7 @@ public final class AccountExternalAccountService extends ApiService {
             options);
     return this.request(request, ExternalAccount.class);
   }
+
   /**
    * Updates the metadata, account holder name, account holder type of a bank account belonging to a
    * connected account and optionally sets it as the default for its currency. Other bank account
@@ -90,6 +96,7 @@ public final class AccountExternalAccountService extends ApiService {
       String account, String id, AccountExternalAccountUpdateParams params) throws StripeException {
     return update(account, id, params, (RequestOptions) null);
   }
+
   /**
    * Updates the metadata, account holder name, account holder type of a bank account belonging to a
    * connected account and optionally sets it as the default for its currency. Other bank account
@@ -107,6 +114,7 @@ public final class AccountExternalAccountService extends ApiService {
       throws StripeException {
     return update(account, id, (AccountExternalAccountUpdateParams) null, options);
   }
+
   /**
    * Updates the metadata, account holder name, account holder type of a bank account belonging to a
    * connected account and optionally sets it as the default for its currency. Other bank account
@@ -123,6 +131,7 @@ public final class AccountExternalAccountService extends ApiService {
   public ExternalAccount update(String account, String id) throws StripeException {
     return update(account, id, (AccountExternalAccountUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the metadata, account holder name, account holder type of a bank account belonging to a
    * connected account and optionally sets it as the default for its currency. Other bank account
@@ -152,20 +161,24 @@ public final class AccountExternalAccountService extends ApiService {
             options);
     return this.request(request, ExternalAccount.class);
   }
+
   /** List external accounts for an account. */
   public StripeCollection<ExternalAccount> list(
       String account, AccountExternalAccountListParams params) throws StripeException {
     return list(account, params, (RequestOptions) null);
   }
+
   /** List external accounts for an account. */
   public StripeCollection<ExternalAccount> list(String account, RequestOptions options)
       throws StripeException {
     return list(account, (AccountExternalAccountListParams) null, options);
   }
+
   /** List external accounts for an account. */
   public StripeCollection<ExternalAccount> list(String account) throws StripeException {
     return list(account, (AccountExternalAccountListParams) null, (RequestOptions) null);
   }
+
   /** List external accounts for an account. */
   public StripeCollection<ExternalAccount> list(
       String account, AccountExternalAccountListParams params, RequestOptions options)
@@ -181,11 +194,13 @@ public final class AccountExternalAccountService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ExternalAccount>>() {}.getType());
   }
+
   /** Create an external account for a given account. */
   public ExternalAccount create(String account, AccountExternalAccountCreateParams params)
       throws StripeException {
     return create(account, params, (RequestOptions) null);
   }
+
   /** Create an external account for a given account. */
   public ExternalAccount create(
       String account, AccountExternalAccountCreateParams params, RequestOptions options)

@@ -19,6 +19,7 @@ public final class V2CoreEventDestinationPingEventNotification extends EventNoti
   public EventDestination fetchRelatedObject() throws StripeException {
     return (EventDestination) super.fetchRelatedObject(this.relatedObject);
   }
+
   /** Retrieve the corresponding full event from the Stripe API. */
   @Override
   public V2CoreEventDestinationPingEvent fetchEvent() throws StripeException {

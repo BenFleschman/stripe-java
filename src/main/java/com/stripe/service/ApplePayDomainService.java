@@ -25,6 +25,7 @@ public final class ApplePayDomainService extends ApiService {
   public ApplePayDomain delete(String domain) throws StripeException {
     return delete(domain, (RequestOptions) null);
   }
+
   /** Delete an apple pay domain. */
   public ApplePayDomain delete(String domain, RequestOptions options) throws StripeException {
     String path = String.format("/v1/apple_pay/domains/%s", ApiResource.urlEncodeId(domain));
@@ -32,19 +33,23 @@ public final class ApplePayDomainService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, ApplePayDomain.class);
   }
+
   /** Retrieve an apple pay domain. */
   public ApplePayDomain retrieve(String domain, ApplePayDomainRetrieveParams params)
       throws StripeException {
     return retrieve(domain, params, (RequestOptions) null);
   }
+
   /** Retrieve an apple pay domain. */
   public ApplePayDomain retrieve(String domain, RequestOptions options) throws StripeException {
     return retrieve(domain, (ApplePayDomainRetrieveParams) null, options);
   }
+
   /** Retrieve an apple pay domain. */
   public ApplePayDomain retrieve(String domain) throws StripeException {
     return retrieve(domain, (ApplePayDomainRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieve an apple pay domain. */
   public ApplePayDomain retrieve(
       String domain, ApplePayDomainRetrieveParams params, RequestOptions options)
@@ -59,19 +64,23 @@ public final class ApplePayDomainService extends ApiService {
             options);
     return this.request(request, ApplePayDomain.class);
   }
+
   /** List apple pay domains. */
   public StripeCollection<ApplePayDomain> list(ApplePayDomainListParams params)
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** List apple pay domains. */
   public StripeCollection<ApplePayDomain> list(RequestOptions options) throws StripeException {
     return list((ApplePayDomainListParams) null, options);
   }
+
   /** List apple pay domains. */
   public StripeCollection<ApplePayDomain> list() throws StripeException {
     return list((ApplePayDomainListParams) null, (RequestOptions) null);
   }
+
   /** List apple pay domains. */
   public StripeCollection<ApplePayDomain> list(
       ApplePayDomainListParams params, RequestOptions options) throws StripeException {
@@ -85,10 +94,12 @@ public final class ApplePayDomainService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ApplePayDomain>>() {}.getType());
   }
+
   /** Create an apple pay domain. */
   public ApplePayDomain create(ApplePayDomainCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Create an apple pay domain. */
   public ApplePayDomain create(ApplePayDomainCreateParams params, RequestOptions options)
       throws StripeException {

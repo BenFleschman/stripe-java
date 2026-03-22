@@ -24,16 +24,19 @@ public final class PaymentIntentAmountDetailsLineItemService extends ApiService 
       String intent, PaymentIntentAmountDetailsLineItemListParams params) throws StripeException {
     return list(intent, params, (RequestOptions) null);
   }
+
   /** Lists all LineItems of a given PaymentIntent. */
   public StripeCollection<PaymentIntentAmountDetailsLineItem> list(
       String intent, RequestOptions options) throws StripeException {
     return list(intent, (PaymentIntentAmountDetailsLineItemListParams) null, options);
   }
+
   /** Lists all LineItems of a given PaymentIntent. */
   public StripeCollection<PaymentIntentAmountDetailsLineItem> list(String intent)
       throws StripeException {
     return list(intent, (PaymentIntentAmountDetailsLineItemListParams) null, (RequestOptions) null);
   }
+
   /** Lists all LineItems of a given PaymentIntent. */
   public StripeCollection<PaymentIntentAmountDetailsLineItem> list(
       String intent, PaymentIntentAmountDetailsLineItemListParams params, RequestOptions options)

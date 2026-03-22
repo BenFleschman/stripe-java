@@ -25,6 +25,7 @@ public final class ReceivedDebitService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of ReceivedDebits. */
   public StripeCollection<ReceivedDebit> list(
       ReceivedDebitListParams params, RequestOptions options) throws StripeException {
@@ -38,6 +39,7 @@ public final class ReceivedDebitService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ReceivedDebit>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from
    * the ReceivedDebit list.
@@ -46,6 +48,7 @@ public final class ReceivedDebitService extends ApiService {
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from
    * the ReceivedDebit list.
@@ -53,6 +56,7 @@ public final class ReceivedDebitService extends ApiService {
   public ReceivedDebit retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (ReceivedDebitRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from
    * the ReceivedDebit list.
@@ -60,6 +64,7 @@ public final class ReceivedDebitService extends ApiService {
   public ReceivedDebit retrieve(String id) throws StripeException {
     return retrieve(id, (ReceivedDebitRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from
    * the ReceivedDebit list.

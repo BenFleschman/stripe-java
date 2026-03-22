@@ -21,14 +21,17 @@ public final class SessionService extends ApiService {
   public Session create(SessionCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a session of the customer portal. */
   public Session create(RequestOptions options) throws StripeException {
     return create((SessionCreateParams) null, options);
   }
+
   /** Creates a session of the customer portal. */
   public Session create() throws StripeException {
     return create((SessionCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates a session of the customer portal. */
   public Session create(SessionCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/billing_portal/sessions";

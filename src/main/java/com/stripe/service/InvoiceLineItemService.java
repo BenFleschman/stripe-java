@@ -29,6 +29,7 @@ public final class InvoiceLineItemService extends ApiService {
       throws StripeException {
     return list(invoice, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving an invoice, you’ll get a <strong>lines</strong> property containing the total
    * count of line items and the first handful of those items. There is also a URL where you can
@@ -38,6 +39,7 @@ public final class InvoiceLineItemService extends ApiService {
       throws StripeException {
     return list(invoice, (InvoiceLineItemListParams) null, options);
   }
+
   /**
    * When retrieving an invoice, you’ll get a <strong>lines</strong> property containing the total
    * count of line items and the first handful of those items. There is also a URL where you can
@@ -46,6 +48,7 @@ public final class InvoiceLineItemService extends ApiService {
   public StripeCollection<InvoiceLineItem> list(String invoice) throws StripeException {
     return list(invoice, (InvoiceLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving an invoice, you’ll get a <strong>lines</strong> property containing the total
    * count of line items and the first handful of those items. There is also a URL where you can
@@ -64,6 +67,7 @@ public final class InvoiceLineItemService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<InvoiceLineItem>>() {}.getType());
   }
+
   /**
    * Updates an invoice’s line item. Some fields, such as {@code tax_amounts}, only live on the
    * invoice line item, so they can only be updated through this endpoint. Other fields, such as
@@ -76,6 +80,7 @@ public final class InvoiceLineItemService extends ApiService {
       throws StripeException {
     return update(invoice, lineItemId, params, (RequestOptions) null);
   }
+
   /**
    * Updates an invoice’s line item. Some fields, such as {@code tax_amounts}, only live on the
    * invoice line item, so they can only be updated through this endpoint. Other fields, such as
@@ -87,6 +92,7 @@ public final class InvoiceLineItemService extends ApiService {
       throws StripeException {
     return update(invoice, lineItemId, (InvoiceLineItemUpdateParams) null, options);
   }
+
   /**
    * Updates an invoice’s line item. Some fields, such as {@code tax_amounts}, only live on the
    * invoice line item, so they can only be updated through this endpoint. Other fields, such as
@@ -97,6 +103,7 @@ public final class InvoiceLineItemService extends ApiService {
   public InvoiceLineItem update(String invoice, String lineItemId) throws StripeException {
     return update(invoice, lineItemId, (InvoiceLineItemUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates an invoice’s line item. Some fields, such as {@code tax_amounts}, only live on the
    * invoice line item, so they can only be updated through this endpoint. Other fields, such as

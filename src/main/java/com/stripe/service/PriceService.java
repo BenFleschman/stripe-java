@@ -32,6 +32,7 @@ public final class PriceService extends ApiService {
   public StripeCollection<Price> list(PriceListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your active prices, excluding <a
    * href="https://stripe.com/docs/products-prices/pricing-models#inline-pricing">inline prices</a>.
@@ -40,6 +41,7 @@ public final class PriceService extends ApiService {
   public StripeCollection<Price> list(RequestOptions options) throws StripeException {
     return list((PriceListParams) null, options);
   }
+
   /**
    * Returns a list of your active prices, excluding <a
    * href="https://stripe.com/docs/products-prices/pricing-models#inline-pricing">inline prices</a>.
@@ -48,6 +50,7 @@ public final class PriceService extends ApiService {
   public StripeCollection<Price> list() throws StripeException {
     return list((PriceListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your active prices, excluding <a
    * href="https://stripe.com/docs/products-prices/pricing-models#inline-pricing">inline prices</a>.
@@ -65,6 +68,7 @@ public final class PriceService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Price>>() {}.getType());
   }
+
   /**
    * Creates a new <a href="https://docs.stripe.com/api/prices">Price</a> for an existing <a
    * href="https://docs.stripe.com/api/products">Product</a>. The Price can be recurring or
@@ -73,6 +77,7 @@ public final class PriceService extends ApiService {
   public Price create(PriceCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new <a href="https://docs.stripe.com/api/prices">Price</a> for an existing <a
    * href="https://docs.stripe.com/api/products">Product</a>. The Price can be recurring or
@@ -89,18 +94,22 @@ public final class PriceService extends ApiService {
             options);
     return this.request(request, Price.class);
   }
+
   /** Retrieves the price with the given ID. */
   public Price retrieve(String price, PriceRetrieveParams params) throws StripeException {
     return retrieve(price, params, (RequestOptions) null);
   }
+
   /** Retrieves the price with the given ID. */
   public Price retrieve(String price, RequestOptions options) throws StripeException {
     return retrieve(price, (PriceRetrieveParams) null, options);
   }
+
   /** Retrieves the price with the given ID. */
   public Price retrieve(String price) throws StripeException {
     return retrieve(price, (PriceRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the price with the given ID. */
   public Price retrieve(String price, PriceRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -114,6 +123,7 @@ public final class PriceService extends ApiService {
             options);
     return this.request(request, Price.class);
   }
+
   /**
    * Updates the specified price by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged.
@@ -121,6 +131,7 @@ public final class PriceService extends ApiService {
   public Price update(String price, PriceUpdateParams params) throws StripeException {
     return update(price, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified price by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged.
@@ -128,6 +139,7 @@ public final class PriceService extends ApiService {
   public Price update(String price, RequestOptions options) throws StripeException {
     return update(price, (PriceUpdateParams) null, options);
   }
+
   /**
    * Updates the specified price by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged.
@@ -135,6 +147,7 @@ public final class PriceService extends ApiService {
   public Price update(String price) throws StripeException {
     return update(price, (PriceUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified price by setting the values of the parameters passed. Any parameters not
    * provided are left unchanged.
@@ -151,6 +164,7 @@ public final class PriceService extends ApiService {
             options);
     return this.request(request, Price.class);
   }
+
   /**
    * Search for prices you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -162,6 +176,7 @@ public final class PriceService extends ApiService {
   public StripeSearchResult<Price> search(PriceSearchParams params) throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for prices you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t

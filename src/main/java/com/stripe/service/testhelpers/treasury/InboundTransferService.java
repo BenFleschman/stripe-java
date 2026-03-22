@@ -26,6 +26,7 @@ public final class InboundTransferService extends ApiService {
   public InboundTransfer fail(String id, InboundTransferFailParams params) throws StripeException {
     return fail(id, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code failed} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -33,6 +34,7 @@ public final class InboundTransferService extends ApiService {
   public InboundTransfer fail(String id, RequestOptions options) throws StripeException {
     return fail(id, (InboundTransferFailParams) null, options);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code failed} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -40,6 +42,7 @@ public final class InboundTransferService extends ApiService {
   public InboundTransfer fail(String id) throws StripeException {
     return fail(id, (InboundTransferFailParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code failed} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -58,6 +61,7 @@ public final class InboundTransferService extends ApiService {
             options);
     return this.request(request, InboundTransfer.class);
   }
+
   /**
    * Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a
    * ReceivedDebit. The InboundTransfer must already be in the {@code succeeded} state.
@@ -66,6 +70,7 @@ public final class InboundTransferService extends ApiService {
       String id, InboundTransferReturnInboundTransferParams params) throws StripeException {
     return returnInboundTransfer(id, params, (RequestOptions) null);
   }
+
   /**
    * Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a
    * ReceivedDebit. The InboundTransfer must already be in the {@code succeeded} state.
@@ -74,6 +79,7 @@ public final class InboundTransferService extends ApiService {
       throws StripeException {
     return returnInboundTransfer(id, (InboundTransferReturnInboundTransferParams) null, options);
   }
+
   /**
    * Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a
    * ReceivedDebit. The InboundTransfer must already be in the {@code succeeded} state.
@@ -82,6 +88,7 @@ public final class InboundTransferService extends ApiService {
     return returnInboundTransfer(
         id, (InboundTransferReturnInboundTransferParams) null, (RequestOptions) null);
   }
+
   /**
    * Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a
    * ReceivedDebit. The InboundTransfer must already be in the {@code succeeded} state.
@@ -101,6 +108,7 @@ public final class InboundTransferService extends ApiService {
             options);
     return this.request(request, InboundTransfer.class);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code succeeded} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -109,6 +117,7 @@ public final class InboundTransferService extends ApiService {
       throws StripeException {
     return succeed(id, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code succeeded} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -116,6 +125,7 @@ public final class InboundTransferService extends ApiService {
   public InboundTransfer succeed(String id, RequestOptions options) throws StripeException {
     return succeed(id, (InboundTransferSucceedParams) null, options);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code succeeded} status. The
    * InboundTransfer must already be in the {@code processing} state.
@@ -123,6 +133,7 @@ public final class InboundTransferService extends ApiService {
   public InboundTransfer succeed(String id) throws StripeException {
     return succeed(id, (InboundTransferSucceedParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created InboundTransfer to the {@code succeeded} status. The
    * InboundTransfer must already be in the {@code processing} state.

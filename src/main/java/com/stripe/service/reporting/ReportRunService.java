@@ -25,14 +25,17 @@ public final class ReportRunService extends ApiService {
   public StripeCollection<ReportRun> list(ReportRunListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Report Runs, with the most recent appearing first. */
   public StripeCollection<ReportRun> list(RequestOptions options) throws StripeException {
     return list((ReportRunListParams) null, options);
   }
+
   /** Returns a list of Report Runs, with the most recent appearing first. */
   public StripeCollection<ReportRun> list() throws StripeException {
     return list((ReportRunListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of Report Runs, with the most recent appearing first. */
   public StripeCollection<ReportRun> list(ReportRunListParams params, RequestOptions options)
       throws StripeException {
@@ -46,6 +49,7 @@ public final class ReportRunService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ReportRun>>() {}.getType());
   }
+
   /**
    * Creates a new object and begin running the report. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)
@@ -53,6 +57,7 @@ public final class ReportRunService extends ApiService {
   public ReportRun create(ReportRunCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new object and begin running the report. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)
@@ -69,19 +74,23 @@ public final class ReportRunService extends ApiService {
             options);
     return this.request(request, ReportRun.class);
   }
+
   /** Retrieves the details of an existing Report Run. */
   public ReportRun retrieve(String reportRun, ReportRunRetrieveParams params)
       throws StripeException {
     return retrieve(reportRun, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing Report Run. */
   public ReportRun retrieve(String reportRun, RequestOptions options) throws StripeException {
     return retrieve(reportRun, (ReportRunRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an existing Report Run. */
   public ReportRun retrieve(String reportRun) throws StripeException {
     return retrieve(reportRun, (ReportRunRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing Report Run. */
   public ReportRun retrieve(
       String reportRun, ReportRunRetrieveParams params, RequestOptions options)

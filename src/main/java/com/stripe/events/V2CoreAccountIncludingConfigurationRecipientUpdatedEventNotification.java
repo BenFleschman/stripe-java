@@ -20,6 +20,7 @@ public final class V2CoreAccountIncludingConfigurationRecipientUpdatedEventNotif
   public Account fetchRelatedObject() throws StripeException {
     return (Account) super.fetchRelatedObject(this.relatedObject);
   }
+
   /** Retrieve the corresponding full event from the Stripe API. */
   @Override
   public V2CoreAccountIncludingConfigurationRecipientUpdatedEvent fetchEvent()

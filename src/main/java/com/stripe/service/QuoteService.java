@@ -31,14 +31,17 @@ public final class QuoteService extends ApiService {
   public StripeCollection<Quote> list(QuoteListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your quotes. */
   public StripeCollection<Quote> list(RequestOptions options) throws StripeException {
     return list((QuoteListParams) null, options);
   }
+
   /** Returns a list of your quotes. */
   public StripeCollection<Quote> list() throws StripeException {
     return list((QuoteListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your quotes. */
   public StripeCollection<Quote> list(QuoteListParams params, RequestOptions options)
       throws StripeException {
@@ -52,6 +55,7 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Quote>>() {}.getType());
   }
+
   /**
    * A quote models prices and services for a customer. Default options for {@code header}, {@code
    * description}, {@code footer}, and {@code expires_at} can be set in the dashboard via the <a
@@ -60,6 +64,7 @@ public final class QuoteService extends ApiService {
   public Quote create(QuoteCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * A quote models prices and services for a customer. Default options for {@code header}, {@code
    * description}, {@code footer}, and {@code expires_at} can be set in the dashboard via the <a
@@ -68,6 +73,7 @@ public final class QuoteService extends ApiService {
   public Quote create(RequestOptions options) throws StripeException {
     return create((QuoteCreateParams) null, options);
   }
+
   /**
    * A quote models prices and services for a customer. Default options for {@code header}, {@code
    * description}, {@code footer}, and {@code expires_at} can be set in the dashboard via the <a
@@ -76,6 +82,7 @@ public final class QuoteService extends ApiService {
   public Quote create() throws StripeException {
     return create((QuoteCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * A quote models prices and services for a customer. Default options for {@code header}, {@code
    * description}, {@code footer}, and {@code expires_at} can be set in the dashboard via the <a
@@ -92,18 +99,22 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /** Retrieves the quote with the given ID. */
   public Quote retrieve(String quote, QuoteRetrieveParams params) throws StripeException {
     return retrieve(quote, params, (RequestOptions) null);
   }
+
   /** Retrieves the quote with the given ID. */
   public Quote retrieve(String quote, RequestOptions options) throws StripeException {
     return retrieve(quote, (QuoteRetrieveParams) null, options);
   }
+
   /** Retrieves the quote with the given ID. */
   public Quote retrieve(String quote) throws StripeException {
     return retrieve(quote, (QuoteRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the quote with the given ID. */
   public Quote retrieve(String quote, QuoteRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -117,18 +128,22 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /** A quote models prices and services for a customer. */
   public Quote update(String quote, QuoteUpdateParams params) throws StripeException {
     return update(quote, params, (RequestOptions) null);
   }
+
   /** A quote models prices and services for a customer. */
   public Quote update(String quote, RequestOptions options) throws StripeException {
     return update(quote, (QuoteUpdateParams) null, options);
   }
+
   /** A quote models prices and services for a customer. */
   public Quote update(String quote) throws StripeException {
     return update(quote, (QuoteUpdateParams) null, (RequestOptions) null);
   }
+
   /** A quote models prices and services for a customer. */
   public Quote update(String quote, QuoteUpdateParams params, RequestOptions options)
       throws StripeException {
@@ -142,18 +157,22 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /** Accepts the specified quote. */
   public Quote accept(String quote, QuoteAcceptParams params) throws StripeException {
     return accept(quote, params, (RequestOptions) null);
   }
+
   /** Accepts the specified quote. */
   public Quote accept(String quote, RequestOptions options) throws StripeException {
     return accept(quote, (QuoteAcceptParams) null, options);
   }
+
   /** Accepts the specified quote. */
   public Quote accept(String quote) throws StripeException {
     return accept(quote, (QuoteAcceptParams) null, (RequestOptions) null);
   }
+
   /** Accepts the specified quote. */
   public Quote accept(String quote, QuoteAcceptParams params, RequestOptions options)
       throws StripeException {
@@ -167,18 +186,22 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /** Cancels the quote. */
   public Quote cancel(String quote, QuoteCancelParams params) throws StripeException {
     return cancel(quote, params, (RequestOptions) null);
   }
+
   /** Cancels the quote. */
   public Quote cancel(String quote, RequestOptions options) throws StripeException {
     return cancel(quote, (QuoteCancelParams) null, options);
   }
+
   /** Cancels the quote. */
   public Quote cancel(String quote) throws StripeException {
     return cancel(quote, (QuoteCancelParams) null, (RequestOptions) null);
   }
+
   /** Cancels the quote. */
   public Quote cancel(String quote, QuoteCancelParams params, RequestOptions options)
       throws StripeException {
@@ -192,18 +215,22 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /** Finalizes the quote. */
   public Quote finalizeQuote(String quote, QuoteFinalizeQuoteParams params) throws StripeException {
     return finalizeQuote(quote, params, (RequestOptions) null);
   }
+
   /** Finalizes the quote. */
   public Quote finalizeQuote(String quote, RequestOptions options) throws StripeException {
     return finalizeQuote(quote, (QuoteFinalizeQuoteParams) null, options);
   }
+
   /** Finalizes the quote. */
   public Quote finalizeQuote(String quote) throws StripeException {
     return finalizeQuote(quote, (QuoteFinalizeQuoteParams) null, (RequestOptions) null);
   }
+
   /** Finalizes the quote. */
   public Quote finalizeQuote(String quote, QuoteFinalizeQuoteParams params, RequestOptions options)
       throws StripeException {
@@ -217,6 +244,7 @@ public final class QuoteService extends ApiService {
             options);
     return this.request(request, Quote.class);
   }
+
   /**
    * Download the PDF for a finalized quote. Explanation for special handling can be found <a
    * href="https://docs.stripe.com/quotes/overview#quote_pdf">here</a>
@@ -224,6 +252,7 @@ public final class QuoteService extends ApiService {
   public InputStream pdf(String quote, QuotePdfParams params) throws StripeException {
     return pdf(quote, params, (RequestOptions) null);
   }
+
   /**
    * Download the PDF for a finalized quote. Explanation for special handling can be found <a
    * href="https://docs.stripe.com/quotes/overview#quote_pdf">here</a>
@@ -231,6 +260,7 @@ public final class QuoteService extends ApiService {
   public InputStream pdf(String quote, RequestOptions options) throws StripeException {
     return pdf(quote, (QuotePdfParams) null, options);
   }
+
   /**
    * Download the PDF for a finalized quote. Explanation for special handling can be found <a
    * href="https://docs.stripe.com/quotes/overview#quote_pdf">here</a>
@@ -238,6 +268,7 @@ public final class QuoteService extends ApiService {
   public InputStream pdf(String quote) throws StripeException {
     return pdf(quote, (QuotePdfParams) null, (RequestOptions) null);
   }
+
   /**
    * Download the PDF for a finalized quote. Explanation for special handling can be found <a
    * href="https://docs.stripe.com/quotes/overview#quote_pdf">here</a>

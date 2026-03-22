@@ -28,14 +28,17 @@ public final class AccountService extends ApiService {
   public StripeCollection<Account> list(AccountListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Financial Connections {@code Account} objects. */
   public StripeCollection<Account> list(RequestOptions options) throws StripeException {
     return list((AccountListParams) null, options);
   }
+
   /** Returns a list of Financial Connections {@code Account} objects. */
   public StripeCollection<Account> list() throws StripeException {
     return list((AccountListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of Financial Connections {@code Account} objects. */
   public StripeCollection<Account> list(AccountListParams params, RequestOptions options)
       throws StripeException {
@@ -49,18 +52,22 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Account>>() {}.getType());
   }
+
   /** Retrieves the details of an Financial Connections {@code Account}. */
   public Account retrieve(String account, AccountRetrieveParams params) throws StripeException {
     return retrieve(account, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an Financial Connections {@code Account}. */
   public Account retrieve(String account, RequestOptions options) throws StripeException {
     return retrieve(account, (AccountRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an Financial Connections {@code Account}. */
   public Account retrieve(String account) throws StripeException {
     return retrieve(account, (AccountRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an Financial Connections {@code Account}. */
   public Account retrieve(String account, AccountRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -75,6 +82,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Disables your access to a Financial Connections {@code Account}. You will no longer be able to
    * access data associated with the account (e.g. balances, transactions).
@@ -82,6 +90,7 @@ public final class AccountService extends ApiService {
   public Account disconnect(String account, AccountDisconnectParams params) throws StripeException {
     return disconnect(account, params, (RequestOptions) null);
   }
+
   /**
    * Disables your access to a Financial Connections {@code Account}. You will no longer be able to
    * access data associated with the account (e.g. balances, transactions).
@@ -89,6 +98,7 @@ public final class AccountService extends ApiService {
   public Account disconnect(String account, RequestOptions options) throws StripeException {
     return disconnect(account, (AccountDisconnectParams) null, options);
   }
+
   /**
    * Disables your access to a Financial Connections {@code Account}. You will no longer be able to
    * access data associated with the account (e.g. balances, transactions).
@@ -96,6 +106,7 @@ public final class AccountService extends ApiService {
   public Account disconnect(String account) throws StripeException {
     return disconnect(account, (AccountDisconnectParams) null, (RequestOptions) null);
   }
+
   /**
    * Disables your access to a Financial Connections {@code Account}. You will no longer be able to
    * access data associated with the account (e.g. balances, transactions).
@@ -114,10 +125,12 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /** Refreshes the data associated with a Financial Connections {@code Account}. */
   public Account refresh(String account, AccountRefreshParams params) throws StripeException {
     return refresh(account, params, (RequestOptions) null);
   }
+
   /** Refreshes the data associated with a Financial Connections {@code Account}. */
   public Account refresh(String account, AccountRefreshParams params, RequestOptions options)
       throws StripeException {
@@ -133,6 +146,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Subscribes to periodic refreshes of data associated with a Financial Connections {@code
    * Account}. When the account status is active, data is typically refreshed once a day.
@@ -140,6 +154,7 @@ public final class AccountService extends ApiService {
   public Account subscribe(String account, AccountSubscribeParams params) throws StripeException {
     return subscribe(account, params, (RequestOptions) null);
   }
+
   /**
    * Subscribes to periodic refreshes of data associated with a Financial Connections {@code
    * Account}. When the account status is active, data is typically refreshed once a day.
@@ -158,6 +173,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Unsubscribes from periodic refreshes of data associated with a Financial Connections {@code
    * Account}.
@@ -166,6 +182,7 @@ public final class AccountService extends ApiService {
       throws StripeException {
     return unsubscribe(account, params, (RequestOptions) null);
   }
+
   /**
    * Unsubscribes from periodic refreshes of data associated with a Financial Connections {@code
    * Account}.

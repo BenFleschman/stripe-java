@@ -28,16 +28,19 @@ public final class PersonService extends ApiService {
       throws StripeException, RateLimitException {
     return list(accountId, params, (RequestOptions) null);
   }
+
   /** Returns a paginated list of Persons associated with an Account. */
   public StripeCollection<AccountPerson> list(String accountId, RequestOptions options)
       throws StripeException, RateLimitException {
     return list(accountId, (PersonListParams) null, options);
   }
+
   /** Returns a paginated list of Persons associated with an Account. */
   public StripeCollection<AccountPerson> list(String accountId)
       throws StripeException, RateLimitException {
     return list(accountId, (PersonListParams) null, (RequestOptions) null);
   }
+
   /** Returns a paginated list of Persons associated with an Account. */
   public StripeCollection<AccountPerson> list(
       String accountId, PersonListParams params, RequestOptions options)
@@ -52,6 +55,7 @@ public final class PersonService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<AccountPerson>>() {}.getType());
   }
+
   /**
    * Create a Person. Adds an individual to an Account's identity. You can set relationship
    * attributes and identity information at creation.
@@ -60,6 +64,7 @@ public final class PersonService extends ApiService {
       throws StripeException, RateLimitException {
     return create(accountId, params, (RequestOptions) null);
   }
+
   /**
    * Create a Person. Adds an individual to an Account's identity. You can set relationship
    * attributes and identity information at creation.
@@ -68,6 +73,7 @@ public final class PersonService extends ApiService {
       throws StripeException, RateLimitException {
     return create(accountId, (PersonCreateParams) null, options);
   }
+
   /**
    * Create a Person. Adds an individual to an Account's identity. You can set relationship
    * attributes and identity information at creation.
@@ -75,6 +81,7 @@ public final class PersonService extends ApiService {
   public AccountPerson create(String accountId) throws StripeException, RateLimitException {
     return create(accountId, (PersonCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Create a Person. Adds an individual to an Account's identity. You can set relationship
    * attributes and identity information at creation.
@@ -91,11 +98,13 @@ public final class PersonService extends ApiService {
             options);
     return this.request(request, AccountPerson.class);
   }
+
   /** Delete a Person associated with an Account. */
   public DeletedObject delete(String accountId, String id)
       throws StripeException, RateLimitException {
     return delete(accountId, id, (RequestOptions) null);
   }
+
   /** Delete a Person associated with an Account. */
   public DeletedObject delete(String accountId, String id, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -107,11 +116,13 @@ public final class PersonService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, DeletedObject.class);
   }
+
   /** Retrieves a Person associated with an Account. */
   public AccountPerson retrieve(String accountId, String id)
       throws StripeException, RateLimitException {
     return retrieve(accountId, id, (RequestOptions) null);
   }
+
   /** Retrieves a Person associated with an Account. */
   public AccountPerson retrieve(String accountId, String id, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -123,21 +134,25 @@ public final class PersonService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.GET, path, null, options);
     return this.request(request, AccountPerson.class);
   }
+
   /** Updates a Person associated with an Account. */
   public AccountPerson update(String accountId, String id, PersonUpdateParams params)
       throws StripeException, RateLimitException {
     return update(accountId, id, params, (RequestOptions) null);
   }
+
   /** Updates a Person associated with an Account. */
   public AccountPerson update(String accountId, String id, RequestOptions options)
       throws StripeException, RateLimitException {
     return update(accountId, id, (PersonUpdateParams) null, options);
   }
+
   /** Updates a Person associated with an Account. */
   public AccountPerson update(String accountId, String id)
       throws StripeException, RateLimitException {
     return update(accountId, id, (PersonUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates a Person associated with an Account. */
   public AccountPerson update(
       String accountId, String id, PersonUpdateParams params, RequestOptions options)

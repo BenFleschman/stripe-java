@@ -19,6 +19,7 @@ public final class V2CoreAccountPersonUpdatedEventNotification extends EventNoti
   public AccountPerson fetchRelatedObject() throws StripeException {
     return (AccountPerson) super.fetchRelatedObject(this.relatedObject);
   }
+
   /** Retrieve the corresponding full event from the Stripe API. */
   @Override
   public V2CoreAccountPersonUpdatedEvent fetchEvent() throws StripeException {

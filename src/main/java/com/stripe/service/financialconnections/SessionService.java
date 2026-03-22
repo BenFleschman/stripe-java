@@ -22,14 +22,17 @@ public final class SessionService extends ApiService {
   public Session retrieve(String session, SessionRetrieveParams params) throws StripeException {
     return retrieve(session, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of a Financial Connections {@code Session}. */
   public Session retrieve(String session, RequestOptions options) throws StripeException {
     return retrieve(session, (SessionRetrieveParams) null, options);
   }
+
   /** Retrieves the details of a Financial Connections {@code Session}. */
   public Session retrieve(String session) throws StripeException {
     return retrieve(session, (SessionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of a Financial Connections {@code Session}. */
   public Session retrieve(String session, SessionRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -44,6 +47,7 @@ public final class SessionService extends ApiService {
             options);
     return this.request(request, Session.class);
   }
+
   /**
    * To launch the Financial Connections authorization flow, create a {@code Session}. The session’s
    * {@code client_secret} can be used to launch the flow using Stripe.js.
@@ -51,6 +55,7 @@ public final class SessionService extends ApiService {
   public Session create(SessionCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * To launch the Financial Connections authorization flow, create a {@code Session}. The session’s
    * {@code client_secret} can be used to launch the flow using Stripe.js.

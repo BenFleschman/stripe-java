@@ -29,6 +29,7 @@ public final class ReviewService extends ApiService {
   public StripeCollection<Review> list(ReviewListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of {@code Review} objects that have {@code open} set to {@code true}. The
    * objects are sorted in descending order by creation date, with the most recently created object
@@ -37,6 +38,7 @@ public final class ReviewService extends ApiService {
   public StripeCollection<Review> list(RequestOptions options) throws StripeException {
     return list((ReviewListParams) null, options);
   }
+
   /**
    * Returns a list of {@code Review} objects that have {@code open} set to {@code true}. The
    * objects are sorted in descending order by creation date, with the most recently created object
@@ -45,6 +47,7 @@ public final class ReviewService extends ApiService {
   public StripeCollection<Review> list() throws StripeException {
     return list((ReviewListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of {@code Review} objects that have {@code open} set to {@code true}. The
    * objects are sorted in descending order by creation date, with the most recently created object
@@ -62,18 +65,22 @@ public final class ReviewService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Review>>() {}.getType());
   }
+
   /** Retrieves a {@code Review} object. */
   public Review retrieve(String review, ReviewRetrieveParams params) throws StripeException {
     return retrieve(review, params, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Review} object. */
   public Review retrieve(String review, RequestOptions options) throws StripeException {
     return retrieve(review, (ReviewRetrieveParams) null, options);
   }
+
   /** Retrieves a {@code Review} object. */
   public Review retrieve(String review) throws StripeException {
     return retrieve(review, (ReviewRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Review} object. */
   public Review retrieve(String review, ReviewRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -87,18 +94,22 @@ public final class ReviewService extends ApiService {
             options);
     return this.request(request, Review.class);
   }
+
   /** Approves a {@code Review} object, closing it and removing it from the list of reviews. */
   public Review approve(String review, ReviewApproveParams params) throws StripeException {
     return approve(review, params, (RequestOptions) null);
   }
+
   /** Approves a {@code Review} object, closing it and removing it from the list of reviews. */
   public Review approve(String review, RequestOptions options) throws StripeException {
     return approve(review, (ReviewApproveParams) null, options);
   }
+
   /** Approves a {@code Review} object, closing it and removing it from the list of reviews. */
   public Review approve(String review) throws StripeException {
     return approve(review, (ReviewApproveParams) null, (RequestOptions) null);
   }
+
   /** Approves a {@code Review} object, closing it and removing it from the list of reviews. */
   public Review approve(String review, ReviewApproveParams params, RequestOptions options)
       throws StripeException {

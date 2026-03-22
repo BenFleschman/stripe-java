@@ -13,9 +13,9 @@ import com.stripe.net.ApiResource.RequestMethod;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
+import mockwebserver3.MockResponse;
+import mockwebserver3.MockWebServer;
+import mockwebserver3.RecordedRequest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,15 +44,16 @@ public class RawRequestTest extends BaseStripeTest {
 
   @AfterEach
   void tearDown() throws IOException {
-    server.shutdown();
+    server.close();
   }
 
   @Test
   public void testStandardRequestGlobal() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
@@ -66,14 +67,15 @@ public class RawRequestTest extends BaseStripeTest {
 
     RecordedRequest request = server.takeRequest();
     assertEquals(
-        "application/x-www-form-urlencoded;charset=UTF-8", request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("description=test+customer", request.getBody().readUtf8());
+        "application/x-www-form-urlencoded;charset=UTF-8",
+        request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    assertEquals("description=test+customer", request.getBody().utf8());
   }
 
   @Test
   public void testNullOptionsGlobal() throws StripeException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{}"));
+    server.enqueue(new MockResponse.Builder().body("{}").build());
     final StripeResponse response =
         client.rawRequest(RequestMethod.POST, "/v1/customers", "description=test+customer", null);
     assertNotNull(response);
@@ -82,8 +84,9 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testV2PostRequestGlobal() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}"));
+        new MockResponse.Builder()
+            .body("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}")
+            .build());
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
     final StripeResponse response =
@@ -91,9 +94,9 @@ public class RawRequestTest extends BaseStripeTest {
             RequestMethod.POST, "/v2/core/event", "{\"event_id\": \"evnt_123\"}", options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals("application/json", request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("{\"event_id\": \"evnt_123\"}", request.getBody().readUtf8());
+    assertEquals("application/json", request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    assertEquals("{\"event_id\": \"evnt_123\"}", request.getBody().utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -103,17 +106,19 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testPreviewGetRequestGlobal() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}"));
+        new MockResponse.Builder()
+            .body("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}")
+            .build());
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
     final StripeResponse response =
         client.rawRequest(RequestMethod.GET, "/v1/subscription_schedules", "", options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals(null, request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("", request.getBody().readUtf8());
+    assertEquals(null, request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -123,9 +128,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testAdditionalHeadersGlobal() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     Map<String, String> additionalHeaders = new HashMap<>();
 
@@ -139,7 +145,7 @@ public class RawRequestTest extends BaseStripeTest {
         client.rawRequest(RequestMethod.GET, "/v1/customers", null, options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals("bar", request.getHeader("foo"));
+    assertEquals("bar", request.getHeaders().get("foo"));
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -149,9 +155,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testDeserializeGlobal() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
@@ -180,7 +187,7 @@ public class RawRequestTest extends BaseStripeTest {
 
   @Test
   public void testNullOptionsClient() throws StripeException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{}"));
+    server.enqueue(new MockResponse.Builder().body("{}").build());
     final StripeResponse response =
         client.rawRequest(RequestMethod.POST, "/v1/customers", "description=test+customer", null);
     assertNotNull(response);
@@ -189,9 +196,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testV1RequestClient() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
@@ -205,16 +213,18 @@ public class RawRequestTest extends BaseStripeTest {
 
     RecordedRequest request = server.takeRequest();
     assertEquals(
-        "application/x-www-form-urlencoded;charset=UTF-8", request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("description=test+customer", request.getBody().readUtf8());
+        "application/x-www-form-urlencoded;charset=UTF-8",
+        request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    assertEquals("description=test+customer", request.getBody().utf8());
   }
 
   @Test
   public void testV2PostRequestClient() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}"));
+        new MockResponse.Builder()
+            .body("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}")
+            .build());
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
     final StripeResponse response =
@@ -222,9 +232,9 @@ public class RawRequestTest extends BaseStripeTest {
             RequestMethod.POST, "/v2/core/events", "{\"event_id\": \"evnt_123\"}", options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals("application/json", request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("{\"event_id\": \"evnt_123\"}", request.getBody().readUtf8());
+    assertEquals("application/json", request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    assertEquals("{\"event_id\": \"evnt_123\"}", request.getBody().utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -234,17 +244,19 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testPreviewGetRequestClient() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}"));
+        new MockResponse.Builder()
+            .body("{\"id\": \"sub_sched_123\",\n  \"object\": \"subscription_schedule\"}")
+            .build());
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
     final StripeResponse response =
         client.rawRequest(RequestMethod.GET, "/v1/subscription_schedules", "", options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals(null, request.getHeader("Content-Type"));
-    assertEquals(Stripe.API_VERSION, request.getHeader("Stripe-Version"));
-    assertEquals("", request.getBody().readUtf8());
+    assertEquals(null, request.getHeaders().get("Content-Type"));
+    assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -254,9 +266,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testAdditionalHeadersClient() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     Map<String, String> additionalHeaders = new HashMap<>();
 
@@ -270,7 +283,7 @@ public class RawRequestTest extends BaseStripeTest {
         client.rawRequest(RequestMethod.GET, "/v1/customers", null, options);
 
     RecordedRequest request = server.takeRequest();
-    assertEquals("bar", request.getHeader("foo"));
+    assertEquals("bar", request.getHeaders().get("foo"));
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -280,9 +293,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testDeserializeClientV1Api() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"id\": \"cus_123\",\n  \"object\": \"customer\",\n  \"description\": \"test customer\"}")
+            .build());
 
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
 
@@ -303,9 +317,10 @@ public class RawRequestTest extends BaseStripeTest {
   @Test
   public void testDeserializeClientV2Api() throws StripeException, InterruptedException {
     server.enqueue(
-        new MockResponse()
-            .setBody(
-                "{\"object\":\"v2.billing.meter_event\",\"created\":\"2024-10-01T04:46:22.861Z\",\"event_name\":\"new_meter\",\"identifier\":\"d8a5ab2e-81ec-4bdf-acbf-48bf346\",\"livemode\":false,\"payload\":{\"stripe_customer_id\":\"cus_QvF3b2W6\",\"value\":\"25\"},\"timestamp\":\"2024-10-01T04:46:22.836Z\"}"));
+        new MockResponse.Builder()
+            .body(
+                "{\"object\":\"v2.billing.meter_event\",\"created\":\"2024-10-01T04:46:22.861Z\",\"event_name\":\"new_meter\",\"identifier\":\"d8a5ab2e-81ec-4bdf-acbf-48bf346\",\"livemode\":false,\"payload\":{\"stripe_customer_id\":\"cus_QvF3b2W6\",\"value\":\"25\"},\"timestamp\":\"2024-10-01T04:46:22.836Z\"}")
+            .build());
 
     final RawRequestOptions options = RawRequestOptions.builder().setApiKey("sk_123").build();
     String param =

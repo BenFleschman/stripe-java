@@ -28,6 +28,7 @@ public final class OutboundPaymentService extends ApiService {
       throws StripeException {
     return update(id, params, (RequestOptions) null);
   }
+
   /**
    * Updates a test mode created OutboundPayment with tracking details. The OutboundPayment must not
    * be cancelable, and cannot be in the {@code canceled} or {@code failed} states.
@@ -47,6 +48,7 @@ public final class OutboundPaymentService extends ApiService {
             options);
     return this.request(request, OutboundPayment.class);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code failed} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -54,6 +56,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment fail(String id, OutboundPaymentFailParams params) throws StripeException {
     return fail(id, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code failed} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -61,6 +64,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment fail(String id, RequestOptions options) throws StripeException {
     return fail(id, (OutboundPaymentFailParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code failed} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -68,6 +72,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment fail(String id) throws StripeException {
     return fail(id, (OutboundPaymentFailParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code failed} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -86,6 +91,7 @@ public final class OutboundPaymentService extends ApiService {
             options);
     return this.request(request, OutboundPayment.class);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code posted} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -93,6 +99,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment post(String id, OutboundPaymentPostParams params) throws StripeException {
     return post(id, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code posted} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -100,6 +107,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment post(String id, RequestOptions options) throws StripeException {
     return post(id, (OutboundPaymentPostParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code posted} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -107,6 +115,7 @@ public final class OutboundPaymentService extends ApiService {
   public OutboundPayment post(String id) throws StripeException {
     return post(id, (OutboundPaymentPostParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code posted} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -125,6 +134,7 @@ public final class OutboundPaymentService extends ApiService {
             options);
     return this.request(request, OutboundPayment.class);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code returned} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -133,6 +143,7 @@ public final class OutboundPaymentService extends ApiService {
       String id, OutboundPaymentReturnOutboundPaymentParams params) throws StripeException {
     return returnOutboundPayment(id, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code returned} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -141,6 +152,7 @@ public final class OutboundPaymentService extends ApiService {
       throws StripeException {
     return returnOutboundPayment(id, (OutboundPaymentReturnOutboundPaymentParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code returned} status. The
    * OutboundPayment must already be in the {@code processing} state.
@@ -149,6 +161,7 @@ public final class OutboundPaymentService extends ApiService {
     return returnOutboundPayment(
         id, (OutboundPaymentReturnOutboundPaymentParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundPayment to the {@code returned} status. The
    * OutboundPayment must already be in the {@code processing} state.

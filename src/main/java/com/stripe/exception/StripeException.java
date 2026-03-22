@@ -28,6 +28,7 @@ public abstract class StripeException extends Exception {
     stripeError = err;
     stripeErrorApiMode = ApiMode.V2;
   }
+
   /**
    * Returns the error code of the response that triggered this exception. For {@link ApiException}
    * the error code will be equal to {@link StripeError#getCode()}.
@@ -109,7 +110,7 @@ public abstract class StripeException extends Exception {
       String requestId,
       StripeResponseGetter responseGetter) {
     switch (type) {
-        // The beginning of the section generated from our OpenAPI spec
+      // The beginning of the section generated from our OpenAPI spec
       case "rate_limit":
         return com.stripe.exception.RateLimitException.parse(
             body, statusCode, requestId, responseGetter);

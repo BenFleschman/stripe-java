@@ -27,6 +27,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return presentPaymentMethod(reader, params, (RequestOptions) null);
   }
+
   /**
    * Presents a payment method on a simulated reader. Can be used to simulate accepting a payment,
    * saving a card or refunding a transaction.
@@ -34,6 +35,7 @@ public final class ReaderService extends ApiService {
   public Reader presentPaymentMethod(String reader, RequestOptions options) throws StripeException {
     return presentPaymentMethod(reader, (ReaderPresentPaymentMethodParams) null, options);
   }
+
   /**
    * Presents a payment method on a simulated reader. Can be used to simulate accepting a payment,
    * saving a card or refunding a transaction.
@@ -42,6 +44,7 @@ public final class ReaderService extends ApiService {
     return presentPaymentMethod(
         reader, (ReaderPresentPaymentMethodParams) null, (RequestOptions) null);
   }
+
   /**
    * Presents a payment method on a simulated reader. Can be used to simulate accepting a payment,
    * saving a card or refunding a transaction.
@@ -62,21 +65,25 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /** Use this endpoint to trigger a successful input collection on a simulated reader. */
   public Reader succeedInputCollection(String reader, ReaderSucceedInputCollectionParams params)
       throws StripeException {
     return succeedInputCollection(reader, params, (RequestOptions) null);
   }
+
   /** Use this endpoint to trigger a successful input collection on a simulated reader. */
   public Reader succeedInputCollection(String reader, RequestOptions options)
       throws StripeException {
     return succeedInputCollection(reader, (ReaderSucceedInputCollectionParams) null, options);
   }
+
   /** Use this endpoint to trigger a successful input collection on a simulated reader. */
   public Reader succeedInputCollection(String reader) throws StripeException {
     return succeedInputCollection(
         reader, (ReaderSucceedInputCollectionParams) null, (RequestOptions) null);
   }
+
   /** Use this endpoint to trigger a successful input collection on a simulated reader. */
   public Reader succeedInputCollection(
       String reader, ReaderSucceedInputCollectionParams params, RequestOptions options)
@@ -94,6 +101,7 @@ public final class ReaderService extends ApiService {
             options);
     return this.request(request, Reader.class);
   }
+
   /**
    * Use this endpoint to complete an input collection with a timeout error on a simulated reader.
    */
@@ -101,6 +109,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return timeoutInputCollection(reader, params, (RequestOptions) null);
   }
+
   /**
    * Use this endpoint to complete an input collection with a timeout error on a simulated reader.
    */
@@ -108,6 +117,7 @@ public final class ReaderService extends ApiService {
       throws StripeException {
     return timeoutInputCollection(reader, (ReaderTimeoutInputCollectionParams) null, options);
   }
+
   /**
    * Use this endpoint to complete an input collection with a timeout error on a simulated reader.
    */
@@ -115,6 +125,7 @@ public final class ReaderService extends ApiService {
     return timeoutInputCollection(
         reader, (ReaderTimeoutInputCollectionParams) null, (RequestOptions) null);
   }
+
   /**
    * Use this endpoint to complete an input collection with a timeout error on a simulated reader.
    */

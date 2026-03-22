@@ -50,6 +50,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return cancel(subscriptionExposedId, params, (RequestOptions) null);
   }
+
   /**
    * Cancels a customer’s subscription immediately. The customer won’t be charged again for the
    * subscription. After it’s canceled, you can no longer update the subscription or its <a
@@ -72,6 +73,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return cancel(subscriptionExposedId, (SubscriptionCancelParams) null, options);
   }
+
   /**
    * Cancels a customer’s subscription immediately. The customer won’t be charged again for the
    * subscription. After it’s canceled, you can no longer update the subscription or its <a
@@ -93,6 +95,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription cancel(String subscriptionExposedId) throws StripeException {
     return cancel(subscriptionExposedId, (SubscriptionCancelParams) null, (RequestOptions) null);
   }
+
   /**
    * Cancels a customer’s subscription immediately. The customer won’t be charged again for the
    * subscription. After it’s canceled, you can no longer update the subscription or its <a
@@ -125,21 +128,25 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, Subscription.class);
   }
+
   /** Retrieves the subscription with the given ID. */
   public Subscription retrieve(String subscriptionExposedId, SubscriptionRetrieveParams params)
       throws StripeException {
     return retrieve(subscriptionExposedId, params, (RequestOptions) null);
   }
+
   /** Retrieves the subscription with the given ID. */
   public Subscription retrieve(String subscriptionExposedId, RequestOptions options)
       throws StripeException {
     return retrieve(subscriptionExposedId, (SubscriptionRetrieveParams) null, options);
   }
+
   /** Retrieves the subscription with the given ID. */
   public Subscription retrieve(String subscriptionExposedId) throws StripeException {
     return retrieve(
         subscriptionExposedId, (SubscriptionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the subscription with the given ID. */
   public Subscription retrieve(
       String subscriptionExposedId, SubscriptionRetrieveParams params, RequestOptions options)
@@ -155,6 +162,7 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, Subscription.class);
   }
+
   /**
    * Updates an existing subscription to match the specified parameters. When changing prices or
    * quantities, we optionally prorate the price we charge next month to make up for any price
@@ -207,6 +215,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return update(subscriptionExposedId, params, (RequestOptions) null);
   }
+
   /**
    * Updates an existing subscription to match the specified parameters. When changing prices or
    * quantities, we optionally prorate the price we charge next month to make up for any price
@@ -259,6 +268,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return update(subscriptionExposedId, (SubscriptionUpdateParams) null, options);
   }
+
   /**
    * Updates an existing subscription to match the specified parameters. When changing prices or
    * quantities, we optionally prorate the price we charge next month to make up for any price
@@ -310,6 +320,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription update(String subscriptionExposedId) throws StripeException {
     return update(subscriptionExposedId, (SubscriptionUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates an existing subscription to match the specified parameters. When changing prices or
    * quantities, we optionally prorate the price we charge next month to make up for any price
@@ -372,10 +383,12 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, Subscription.class);
   }
+
   /** Removes the currently applied discount on a subscription. */
   public Discount deleteDiscount(String subscriptionExposedId) throws StripeException {
     return deleteDiscount(subscriptionExposedId, (RequestOptions) null);
   }
+
   /** Removes the currently applied discount on a subscription. */
   public Discount deleteDiscount(String subscriptionExposedId, RequestOptions options)
       throws StripeException {
@@ -386,6 +399,7 @@ public final class SubscriptionService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Discount.class);
   }
+
   /**
    * By default, returns a list of subscriptions that have not been canceled. In order to list
    * canceled subscriptions, specify {@code status=canceled}.
@@ -393,6 +407,7 @@ public final class SubscriptionService extends ApiService {
   public StripeCollection<Subscription> list(SubscriptionListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * By default, returns a list of subscriptions that have not been canceled. In order to list
    * canceled subscriptions, specify {@code status=canceled}.
@@ -400,6 +415,7 @@ public final class SubscriptionService extends ApiService {
   public StripeCollection<Subscription> list(RequestOptions options) throws StripeException {
     return list((SubscriptionListParams) null, options);
   }
+
   /**
    * By default, returns a list of subscriptions that have not been canceled. In order to list
    * canceled subscriptions, specify {@code status=canceled}.
@@ -407,6 +423,7 @@ public final class SubscriptionService extends ApiService {
   public StripeCollection<Subscription> list() throws StripeException {
     return list((SubscriptionListParams) null, (RequestOptions) null);
   }
+
   /**
    * By default, returns a list of subscriptions that have not been canceled. In order to list
    * canceled subscriptions, specify {@code status=canceled}.
@@ -423,6 +440,7 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Subscription>>() {}.getType());
   }
+
   /**
    * Creates a new subscription on an existing customer. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -440,6 +458,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription create(SubscriptionCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new subscription on an existing customer. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -457,6 +476,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription create(RequestOptions options) throws StripeException {
     return create((SubscriptionCreateParams) null, options);
   }
+
   /**
    * Creates a new subscription on an existing customer. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -474,6 +494,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription create() throws StripeException {
     return create((SubscriptionCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a new subscription on an existing customer. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -500,6 +521,7 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, Subscription.class);
   }
+
   /**
    * Search for subscriptions you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -512,6 +534,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for subscriptions you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -532,11 +555,13 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeSearchResult<Subscription>>() {}.getType());
   }
+
   /** Upgrade the billing_mode of an existing subscription. */
   public Subscription migrate(String subscription, SubscriptionMigrateParams params)
       throws StripeException {
     return migrate(subscription, params, (RequestOptions) null);
   }
+
   /** Upgrade the billing_mode of an existing subscription. */
   public Subscription migrate(
       String subscription, SubscriptionMigrateParams params, RequestOptions options)
@@ -552,6 +577,7 @@ public final class SubscriptionService extends ApiService {
             options);
     return this.request(request, Subscription.class);
   }
+
   /**
    * Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor
    * and creating prorations. If no resumption invoice is generated, the subscription becomes {@code
@@ -563,6 +589,7 @@ public final class SubscriptionService extends ApiService {
       throws StripeException {
     return resume(subscription, params, (RequestOptions) null);
   }
+
   /**
    * Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor
    * and creating prorations. If no resumption invoice is generated, the subscription becomes {@code
@@ -573,6 +600,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription resume(String subscription, RequestOptions options) throws StripeException {
     return resume(subscription, (SubscriptionResumeParams) null, options);
   }
+
   /**
    * Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor
    * and creating prorations. If no resumption invoice is generated, the subscription becomes {@code
@@ -583,6 +611,7 @@ public final class SubscriptionService extends ApiService {
   public Subscription resume(String subscription) throws StripeException {
     return resume(subscription, (SubscriptionResumeParams) null, (RequestOptions) null);
   }
+
   /**
    * Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor
    * and creating prorations. If no resumption invoice is generated, the subscription becomes {@code

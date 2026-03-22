@@ -29,6 +29,7 @@ public final class QuoteComputedUpfrontLineItemsService extends ApiService {
       String quote, QuoteComputedUpfrontLineItemsListParams params) throws StripeException {
     return list(quote, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a quote, there is an includable <a
    * href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items"><strong>computed.upfront.line_items</strong></a>
@@ -39,6 +40,7 @@ public final class QuoteComputedUpfrontLineItemsService extends ApiService {
       throws StripeException {
     return list(quote, (QuoteComputedUpfrontLineItemsListParams) null, options);
   }
+
   /**
    * When retrieving a quote, there is an includable <a
    * href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items"><strong>computed.upfront.line_items</strong></a>
@@ -48,6 +50,7 @@ public final class QuoteComputedUpfrontLineItemsService extends ApiService {
   public StripeCollection<LineItem> list(String quote) throws StripeException {
     return list(quote, (QuoteComputedUpfrontLineItemsListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving a quote, there is an includable <a
    * href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items"><strong>computed.upfront.line_items</strong></a>
