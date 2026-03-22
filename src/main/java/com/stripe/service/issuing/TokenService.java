@@ -25,6 +25,7 @@ public final class TokenService extends ApiService {
   public StripeCollection<Token> list(TokenListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Lists all Issuing {@code Token} objects for a given card. */
   public StripeCollection<Token> list(TokenListParams params, RequestOptions options)
       throws StripeException {
@@ -38,18 +39,22 @@ public final class TokenService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Token>>() {}.getType());
   }
+
   /** Retrieves an Issuing {@code Token} object. */
   public Token retrieve(String token, TokenRetrieveParams params) throws StripeException {
     return retrieve(token, params, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Token} object. */
   public Token retrieve(String token, RequestOptions options) throws StripeException {
     return retrieve(token, (TokenRetrieveParams) null, options);
   }
+
   /** Retrieves an Issuing {@code Token} object. */
   public Token retrieve(String token) throws StripeException {
     return retrieve(token, (TokenRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Token} object. */
   public Token retrieve(String token, TokenRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -63,10 +68,12 @@ public final class TokenService extends ApiService {
             options);
     return this.request(request, Token.class);
   }
+
   /** Attempts to update the specified Issuing {@code Token} object to the status specified. */
   public Token update(String token, TokenUpdateParams params) throws StripeException {
     return update(token, params, (RequestOptions) null);
   }
+
   /** Attempts to update the specified Issuing {@code Token} object to the status specified. */
   public Token update(String token, TokenUpdateParams params, RequestOptions options)
       throws StripeException {

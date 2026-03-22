@@ -29,14 +29,17 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of VerificationSessions. */
   public StripeCollection<VerificationSession> list(RequestOptions options) throws StripeException {
     return list((VerificationSessionListParams) null, options);
   }
+
   /** Returns a list of VerificationSessions. */
   public StripeCollection<VerificationSession> list() throws StripeException {
     return list((VerificationSessionListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of VerificationSessions. */
   public StripeCollection<VerificationSession> list(
       VerificationSessionListParams params, RequestOptions options) throws StripeException {
@@ -51,6 +54,7 @@ public final class VerificationSessionService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<VerificationSession>>() {}.getType());
   }
+
   /**
    * Creates a VerificationSession object.
    *
@@ -66,6 +70,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession create(VerificationSessionCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a VerificationSession object.
    *
@@ -81,6 +86,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession create(RequestOptions options) throws StripeException {
     return create((VerificationSessionCreateParams) null, options);
   }
+
   /**
    * Creates a VerificationSession object.
    *
@@ -96,6 +102,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession create() throws StripeException {
     return create((VerificationSessionCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a VerificationSession object.
    *
@@ -120,6 +127,7 @@ public final class VerificationSessionService extends ApiService {
             options);
     return this.request(request, VerificationSession.class);
   }
+
   /**
    * Retrieves the details of a VerificationSession that was previously created.
    *
@@ -130,6 +138,7 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return retrieve(session, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a VerificationSession that was previously created.
    *
@@ -140,6 +149,7 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return retrieve(session, (VerificationSessionRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of a VerificationSession that was previously created.
    *
@@ -149,6 +159,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession retrieve(String session) throws StripeException {
     return retrieve(session, (VerificationSessionRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a VerificationSession that was previously created.
    *
@@ -169,6 +180,7 @@ public final class VerificationSessionService extends ApiService {
             options);
     return this.request(request, VerificationSession.class);
   }
+
   /**
    * Updates a VerificationSession object.
    *
@@ -179,6 +191,7 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return update(session, params, (RequestOptions) null);
   }
+
   /**
    * Updates a VerificationSession object.
    *
@@ -188,6 +201,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession update(String session, RequestOptions options) throws StripeException {
     return update(session, (VerificationSessionUpdateParams) null, options);
   }
+
   /**
    * Updates a VerificationSession object.
    *
@@ -197,6 +211,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession update(String session) throws StripeException {
     return update(session, (VerificationSessionUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a VerificationSession object.
    *
@@ -217,6 +232,7 @@ public final class VerificationSessionService extends ApiService {
             options);
     return this.request(request, VerificationSession.class);
   }
+
   /**
    * A VerificationSession object can be canceled when it is in {@code requires_input} <a
    * href="https://stripe.com/docs/identity/how-sessions-work">status</a>.
@@ -228,6 +244,7 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return cancel(session, params, (RequestOptions) null);
   }
+
   /**
    * A VerificationSession object can be canceled when it is in {@code requires_input} <a
    * href="https://stripe.com/docs/identity/how-sessions-work">status</a>.
@@ -238,6 +255,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession cancel(String session, RequestOptions options) throws StripeException {
     return cancel(session, (VerificationSessionCancelParams) null, options);
   }
+
   /**
    * A VerificationSession object can be canceled when it is in {@code requires_input} <a
    * href="https://stripe.com/docs/identity/how-sessions-work">status</a>.
@@ -248,6 +266,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession cancel(String session) throws StripeException {
     return cancel(session, (VerificationSessionCancelParams) null, (RequestOptions) null);
   }
+
   /**
    * A VerificationSession object can be canceled when it is in {@code requires_input} <a
    * href="https://stripe.com/docs/identity/how-sessions-work">status</a>.
@@ -270,6 +289,7 @@ public final class VerificationSessionService extends ApiService {
             options);
     return this.request(request, VerificationSession.class);
   }
+
   /**
    * Redact a VerificationSession to remove all collected information from Stripe. This will redact
    * the VerificationSession and all objects related to it, including VerificationReports, Events,
@@ -295,6 +315,7 @@ public final class VerificationSessionService extends ApiService {
       throws StripeException {
     return redact(session, params, (RequestOptions) null);
   }
+
   /**
    * Redact a VerificationSession to remove all collected information from Stripe. This will redact
    * the VerificationSession and all objects related to it, including VerificationReports, Events,
@@ -319,6 +340,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession redact(String session, RequestOptions options) throws StripeException {
     return redact(session, (VerificationSessionRedactParams) null, options);
   }
+
   /**
    * Redact a VerificationSession to remove all collected information from Stripe. This will redact
    * the VerificationSession and all objects related to it, including VerificationReports, Events,
@@ -343,6 +365,7 @@ public final class VerificationSessionService extends ApiService {
   public VerificationSession redact(String session) throws StripeException {
     return redact(session, (VerificationSessionRedactParams) null, (RequestOptions) null);
   }
+
   /**
    * Redact a VerificationSession to remove all collected information from Stripe. This will redact
    * the VerificationSession and all objects related to it, including VerificationReports, Events,

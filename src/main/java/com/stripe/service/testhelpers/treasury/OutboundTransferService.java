@@ -28,6 +28,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return update(outboundTransfer, params, (RequestOptions) null);
   }
+
   /**
    * Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must
    * not be cancelable, and cannot be in the {@code canceled} or {@code failed} states.
@@ -48,6 +49,7 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, OutboundTransfer.class);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code failed} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -56,6 +58,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return fail(outboundTransfer, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code failed} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -64,6 +67,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return fail(outboundTransfer, (OutboundTransferFailParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code failed} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -71,6 +75,7 @@ public final class OutboundTransferService extends ApiService {
   public OutboundTransfer fail(String outboundTransfer) throws StripeException {
     return fail(outboundTransfer, (OutboundTransferFailParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code failed} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -91,6 +96,7 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, OutboundTransfer.class);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code posted} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -99,6 +105,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return post(outboundTransfer, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code posted} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -107,6 +114,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return post(outboundTransfer, (OutboundTransferPostParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code posted} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -114,6 +122,7 @@ public final class OutboundTransferService extends ApiService {
   public OutboundTransfer post(String outboundTransfer) throws StripeException {
     return post(outboundTransfer, (OutboundTransferPostParams) null, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code posted} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -134,6 +143,7 @@ public final class OutboundTransferService extends ApiService {
             options);
     return this.request(request, OutboundTransfer.class);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code returned} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -143,6 +153,7 @@ public final class OutboundTransferService extends ApiService {
       throws StripeException {
     return returnOutboundTransfer(outboundTransfer, params, (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code returned} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -152,6 +163,7 @@ public final class OutboundTransferService extends ApiService {
     return returnOutboundTransfer(
         outboundTransfer, (OutboundTransferReturnOutboundTransferParams) null, options);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code returned} status. The
    * OutboundTransfer must already be in the {@code processing} state.
@@ -162,6 +174,7 @@ public final class OutboundTransferService extends ApiService {
         (OutboundTransferReturnOutboundTransferParams) null,
         (RequestOptions) null);
   }
+
   /**
    * Transitions a test mode created OutboundTransfer to the {@code returned} status. The
    * OutboundTransfer must already be in the {@code processing} state.

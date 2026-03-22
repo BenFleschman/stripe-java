@@ -32,6 +32,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return list(id, params, (RequestOptions) null);
   }
+
   /**
    * You can see a list of the reversals belonging to a specific transfer. Note that the 10 most
    * recent reversals are always available by default on the transfer object. If you need more than
@@ -42,6 +43,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return list(id, (TransferReversalListParams) null, options);
   }
+
   /**
    * You can see a list of the reversals belonging to a specific transfer. Note that the 10 most
    * recent reversals are always available by default on the transfer object. If you need more than
@@ -51,6 +53,7 @@ public final class TransferReversalService extends ApiService {
   public StripeCollection<TransferReversal> list(String id) throws StripeException {
     return list(id, (TransferReversalListParams) null, (RequestOptions) null);
   }
+
   /**
    * You can see a list of the reversals belonging to a specific transfer. Note that the 10 most
    * recent reversals are always available by default on the transfer object. If you need more than
@@ -69,6 +72,7 @@ public final class TransferReversalService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<TransferReversal>>() {}.getType());
   }
+
   /**
    * When you create a new reversal, you must specify a transfer to create it on.
    *
@@ -83,6 +87,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return create(id, params, (RequestOptions) null);
   }
+
   /**
    * When you create a new reversal, you must specify a transfer to create it on.
    *
@@ -96,6 +101,7 @@ public final class TransferReversalService extends ApiService {
   public TransferReversal create(String id, RequestOptions options) throws StripeException {
     return create(id, (TransferReversalCreateParams) null, options);
   }
+
   /**
    * When you create a new reversal, you must specify a transfer to create it on.
    *
@@ -109,6 +115,7 @@ public final class TransferReversalService extends ApiService {
   public TransferReversal create(String id) throws StripeException {
     return create(id, (TransferReversalCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * When you create a new reversal, you must specify a transfer to create it on.
    *
@@ -132,6 +139,7 @@ public final class TransferReversalService extends ApiService {
             options);
     return this.request(request, TransferReversal.class);
   }
+
   /**
    * By default, you can see the 10 most recent reversals stored directly on the transfer object,
    * but you can also retrieve details about a specific reversal stored on the transfer.
@@ -140,6 +148,7 @@ public final class TransferReversalService extends ApiService {
       String transfer, String id, TransferReversalRetrieveParams params) throws StripeException {
     return retrieve(transfer, id, params, (RequestOptions) null);
   }
+
   /**
    * By default, you can see the 10 most recent reversals stored directly on the transfer object,
    * but you can also retrieve details about a specific reversal stored on the transfer.
@@ -148,6 +157,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return retrieve(transfer, id, (TransferReversalRetrieveParams) null, options);
   }
+
   /**
    * By default, you can see the 10 most recent reversals stored directly on the transfer object,
    * but you can also retrieve details about a specific reversal stored on the transfer.
@@ -155,6 +165,7 @@ public final class TransferReversalService extends ApiService {
   public TransferReversal retrieve(String transfer, String id) throws StripeException {
     return retrieve(transfer, id, (TransferReversalRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * By default, you can see the 10 most recent reversals stored directly on the transfer object,
    * but you can also retrieve details about a specific reversal stored on the transfer.
@@ -175,6 +186,7 @@ public final class TransferReversalService extends ApiService {
             options);
     return this.request(request, TransferReversal.class);
   }
+
   /**
    * Updates the specified reversal by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -185,6 +197,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return update(transfer, id, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified reversal by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -195,6 +208,7 @@ public final class TransferReversalService extends ApiService {
       throws StripeException {
     return update(transfer, id, (TransferReversalUpdateParams) null, options);
   }
+
   /**
    * Updates the specified reversal by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -204,6 +218,7 @@ public final class TransferReversalService extends ApiService {
   public TransferReversal update(String transfer, String id) throws StripeException {
     return update(transfer, id, (TransferReversalUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified reversal by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.

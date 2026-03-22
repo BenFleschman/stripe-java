@@ -26,6 +26,7 @@ public final class CreditReversalService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of CreditReversals. */
   public StripeCollection<CreditReversal> list(
       CreditReversalListParams params, RequestOptions options) throws StripeException {
@@ -39,10 +40,12 @@ public final class CreditReversalService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<CreditReversal>>() {}.getType());
   }
+
   /** Reverses a ReceivedCredit and creates a CreditReversal object. */
   public CreditReversal create(CreditReversalCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Reverses a ReceivedCredit and creates a CreditReversal object. */
   public CreditReversal create(CreditReversalCreateParams params, RequestOptions options)
       throws StripeException {
@@ -56,6 +59,7 @@ public final class CreditReversalService extends ApiService {
             options);
     return this.request(request, CreditReversal.class);
   }
+
   /**
    * Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID
    * from either the CreditReversal creation request or CreditReversal list.
@@ -64,6 +68,7 @@ public final class CreditReversalService extends ApiService {
       throws StripeException {
     return retrieve(creditReversal, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID
    * from either the CreditReversal creation request or CreditReversal list.
@@ -72,6 +77,7 @@ public final class CreditReversalService extends ApiService {
       throws StripeException {
     return retrieve(creditReversal, (CreditReversalRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID
    * from either the CreditReversal creation request or CreditReversal list.
@@ -79,6 +85,7 @@ public final class CreditReversalService extends ApiService {
   public CreditReversal retrieve(String creditReversal) throws StripeException {
     return retrieve(creditReversal, (CreditReversalRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID
    * from either the CreditReversal creation request or CreditReversal list.

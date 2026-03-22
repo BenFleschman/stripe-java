@@ -41,6 +41,7 @@ public final class AccountService extends ApiService {
   public Account delete(String account) throws StripeException {
     return delete(account, (RequestOptions) null);
   }
+
   /**
    * With <a href="https://stripe.com/connect">Connect</a>, you can delete accounts you manage.
    *
@@ -61,18 +62,22 @@ public final class AccountService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Account.class);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieve(String account, AccountRetrieveParams params) throws StripeException {
     return retrieve(account, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieve(String account, RequestOptions options) throws StripeException {
     return retrieve(account, (AccountRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieve(String account) throws StripeException {
     return retrieve(account, (AccountRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieve(String account, AccountRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -86,6 +91,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Updates a <a href="https://stripe.com/connect/accounts">connected account</a> by setting the
    * values of the parameters passed. Any parameters not provided are left unchanged.
@@ -110,6 +116,7 @@ public final class AccountService extends ApiService {
   public Account update(String account, AccountUpdateParams params) throws StripeException {
     return update(account, params, (RequestOptions) null);
   }
+
   /**
    * Updates a <a href="https://stripe.com/connect/accounts">connected account</a> by setting the
    * values of the parameters passed. Any parameters not provided are left unchanged.
@@ -134,6 +141,7 @@ public final class AccountService extends ApiService {
   public Account update(String account, RequestOptions options) throws StripeException {
     return update(account, (AccountUpdateParams) null, options);
   }
+
   /**
    * Updates a <a href="https://stripe.com/connect/accounts">connected account</a> by setting the
    * values of the parameters passed. Any parameters not provided are left unchanged.
@@ -158,6 +166,7 @@ public final class AccountService extends ApiService {
   public Account update(String account) throws StripeException {
     return update(account, (AccountUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a <a href="https://stripe.com/connect/accounts">connected account</a> by setting the
    * values of the parameters passed. Any parameters not provided are left unchanged.
@@ -191,18 +200,22 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieveCurrent(AccountRetrieveCurrentParams params) throws StripeException {
     return retrieveCurrent(params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieveCurrent(RequestOptions options) throws StripeException {
     return retrieveCurrent((AccountRetrieveCurrentParams) null, options);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieveCurrent() throws StripeException {
     return retrieveCurrent((AccountRetrieveCurrentParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an account. */
   public Account retrieveCurrent(AccountRetrieveCurrentParams params, RequestOptions options)
       throws StripeException {
@@ -216,6 +229,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * Returns a list of accounts connected to your platform via <a
    * href="https://stripe.com/docs/connect">Connect</a>. If you’re not a platform, the list is
@@ -224,6 +238,7 @@ public final class AccountService extends ApiService {
   public StripeCollection<Account> list(AccountListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of accounts connected to your platform via <a
    * href="https://stripe.com/docs/connect">Connect</a>. If you’re not a platform, the list is
@@ -232,6 +247,7 @@ public final class AccountService extends ApiService {
   public StripeCollection<Account> list(RequestOptions options) throws StripeException {
     return list((AccountListParams) null, options);
   }
+
   /**
    * Returns a list of accounts connected to your platform via <a
    * href="https://stripe.com/docs/connect">Connect</a>. If you’re not a platform, the list is
@@ -240,6 +256,7 @@ public final class AccountService extends ApiService {
   public StripeCollection<Account> list() throws StripeException {
     return list((AccountListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of accounts connected to your platform via <a
    * href="https://stripe.com/docs/connect">Connect</a>. If you’re not a platform, the list is
@@ -257,6 +274,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Account>>() {}.getType());
   }
+
   /**
    * With <a href="https://stripe.com/docs/connect">Connect</a>, you can create Stripe accounts for
    * your users. To do this, you’ll first need to <a
@@ -270,6 +288,7 @@ public final class AccountService extends ApiService {
   public Account create(AccountCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * With <a href="https://stripe.com/docs/connect">Connect</a>, you can create Stripe accounts for
    * your users. To do this, you’ll first need to <a
@@ -283,6 +302,7 @@ public final class AccountService extends ApiService {
   public Account create(RequestOptions options) throws StripeException {
     return create((AccountCreateParams) null, options);
   }
+
   /**
    * With <a href="https://stripe.com/docs/connect">Connect</a>, you can create Stripe accounts for
    * your users. To do this, you’ll first need to <a
@@ -296,6 +316,7 @@ public final class AccountService extends ApiService {
   public Account create() throws StripeException {
     return create((AccountCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * With <a href="https://stripe.com/docs/connect">Connect</a>, you can create Stripe accounts for
    * your users. To do this, you’ll first need to <a
@@ -317,6 +338,7 @@ public final class AccountService extends ApiService {
             options);
     return this.request(request, Account.class);
   }
+
   /**
    * With <a href="https://stripe.com/connect">Connect</a>, you can reject accounts that you have
    * flagged as suspicious.
@@ -328,6 +350,7 @@ public final class AccountService extends ApiService {
   public Account reject(String account, AccountRejectParams params) throws StripeException {
     return reject(account, params, (RequestOptions) null);
   }
+
   /**
    * With <a href="https://stripe.com/connect">Connect</a>, you can reject accounts that you have
    * flagged as suspicious.

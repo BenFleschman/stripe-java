@@ -29,14 +29,17 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of all PaymentMethods. */
   public StripeCollection<PaymentMethod> list(RequestOptions options) throws StripeException {
     return list((PaymentMethodListParams) null, options);
   }
+
   /** Returns a list of all PaymentMethods. */
   public StripeCollection<PaymentMethod> list() throws StripeException {
     return list((PaymentMethodListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of all PaymentMethods. */
   public StripeCollection<PaymentMethod> list(
       PaymentMethodListParams params, RequestOptions options) throws StripeException {
@@ -50,6 +53,7 @@ public final class PaymentMethodService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<PaymentMethod>>() {}.getType());
   }
+
   /**
    * Creates a PaymentMethod object. Read the <a
    * href="https://stripe.com/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
@@ -64,6 +68,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod create(PaymentMethodCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a PaymentMethod object. Read the <a
    * href="https://stripe.com/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
@@ -78,6 +83,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod create(RequestOptions options) throws StripeException {
     return create((PaymentMethodCreateParams) null, options);
   }
+
   /**
    * Creates a PaymentMethod object. Read the <a
    * href="https://stripe.com/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
@@ -92,6 +98,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod create() throws StripeException {
     return create((PaymentMethodCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a PaymentMethod object. Read the <a
    * href="https://stripe.com/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
@@ -115,6 +122,7 @@ public final class PaymentMethodService extends ApiService {
             options);
     return this.request(request, PaymentMethod.class);
   }
+
   /**
    * Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method
    * attached to a Customer, you should use <a
@@ -125,6 +133,7 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return retrieve(paymentMethod, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method
    * attached to a Customer, you should use <a
@@ -135,6 +144,7 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return retrieve(paymentMethod, (PaymentMethodRetrieveParams) null, options);
   }
+
   /**
    * Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method
    * attached to a Customer, you should use <a
@@ -144,6 +154,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod retrieve(String paymentMethod) throws StripeException {
     return retrieve(paymentMethod, (PaymentMethodRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method
    * attached to a Customer, you should use <a
@@ -163,6 +174,7 @@ public final class PaymentMethodService extends ApiService {
             options);
     return this.request(request, PaymentMethod.class);
   }
+
   /**
    * Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.
    */
@@ -170,18 +182,21 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return update(paymentMethod, params, (RequestOptions) null);
   }
+
   /**
    * Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.
    */
   public PaymentMethod update(String paymentMethod, RequestOptions options) throws StripeException {
     return update(paymentMethod, (PaymentMethodUpdateParams) null, options);
   }
+
   /**
    * Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.
    */
   public PaymentMethod update(String paymentMethod) throws StripeException {
     return update(paymentMethod, (PaymentMethodUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.
    */
@@ -198,6 +213,7 @@ public final class PaymentMethodService extends ApiService {
             options);
     return this.request(request, PaymentMethod.class);
   }
+
   /**
    * Attaches a PaymentMethod object to a Customer.
    *
@@ -219,6 +235,7 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return attach(paymentMethod, params, (RequestOptions) null);
   }
+
   /**
    * Attaches a PaymentMethod object to a Customer.
    *
@@ -239,6 +256,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod attach(String paymentMethod, RequestOptions options) throws StripeException {
     return attach(paymentMethod, (PaymentMethodAttachParams) null, options);
   }
+
   /**
    * Attaches a PaymentMethod object to a Customer.
    *
@@ -259,6 +277,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod attach(String paymentMethod) throws StripeException {
     return attach(paymentMethod, (PaymentMethodAttachParams) null, (RequestOptions) null);
   }
+
   /**
    * Attaches a PaymentMethod object to a Customer.
    *
@@ -290,6 +309,7 @@ public final class PaymentMethodService extends ApiService {
             options);
     return this.request(request, PaymentMethod.class);
   }
+
   /**
    * Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no
    * longer be used for a payment or re-attached to a Customer.
@@ -298,6 +318,7 @@ public final class PaymentMethodService extends ApiService {
       throws StripeException {
     return detach(paymentMethod, params, (RequestOptions) null);
   }
+
   /**
    * Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no
    * longer be used for a payment or re-attached to a Customer.
@@ -305,6 +326,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod detach(String paymentMethod, RequestOptions options) throws StripeException {
     return detach(paymentMethod, (PaymentMethodDetachParams) null, options);
   }
+
   /**
    * Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no
    * longer be used for a payment or re-attached to a Customer.
@@ -312,6 +334,7 @@ public final class PaymentMethodService extends ApiService {
   public PaymentMethod detach(String paymentMethod) throws StripeException {
     return detach(paymentMethod, (PaymentMethodDetachParams) null, (RequestOptions) null);
   }
+
   /**
    * Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no
    * longer be used for a payment or re-attached to a Customer.

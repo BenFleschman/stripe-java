@@ -22,6 +22,7 @@ public final class MeterEventAdjustmentService extends ApiService {
       throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a billing meter event adjustment. */
   public MeterEventAdjustment create(
       MeterEventAdjustmentCreateParams params, RequestOptions options) throws StripeException {

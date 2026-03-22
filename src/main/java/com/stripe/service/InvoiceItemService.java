@@ -29,6 +29,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem delete(String invoiceitem) throws StripeException {
     return delete(invoiceitem, (RequestOptions) null);
   }
+
   /**
    * Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible
    * when they’re not attached to invoices, or if it’s attached to a draft invoice.
@@ -39,19 +40,23 @@ public final class InvoiceItemService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, InvoiceItem.class);
   }
+
   /** Retrieves the invoice item with the given ID. */
   public InvoiceItem retrieve(String invoiceitem, InvoiceItemRetrieveParams params)
       throws StripeException {
     return retrieve(invoiceitem, params, (RequestOptions) null);
   }
+
   /** Retrieves the invoice item with the given ID. */
   public InvoiceItem retrieve(String invoiceitem, RequestOptions options) throws StripeException {
     return retrieve(invoiceitem, (InvoiceItemRetrieveParams) null, options);
   }
+
   /** Retrieves the invoice item with the given ID. */
   public InvoiceItem retrieve(String invoiceitem) throws StripeException {
     return retrieve(invoiceitem, (InvoiceItemRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the invoice item with the given ID. */
   public InvoiceItem retrieve(
       String invoiceitem, InvoiceItemRetrieveParams params, RequestOptions options)
@@ -66,6 +71,7 @@ public final class InvoiceItemService extends ApiService {
             options);
     return this.request(request, InvoiceItem.class);
   }
+
   /**
    * Updates the amount or description of an invoice item on an upcoming invoice. Updating an
    * invoice item is only possible before the invoice it’s attached to is closed.
@@ -74,6 +80,7 @@ public final class InvoiceItemService extends ApiService {
       throws StripeException {
     return update(invoiceitem, params, (RequestOptions) null);
   }
+
   /**
    * Updates the amount or description of an invoice item on an upcoming invoice. Updating an
    * invoice item is only possible before the invoice it’s attached to is closed.
@@ -81,6 +88,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem update(String invoiceitem, RequestOptions options) throws StripeException {
     return update(invoiceitem, (InvoiceItemUpdateParams) null, options);
   }
+
   /**
    * Updates the amount or description of an invoice item on an upcoming invoice. Updating an
    * invoice item is only possible before the invoice it’s attached to is closed.
@@ -88,6 +96,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem update(String invoiceitem) throws StripeException {
     return update(invoiceitem, (InvoiceItemUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the amount or description of an invoice item on an upcoming invoice. Updating an
    * invoice item is only possible before the invoice it’s attached to is closed.
@@ -105,6 +114,7 @@ public final class InvoiceItemService extends ApiService {
             options);
     return this.request(request, InvoiceItem.class);
   }
+
   /**
    * Returns a list of your invoice items. Invoice items are returned sorted by creation date, with
    * the most recently created invoice items appearing first.
@@ -112,6 +122,7 @@ public final class InvoiceItemService extends ApiService {
   public StripeCollection<InvoiceItem> list(InvoiceItemListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your invoice items. Invoice items are returned sorted by creation date, with
    * the most recently created invoice items appearing first.
@@ -119,6 +130,7 @@ public final class InvoiceItemService extends ApiService {
   public StripeCollection<InvoiceItem> list(RequestOptions options) throws StripeException {
     return list((InvoiceItemListParams) null, options);
   }
+
   /**
    * Returns a list of your invoice items. Invoice items are returned sorted by creation date, with
    * the most recently created invoice items appearing first.
@@ -126,6 +138,7 @@ public final class InvoiceItemService extends ApiService {
   public StripeCollection<InvoiceItem> list() throws StripeException {
     return list((InvoiceItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your invoice items. Invoice items are returned sorted by creation date, with
    * the most recently created invoice items appearing first.
@@ -142,6 +155,7 @@ public final class InvoiceItemService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<InvoiceItem>>() {}.getType());
   }
+
   /**
    * Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is
    * specified, the item will be on the next invoice created for the customer specified.
@@ -149,6 +163,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem create(InvoiceItemCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is
    * specified, the item will be on the next invoice created for the customer specified.
@@ -156,6 +171,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem create(RequestOptions options) throws StripeException {
     return create((InvoiceItemCreateParams) null, options);
   }
+
   /**
    * Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is
    * specified, the item will be on the next invoice created for the customer specified.
@@ -163,6 +179,7 @@ public final class InvoiceItemService extends ApiService {
   public InvoiceItem create() throws StripeException {
     return create((InvoiceItemCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is
    * specified, the item will be on the next invoice created for the customer specified.

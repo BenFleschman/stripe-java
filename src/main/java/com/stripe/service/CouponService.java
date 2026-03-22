@@ -31,6 +31,7 @@ public final class CouponService extends ApiService {
   public Coupon delete(String coupon) throws StripeException {
     return delete(coupon, (RequestOptions) null);
   }
+
   /**
    * You can delete coupons via the <a href="https://dashboard.stripe.com/coupons">coupon
    * management</a> page of the Stripe dashboard. However, deleting a coupon does not affect any
@@ -43,18 +44,22 @@ public final class CouponService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Coupon.class);
   }
+
   /** Retrieves the coupon with the given ID. */
   public Coupon retrieve(String coupon, CouponRetrieveParams params) throws StripeException {
     return retrieve(coupon, params, (RequestOptions) null);
   }
+
   /** Retrieves the coupon with the given ID. */
   public Coupon retrieve(String coupon, RequestOptions options) throws StripeException {
     return retrieve(coupon, (CouponRetrieveParams) null, options);
   }
+
   /** Retrieves the coupon with the given ID. */
   public Coupon retrieve(String coupon) throws StripeException {
     return retrieve(coupon, (CouponRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the coupon with the given ID. */
   public Coupon retrieve(String coupon, CouponRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -68,6 +73,7 @@ public final class CouponService extends ApiService {
             options);
     return this.request(request, Coupon.class);
   }
+
   /**
    * Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by
    * design, not editable.
@@ -75,6 +81,7 @@ public final class CouponService extends ApiService {
   public Coupon update(String coupon, CouponUpdateParams params) throws StripeException {
     return update(coupon, params, (RequestOptions) null);
   }
+
   /**
    * Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by
    * design, not editable.
@@ -82,6 +89,7 @@ public final class CouponService extends ApiService {
   public Coupon update(String coupon, RequestOptions options) throws StripeException {
     return update(coupon, (CouponUpdateParams) null, options);
   }
+
   /**
    * Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by
    * design, not editable.
@@ -89,6 +97,7 @@ public final class CouponService extends ApiService {
   public Coupon update(String coupon) throws StripeException {
     return update(coupon, (CouponUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by
    * design, not editable.
@@ -105,18 +114,22 @@ public final class CouponService extends ApiService {
             options);
     return this.request(request, Coupon.class);
   }
+
   /** Returns a list of your coupons. */
   public StripeCollection<Coupon> list(CouponListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your coupons. */
   public StripeCollection<Coupon> list(RequestOptions options) throws StripeException {
     return list((CouponListParams) null, options);
   }
+
   /** Returns a list of your coupons. */
   public StripeCollection<Coupon> list() throws StripeException {
     return list((CouponListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your coupons. */
   public StripeCollection<Coupon> list(CouponListParams params, RequestOptions options)
       throws StripeException {
@@ -130,6 +143,7 @@ public final class CouponService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Coupon>>() {}.getType());
   }
+
   /**
    * You can create coupons easily via the <a href="https://dashboard.stripe.com/coupons">coupon
    * management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if
@@ -144,6 +158,7 @@ public final class CouponService extends ApiService {
   public Coupon create(CouponCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * You can create coupons easily via the <a href="https://dashboard.stripe.com/coupons">coupon
    * management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if
@@ -158,6 +173,7 @@ public final class CouponService extends ApiService {
   public Coupon create(RequestOptions options) throws StripeException {
     return create((CouponCreateParams) null, options);
   }
+
   /**
    * You can create coupons easily via the <a href="https://dashboard.stripe.com/coupons">coupon
    * management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if
@@ -172,6 +188,7 @@ public final class CouponService extends ApiService {
   public Coupon create() throws StripeException {
     return create((CouponCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * You can create coupons easily via the <a href="https://dashboard.stripe.com/coupons">coupon
    * management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if

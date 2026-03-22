@@ -7,7 +7,9 @@ import java.lang.reflect.Type;
 import java.util.Map;
 
 public interface StripeResponseGetter {
-  /** @deprecated Use {@link #request(ApiRequest, Type)} instead. */
+  /**
+   * @deprecated Use {@link #request(ApiRequest, Type)} instead.
+   */
   @SuppressWarnings("TypeParameterUnusedInFormals")
   @Deprecated
   <T extends StripeObject> T request(
@@ -31,9 +33,12 @@ public interface StripeResponseGetter {
         typeToken,
         request.getOptions(),
         request.getApiMode());
-  };
+  }
+  ;
 
-  /** @deprecated Use {@link #requestStream(ApiRequest)} instead. */
+  /**
+   * @deprecated Use {@link #requestStream(ApiRequest)} instead.
+   */
   @SuppressWarnings("TypeParameterUnusedInFormals")
   @Deprecated
   InputStream requestStream(
@@ -53,12 +58,14 @@ public interface StripeResponseGetter {
         request.getParams(),
         request.getOptions(),
         request.getApiMode());
-  };
+  }
+  ;
 
   default StripeResponse rawRequest(RawApiRequest request) throws StripeException {
     throw new UnsupportedOperationException(
         "rawRequest is unimplemented for this StripeResponseGetter");
-  };
+  }
+  ;
 
   /**
    * This method should e.g. throws an ApiKeyMissingError if a proper API Key cannot be determined

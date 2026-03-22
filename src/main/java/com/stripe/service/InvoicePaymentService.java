@@ -29,6 +29,7 @@ public final class InvoicePaymentService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * When retrieving an invoice, there is an includable payments property containing the first
    * handful of those items. There is also a URL where you can retrieve the full (paginated) list of
@@ -37,6 +38,7 @@ public final class InvoicePaymentService extends ApiService {
   public StripeCollection<InvoicePayment> list(RequestOptions options) throws StripeException {
     return list((InvoicePaymentListParams) null, options);
   }
+
   /**
    * When retrieving an invoice, there is an includable payments property containing the first
    * handful of those items. There is also a URL where you can retrieve the full (paginated) list of
@@ -45,6 +47,7 @@ public final class InvoicePaymentService extends ApiService {
   public StripeCollection<InvoicePayment> list() throws StripeException {
     return list((InvoicePaymentListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving an invoice, there is an includable payments property containing the first
    * handful of those items. There is also a URL where you can retrieve the full (paginated) list of
@@ -62,20 +65,24 @@ public final class InvoicePaymentService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<InvoicePayment>>() {}.getType());
   }
+
   /** Retrieves the invoice payment with the given ID. */
   public InvoicePayment retrieve(String invoicePayment, InvoicePaymentRetrieveParams params)
       throws StripeException {
     return retrieve(invoicePayment, params, (RequestOptions) null);
   }
+
   /** Retrieves the invoice payment with the given ID. */
   public InvoicePayment retrieve(String invoicePayment, RequestOptions options)
       throws StripeException {
     return retrieve(invoicePayment, (InvoicePaymentRetrieveParams) null, options);
   }
+
   /** Retrieves the invoice payment with the given ID. */
   public InvoicePayment retrieve(String invoicePayment) throws StripeException {
     return retrieve(invoicePayment, (InvoicePaymentRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the invoice payment with the given ID. */
   public InvoicePayment retrieve(
       String invoicePayment, InvoicePaymentRetrieveParams params, RequestOptions options)

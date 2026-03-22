@@ -24,6 +24,7 @@ public final class MeterEventSummaryService extends ApiService {
       throws StripeException {
     return list(id, params, (RequestOptions) null);
   }
+
   /** Retrieve a list of billing meter event summaries. */
   public StripeCollection<MeterEventSummary> list(
       String id, MeterEventSummaryListParams params, RequestOptions options)

@@ -26,14 +26,17 @@ public final class RegistrationService extends ApiService {
   public StripeCollection<Registration> list(RegistrationListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Tax {@code Registration} objects. */
   public StripeCollection<Registration> list(RequestOptions options) throws StripeException {
     return list((RegistrationListParams) null, options);
   }
+
   /** Returns a list of Tax {@code Registration} objects. */
   public StripeCollection<Registration> list() throws StripeException {
     return list((RegistrationListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of Tax {@code Registration} objects. */
   public StripeCollection<Registration> list(RegistrationListParams params, RequestOptions options)
       throws StripeException {
@@ -47,10 +50,12 @@ public final class RegistrationService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Registration>>() {}.getType());
   }
+
   /** Creates a new Tax {@code Registration} object. */
   public Registration create(RegistrationCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new Tax {@code Registration} object. */
   public Registration create(RegistrationCreateParams params, RequestOptions options)
       throws StripeException {
@@ -64,19 +69,23 @@ public final class RegistrationService extends ApiService {
             options);
     return this.request(request, Registration.class);
   }
+
   /** Returns a Tax {@code Registration} object. */
   public Registration retrieve(String id, RegistrationRetrieveParams params)
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Returns a Tax {@code Registration} object. */
   public Registration retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (RegistrationRetrieveParams) null, options);
   }
+
   /** Returns a Tax {@code Registration} object. */
   public Registration retrieve(String id) throws StripeException {
     return retrieve(id, (RegistrationRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Returns a Tax {@code Registration} object. */
   public Registration retrieve(String id, RegistrationRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -90,6 +99,7 @@ public final class RegistrationService extends ApiService {
             options);
     return this.request(request, Registration.class);
   }
+
   /**
    * Updates an existing Tax {@code Registration} object.
    *
@@ -99,6 +109,7 @@ public final class RegistrationService extends ApiService {
   public Registration update(String id, RegistrationUpdateParams params) throws StripeException {
     return update(id, params, (RequestOptions) null);
   }
+
   /**
    * Updates an existing Tax {@code Registration} object.
    *
@@ -108,6 +119,7 @@ public final class RegistrationService extends ApiService {
   public Registration update(String id, RequestOptions options) throws StripeException {
     return update(id, (RegistrationUpdateParams) null, options);
   }
+
   /**
    * Updates an existing Tax {@code Registration} object.
    *
@@ -117,6 +129,7 @@ public final class RegistrationService extends ApiService {
   public Registration update(String id) throws StripeException {
     return update(id, (RegistrationUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates an existing Tax {@code Registration} object.
    *

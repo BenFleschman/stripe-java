@@ -28,6 +28,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
       String customer, CustomerCashBalanceTransactionListParams params) throws StripeException {
     return list(customer, params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that modified the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -36,6 +37,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
       String customer, RequestOptions options) throws StripeException {
     return list(customer, (CustomerCashBalanceTransactionListParams) null, options);
   }
+
   /**
    * Returns a list of transactions that modified the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -44,6 +46,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
       throws StripeException {
     return list(customer, (CustomerCashBalanceTransactionListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that modified the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -64,6 +67,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<CustomerCashBalanceTransaction>>() {}.getType());
   }
+
   /**
    * Retrieves a specific cash balance transaction, which updated the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -73,6 +77,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
       throws StripeException {
     return retrieve(customer, transaction, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves a specific cash balance transaction, which updated the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -82,6 +87,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
     return retrieve(
         customer, transaction, (CustomerCashBalanceTransactionRetrieveParams) null, options);
   }
+
   /**
    * Retrieves a specific cash balance transaction, which updated the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.
@@ -94,6 +100,7 @@ public final class CustomerCashBalanceTransactionService extends ApiService {
         (CustomerCashBalanceTransactionRetrieveParams) null,
         (RequestOptions) null);
   }
+
   /**
    * Retrieves a specific cash balance transaction, which updated the customer’s <a
    * href="https://stripe.com/docs/payments/customer-balance">cash balance</a>.

@@ -25,6 +25,7 @@ public final class ActiveEntitlementService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Retrieve a list of active entitlements for a customer. */
   public StripeCollection<ActiveEntitlement> list(
       ActiveEntitlementListParams params, RequestOptions options) throws StripeException {
@@ -38,19 +39,23 @@ public final class ActiveEntitlementService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ActiveEntitlement>>() {}.getType());
   }
+
   /** Retrieve an active entitlement. */
   public ActiveEntitlement retrieve(String id, ActiveEntitlementRetrieveParams params)
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieve an active entitlement. */
   public ActiveEntitlement retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (ActiveEntitlementRetrieveParams) null, options);
   }
+
   /** Retrieve an active entitlement. */
   public ActiveEntitlement retrieve(String id) throws StripeException {
     return retrieve(id, (ActiveEntitlementRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieve an active entitlement. */
   public ActiveEntitlement retrieve(
       String id, ActiveEntitlementRetrieveParams params, RequestOptions options)

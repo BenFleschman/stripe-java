@@ -24,14 +24,17 @@ public final class ReportTypeService extends ApiService {
   public StripeCollection<ReportType> list(ReportTypeListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a full list of Report Types. */
   public StripeCollection<ReportType> list(RequestOptions options) throws StripeException {
     return list((ReportTypeListParams) null, options);
   }
+
   /** Returns a full list of Report Types. */
   public StripeCollection<ReportType> list() throws StripeException {
     return list((ReportTypeListParams) null, (RequestOptions) null);
   }
+
   /** Returns a full list of Report Types. */
   public StripeCollection<ReportType> list(ReportTypeListParams params, RequestOptions options)
       throws StripeException {
@@ -45,6 +48,7 @@ public final class ReportTypeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ReportType>>() {}.getType());
   }
+
   /**
    * Retrieves the details of a Report Type. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)
@@ -53,6 +57,7 @@ public final class ReportTypeService extends ApiService {
       throws StripeException {
     return retrieve(reportType, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a Report Type. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)
@@ -60,6 +65,7 @@ public final class ReportTypeService extends ApiService {
   public ReportType retrieve(String reportType, RequestOptions options) throws StripeException {
     return retrieve(reportType, (ReportTypeRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of a Report Type. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)
@@ -67,6 +73,7 @@ public final class ReportTypeService extends ApiService {
   public ReportType retrieve(String reportType) throws StripeException {
     return retrieve(reportType, (ReportTypeRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a Report Type. (Certain report types require a <a
    * href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)

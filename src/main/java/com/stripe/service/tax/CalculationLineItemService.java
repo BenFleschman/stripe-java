@@ -27,6 +27,7 @@ public final class CalculationLineItemService extends ApiService {
       String calculation, CalculationLineItemListParams params) throws StripeException {
     return list(calculation, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t
    * expired.
@@ -35,6 +36,7 @@ public final class CalculationLineItemService extends ApiService {
       throws StripeException {
     return list(calculation, (CalculationLineItemListParams) null, options);
   }
+
   /**
    * Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t
    * expired.
@@ -42,6 +44,7 @@ public final class CalculationLineItemService extends ApiService {
   public StripeCollection<CalculationLineItem> list(String calculation) throws StripeException {
     return list(calculation, (CalculationLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t
    * expired.

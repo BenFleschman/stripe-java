@@ -25,14 +25,17 @@ public final class EarlyFraudWarningService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of early fraud warnings. */
   public StripeCollection<EarlyFraudWarning> list(RequestOptions options) throws StripeException {
     return list((EarlyFraudWarningListParams) null, options);
   }
+
   /** Returns a list of early fraud warnings. */
   public StripeCollection<EarlyFraudWarning> list() throws StripeException {
     return list((EarlyFraudWarningListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of early fraud warnings. */
   public StripeCollection<EarlyFraudWarning> list(
       EarlyFraudWarningListParams params, RequestOptions options) throws StripeException {
@@ -46,6 +49,7 @@ public final class EarlyFraudWarningService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<EarlyFraudWarning>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an early fraud warning that has previously been created.
    *
@@ -56,6 +60,7 @@ public final class EarlyFraudWarningService extends ApiService {
       String earlyFraudWarning, EarlyFraudWarningRetrieveParams params) throws StripeException {
     return retrieve(earlyFraudWarning, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an early fraud warning that has previously been created.
    *
@@ -66,6 +71,7 @@ public final class EarlyFraudWarningService extends ApiService {
       throws StripeException {
     return retrieve(earlyFraudWarning, (EarlyFraudWarningRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an early fraud warning that has previously been created.
    *
@@ -76,6 +82,7 @@ public final class EarlyFraudWarningService extends ApiService {
     return retrieve(
         earlyFraudWarning, (EarlyFraudWarningRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an early fraud warning that has previously been created.
    *

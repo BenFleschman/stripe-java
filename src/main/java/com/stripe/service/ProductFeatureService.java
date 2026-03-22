@@ -25,6 +25,7 @@ public final class ProductFeatureService extends ApiService {
   public ProductFeature delete(String product, String id) throws StripeException {
     return delete(product, id, (RequestOptions) null);
   }
+
   /** Deletes the feature attachment to a product. */
   public ProductFeature delete(String product, String id, RequestOptions options)
       throws StripeException {
@@ -36,20 +37,24 @@ public final class ProductFeatureService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, ProductFeature.class);
   }
+
   /** Retrieves a product_feature, which represents a feature attachment to a product. */
   public ProductFeature retrieve(String product, String id, ProductFeatureRetrieveParams params)
       throws StripeException {
     return retrieve(product, id, params, (RequestOptions) null);
   }
+
   /** Retrieves a product_feature, which represents a feature attachment to a product. */
   public ProductFeature retrieve(String product, String id, RequestOptions options)
       throws StripeException {
     return retrieve(product, id, (ProductFeatureRetrieveParams) null, options);
   }
+
   /** Retrieves a product_feature, which represents a feature attachment to a product. */
   public ProductFeature retrieve(String product, String id) throws StripeException {
     return retrieve(product, id, (ProductFeatureRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a product_feature, which represents a feature attachment to a product. */
   public ProductFeature retrieve(
       String product, String id, ProductFeatureRetrieveParams params, RequestOptions options)
@@ -67,20 +72,24 @@ public final class ProductFeatureService extends ApiService {
             options);
     return this.request(request, ProductFeature.class);
   }
+
   /** Retrieve a list of features for a product. */
   public StripeCollection<ProductFeature> list(String product, ProductFeatureListParams params)
       throws StripeException {
     return list(product, params, (RequestOptions) null);
   }
+
   /** Retrieve a list of features for a product. */
   public StripeCollection<ProductFeature> list(String product, RequestOptions options)
       throws StripeException {
     return list(product, (ProductFeatureListParams) null, options);
   }
+
   /** Retrieve a list of features for a product. */
   public StripeCollection<ProductFeature> list(String product) throws StripeException {
     return list(product, (ProductFeatureListParams) null, (RequestOptions) null);
   }
+
   /** Retrieve a list of features for a product. */
   public StripeCollection<ProductFeature> list(
       String product, ProductFeatureListParams params, RequestOptions options)
@@ -95,11 +104,13 @@ public final class ProductFeatureService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ProductFeature>>() {}.getType());
   }
+
   /** Creates a product_feature, which represents a feature attachment to a product. */
   public ProductFeature create(String product, ProductFeatureCreateParams params)
       throws StripeException {
     return create(product, params, (RequestOptions) null);
   }
+
   /** Creates a product_feature, which represents a feature attachment to a product. */
   public ProductFeature create(
       String product, ProductFeatureCreateParams params, RequestOptions options)

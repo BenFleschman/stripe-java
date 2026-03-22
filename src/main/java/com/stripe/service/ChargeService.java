@@ -32,6 +32,7 @@ public final class ChargeService extends ApiService {
   public StripeCollection<Charge> list(ChargeListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of charges you’ve previously created. The charges are returned in sorted order,
    * with the most recent charges appearing first.
@@ -39,6 +40,7 @@ public final class ChargeService extends ApiService {
   public StripeCollection<Charge> list(RequestOptions options) throws StripeException {
     return list((ChargeListParams) null, options);
   }
+
   /**
    * Returns a list of charges you’ve previously created. The charges are returned in sorted order,
    * with the most recent charges appearing first.
@@ -46,6 +48,7 @@ public final class ChargeService extends ApiService {
   public StripeCollection<Charge> list() throws StripeException {
     return list((ChargeListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of charges you’ve previously created. The charges are returned in sorted order,
    * with the most recent charges appearing first.
@@ -62,6 +65,7 @@ public final class ChargeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Charge>>() {}.getType());
   }
+
   /**
    * This method is no longer recommended—use the <a
    * href="https://stripe.com/docs/api/payment_intents">Payment Intents API</a> to initiate a new
@@ -71,6 +75,7 @@ public final class ChargeService extends ApiService {
   public Charge create(ChargeCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * This method is no longer recommended—use the <a
    * href="https://stripe.com/docs/api/payment_intents">Payment Intents API</a> to initiate a new
@@ -80,6 +85,7 @@ public final class ChargeService extends ApiService {
   public Charge create(RequestOptions options) throws StripeException {
     return create((ChargeCreateParams) null, options);
   }
+
   /**
    * This method is no longer recommended—use the <a
    * href="https://stripe.com/docs/api/payment_intents">Payment Intents API</a> to initiate a new
@@ -89,6 +95,7 @@ public final class ChargeService extends ApiService {
   public Charge create() throws StripeException {
     return create((ChargeCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * This method is no longer recommended—use the <a
    * href="https://stripe.com/docs/api/payment_intents">Payment Intents API</a> to initiate a new
@@ -106,6 +113,7 @@ public final class ChargeService extends ApiService {
             options);
     return this.request(request, Charge.class);
   }
+
   /**
    * Retrieves the details of a charge that has previously been created. Supply the unique charge ID
    * that was returned from your previous request, and Stripe will return the corresponding charge
@@ -114,6 +122,7 @@ public final class ChargeService extends ApiService {
   public Charge retrieve(String charge, ChargeRetrieveParams params) throws StripeException {
     return retrieve(charge, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a charge that has previously been created. Supply the unique charge ID
    * that was returned from your previous request, and Stripe will return the corresponding charge
@@ -122,6 +131,7 @@ public final class ChargeService extends ApiService {
   public Charge retrieve(String charge, RequestOptions options) throws StripeException {
     return retrieve(charge, (ChargeRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of a charge that has previously been created. Supply the unique charge ID
    * that was returned from your previous request, and Stripe will return the corresponding charge
@@ -130,6 +140,7 @@ public final class ChargeService extends ApiService {
   public Charge retrieve(String charge) throws StripeException {
     return retrieve(charge, (ChargeRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of a charge that has previously been created. Supply the unique charge ID
    * that was returned from your previous request, and Stripe will return the corresponding charge
@@ -147,6 +158,7 @@ public final class ChargeService extends ApiService {
             options);
     return this.request(request, Charge.class);
   }
+
   /**
    * Updates the specified charge by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -154,6 +166,7 @@ public final class ChargeService extends ApiService {
   public Charge update(String charge, ChargeUpdateParams params) throws StripeException {
     return update(charge, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified charge by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -161,6 +174,7 @@ public final class ChargeService extends ApiService {
   public Charge update(String charge, RequestOptions options) throws StripeException {
     return update(charge, (ChargeUpdateParams) null, options);
   }
+
   /**
    * Updates the specified charge by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -168,6 +182,7 @@ public final class ChargeService extends ApiService {
   public Charge update(String charge) throws StripeException {
     return update(charge, (ChargeUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified charge by setting the values of the parameters passed. Any parameters not
    * provided will be left unchanged.
@@ -184,6 +199,7 @@ public final class ChargeService extends ApiService {
             options);
     return this.request(request, Charge.class);
   }
+
   /**
    * Search for charges you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -195,6 +211,7 @@ public final class ChargeService extends ApiService {
   public StripeSearchResult<Charge> search(ChargeSearchParams params) throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for charges you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -215,6 +232,7 @@ public final class ChargeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeSearchResult<Charge>>() {}.getType());
   }
+
   /**
    * Capture the payment of an existing, uncaptured charge that was created with the {@code capture}
    * option set to false.
@@ -229,6 +247,7 @@ public final class ChargeService extends ApiService {
   public Charge capture(String charge, ChargeCaptureParams params) throws StripeException {
     return capture(charge, params, (RequestOptions) null);
   }
+
   /**
    * Capture the payment of an existing, uncaptured charge that was created with the {@code capture}
    * option set to false.
@@ -243,6 +262,7 @@ public final class ChargeService extends ApiService {
   public Charge capture(String charge, RequestOptions options) throws StripeException {
     return capture(charge, (ChargeCaptureParams) null, options);
   }
+
   /**
    * Capture the payment of an existing, uncaptured charge that was created with the {@code capture}
    * option set to false.
@@ -257,6 +277,7 @@ public final class ChargeService extends ApiService {
   public Charge capture(String charge) throws StripeException {
     return capture(charge, (ChargeCaptureParams) null, (RequestOptions) null);
   }
+
   /**
    * Capture the payment of an existing, uncaptured charge that was created with the {@code capture}
    * option set to false.

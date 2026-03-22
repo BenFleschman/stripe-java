@@ -28,6 +28,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return activate(personalizationDesign, params, (RequestOptions) null);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * active}.
@@ -36,6 +37,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return activate(personalizationDesign, (PersonalizationDesignActivateParams) null, options);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * active}.
@@ -44,6 +46,7 @@ public final class PersonalizationDesignService extends ApiService {
     return activate(
         personalizationDesign, (PersonalizationDesignActivateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * active}.
@@ -66,6 +69,7 @@ public final class PersonalizationDesignService extends ApiService {
             options);
     return this.request(request, PersonalizationDesign.class);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * inactive}.
@@ -75,6 +79,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return deactivate(personalizationDesign, params, (RequestOptions) null);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * inactive}.
@@ -83,6 +88,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return deactivate(personalizationDesign, (PersonalizationDesignDeactivateParams) null, options);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * inactive}.
@@ -91,6 +97,7 @@ public final class PersonalizationDesignService extends ApiService {
     return deactivate(
         personalizationDesign, (PersonalizationDesignDeactivateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * inactive}.
@@ -113,6 +120,7 @@ public final class PersonalizationDesignService extends ApiService {
             options);
     return this.request(request, PersonalizationDesign.class);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * rejected}.
@@ -122,6 +130,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return reject(personalizationDesign, params, (RequestOptions) null);
   }
+
   /**
    * Updates the {@code status} of the specified testmode personalization design object to {@code
    * rejected}.

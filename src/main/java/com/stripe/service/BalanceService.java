@@ -26,6 +26,7 @@ public final class BalanceService extends ApiService {
   public Balance retrieve(BalanceRetrieveParams params) throws StripeException {
     return retrieve(params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the current account balance, based on the authentication that was used to make the
    * request. For a sample request, see <a
@@ -35,6 +36,7 @@ public final class BalanceService extends ApiService {
   public Balance retrieve(RequestOptions options) throws StripeException {
     return retrieve((BalanceRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the current account balance, based on the authentication that was used to make the
    * request. For a sample request, see <a
@@ -44,6 +46,7 @@ public final class BalanceService extends ApiService {
   public Balance retrieve() throws StripeException {
     return retrieve((BalanceRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the current account balance, based on the authentication that was used to make the
    * request. For a sample request, see <a

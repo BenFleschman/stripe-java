@@ -22,14 +22,17 @@ public final class SettingsService extends ApiService {
   public Settings retrieve(SettingsRetrieveParams params) throws StripeException {
     return retrieve(params, (RequestOptions) null);
   }
+
   /** Retrieves Tax {@code Settings} for a merchant. */
   public Settings retrieve(RequestOptions options) throws StripeException {
     return retrieve((SettingsRetrieveParams) null, options);
   }
+
   /** Retrieves Tax {@code Settings} for a merchant. */
   public Settings retrieve() throws StripeException {
     return retrieve((SettingsRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves Tax {@code Settings} for a merchant. */
   public Settings retrieve(SettingsRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -43,6 +46,7 @@ public final class SettingsService extends ApiService {
             options);
     return this.request(request, Settings.class);
   }
+
   /**
    * Updates Tax {@code Settings} parameters used in tax calculations. All parameters are editable
    * but none can be removed once set.
@@ -50,6 +54,7 @@ public final class SettingsService extends ApiService {
   public Settings update(SettingsUpdateParams params) throws StripeException {
     return update(params, (RequestOptions) null);
   }
+
   /**
    * Updates Tax {@code Settings} parameters used in tax calculations. All parameters are editable
    * but none can be removed once set.
@@ -57,6 +62,7 @@ public final class SettingsService extends ApiService {
   public Settings update(RequestOptions options) throws StripeException {
     return update((SettingsUpdateParams) null, options);
   }
+
   /**
    * Updates Tax {@code Settings} parameters used in tax calculations. All parameters are editable
    * but none can be removed once set.
@@ -64,6 +70,7 @@ public final class SettingsService extends ApiService {
   public Settings update() throws StripeException {
     return update((SettingsUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates Tax {@code Settings} parameters used in tax calculations. All parameters are editable
    * but none can be removed once set.

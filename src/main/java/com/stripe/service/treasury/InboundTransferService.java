@@ -27,6 +27,7 @@ public final class InboundTransferService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of InboundTransfers sent from the specified FinancialAccount. */
   public StripeCollection<InboundTransfer> list(
       InboundTransferListParams params, RequestOptions options) throws StripeException {
@@ -40,10 +41,12 @@ public final class InboundTransferService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<InboundTransfer>>() {}.getType());
   }
+
   /** Creates an InboundTransfer. */
   public InboundTransfer create(InboundTransferCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates an InboundTransfer. */
   public InboundTransfer create(InboundTransferCreateParams params, RequestOptions options)
       throws StripeException {
@@ -57,19 +60,23 @@ public final class InboundTransferService extends ApiService {
             options);
     return this.request(request, InboundTransfer.class);
   }
+
   /** Retrieves the details of an existing InboundTransfer. */
   public InboundTransfer retrieve(String id, InboundTransferRetrieveParams params)
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing InboundTransfer. */
   public InboundTransfer retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (InboundTransferRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an existing InboundTransfer. */
   public InboundTransfer retrieve(String id) throws StripeException {
     return retrieve(id, (InboundTransferRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing InboundTransfer. */
   public InboundTransfer retrieve(
       String id, InboundTransferRetrieveParams params, RequestOptions options)
@@ -84,20 +91,24 @@ public final class InboundTransferService extends ApiService {
             options);
     return this.request(request, InboundTransfer.class);
   }
+
   /** Cancels an InboundTransfer. */
   public InboundTransfer cancel(String inboundTransfer, InboundTransferCancelParams params)
       throws StripeException {
     return cancel(inboundTransfer, params, (RequestOptions) null);
   }
+
   /** Cancels an InboundTransfer. */
   public InboundTransfer cancel(String inboundTransfer, RequestOptions options)
       throws StripeException {
     return cancel(inboundTransfer, (InboundTransferCancelParams) null, options);
   }
+
   /** Cancels an InboundTransfer. */
   public InboundTransfer cancel(String inboundTransfer) throws StripeException {
     return cancel(inboundTransfer, (InboundTransferCancelParams) null, (RequestOptions) null);
   }
+
   /** Cancels an InboundTransfer. */
   public InboundTransfer cancel(
       String inboundTransfer, InboundTransferCancelParams params, RequestOptions options)

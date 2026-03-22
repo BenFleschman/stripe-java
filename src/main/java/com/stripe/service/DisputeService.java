@@ -26,14 +26,17 @@ public final class DisputeService extends ApiService {
   public StripeCollection<Dispute> list(DisputeListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your disputes. */
   public StripeCollection<Dispute> list(RequestOptions options) throws StripeException {
     return list((DisputeListParams) null, options);
   }
+
   /** Returns a list of your disputes. */
   public StripeCollection<Dispute> list() throws StripeException {
     return list((DisputeListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your disputes. */
   public StripeCollection<Dispute> list(DisputeListParams params, RequestOptions options)
       throws StripeException {
@@ -47,18 +50,22 @@ public final class DisputeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Dispute>>() {}.getType());
   }
+
   /** Retrieves the dispute with the given ID. */
   public Dispute retrieve(String dispute, DisputeRetrieveParams params) throws StripeException {
     return retrieve(dispute, params, (RequestOptions) null);
   }
+
   /** Retrieves the dispute with the given ID. */
   public Dispute retrieve(String dispute, RequestOptions options) throws StripeException {
     return retrieve(dispute, (DisputeRetrieveParams) null, options);
   }
+
   /** Retrieves the dispute with the given ID. */
   public Dispute retrieve(String dispute) throws StripeException {
     return retrieve(dispute, (DisputeRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the dispute with the given ID. */
   public Dispute retrieve(String dispute, DisputeRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -72,6 +79,7 @@ public final class DisputeService extends ApiService {
             options);
     return this.request(request, Dispute.class);
   }
+
   /**
    * When you get a dispute, contacting your customer is always the best first step. If that doesn’t
    * work, you can submit evidence to help us resolve the dispute in your favor. You can do this in
@@ -85,6 +93,7 @@ public final class DisputeService extends ApiService {
   public Dispute update(String dispute, DisputeUpdateParams params) throws StripeException {
     return update(dispute, params, (RequestOptions) null);
   }
+
   /**
    * When you get a dispute, contacting your customer is always the best first step. If that doesn’t
    * work, you can submit evidence to help us resolve the dispute in your favor. You can do this in
@@ -98,6 +107,7 @@ public final class DisputeService extends ApiService {
   public Dispute update(String dispute, RequestOptions options) throws StripeException {
     return update(dispute, (DisputeUpdateParams) null, options);
   }
+
   /**
    * When you get a dispute, contacting your customer is always the best first step. If that doesn’t
    * work, you can submit evidence to help us resolve the dispute in your favor. You can do this in
@@ -111,6 +121,7 @@ public final class DisputeService extends ApiService {
   public Dispute update(String dispute) throws StripeException {
     return update(dispute, (DisputeUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * When you get a dispute, contacting your customer is always the best first step. If that doesn’t
    * work, you can submit evidence to help us resolve the dispute in your favor. You can do this in
@@ -133,6 +144,7 @@ public final class DisputeService extends ApiService {
             options);
     return this.request(request, Dispute.class);
   }
+
   /**
    * Closing the dispute for a charge indicates that you do not have any evidence to submit and are
    * essentially dismissing the dispute, acknowledging it as lost.
@@ -143,6 +155,7 @@ public final class DisputeService extends ApiService {
   public Dispute close(String dispute, DisputeCloseParams params) throws StripeException {
     return close(dispute, params, (RequestOptions) null);
   }
+
   /**
    * Closing the dispute for a charge indicates that you do not have any evidence to submit and are
    * essentially dismissing the dispute, acknowledging it as lost.
@@ -153,6 +166,7 @@ public final class DisputeService extends ApiService {
   public Dispute close(String dispute, RequestOptions options) throws StripeException {
     return close(dispute, (DisputeCloseParams) null, options);
   }
+
   /**
    * Closing the dispute for a charge indicates that you do not have any evidence to submit and are
    * essentially dismissing the dispute, acknowledging it as lost.
@@ -163,6 +177,7 @@ public final class DisputeService extends ApiService {
   public Dispute close(String dispute) throws StripeException {
     return close(dispute, (DisputeCloseParams) null, (RequestOptions) null);
   }
+
   /**
    * Closing the dispute for a charge indicates that you do not have any evidence to submit and are
    * essentially dismissing the dispute, acknowledging it as lost.

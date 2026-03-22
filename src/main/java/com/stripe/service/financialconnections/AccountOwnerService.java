@@ -24,6 +24,7 @@ public final class AccountOwnerService extends ApiService {
       throws StripeException {
     return list(account, params, (RequestOptions) null);
   }
+
   /** Lists all owners for a given {@code Account}. */
   public StripeCollection<AccountOwner> list(
       String account, AccountOwnerListParams params, RequestOptions options)

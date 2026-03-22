@@ -24,15 +24,18 @@ public final class TransactionLineItemService extends ApiService {
       String transaction, TransactionLineItemListParams params) throws StripeException {
     return list(transaction, params, (RequestOptions) null);
   }
+
   /** Retrieves the line items of a committed standalone transaction as a collection. */
   public StripeCollection<TransactionLineItem> list(String transaction, RequestOptions options)
       throws StripeException {
     return list(transaction, (TransactionLineItemListParams) null, options);
   }
+
   /** Retrieves the line items of a committed standalone transaction as a collection. */
   public StripeCollection<TransactionLineItem> list(String transaction) throws StripeException {
     return list(transaction, (TransactionLineItemListParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the line items of a committed standalone transaction as a collection. */
   public StripeCollection<TransactionLineItem> list(
       String transaction, TransactionLineItemListParams params, RequestOptions options)
