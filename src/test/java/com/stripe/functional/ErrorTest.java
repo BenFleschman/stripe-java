@@ -49,6 +49,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     TemporarySessionExpiredException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -78,6 +79,7 @@ public class ErrorTest extends BaseStripeTest {
   public void testV2InvalidErrorEmpty() throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation -> new StripeResponse(404, HttpHeaders.of(Collections.emptyMap()), "{}"))
@@ -104,6 +106,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -140,6 +143,7 @@ public class ErrorTest extends BaseStripeTest {
               .code(401)
               .body(getResourceAsString("/oauth_fixtures/error_invalid_client.json"))
               .build());
+      server.start();
 
       Stripe.overrideConnectBase(server.url("").toString());
 
