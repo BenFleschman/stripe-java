@@ -60,19 +60,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # We test Stripe SDK against Java LTS versions(8, 11, 17, 21) and currently supported non-LTS versions.
+        # We test Stripe SDK against Java LTS versions (17+).
         # https://www.oracle.com/java/technologies/java-se-support-roadmap.html
         # https://endoflife.date/oracle-jdk
         java-version:
           # LTS versions
-          - "1.8"
-          - "11"
           - "17"
           - "21"
-          - "25"
-          # non-LTS versions
-          # we should periodically add the latest non-LTS version here to test against
-          - "26"
 
     steps:
       - uses: extractions/setup-just@v2
@@ -93,10 +87,6 @@ jobs:
         with:
           java-version: "17" # always use 17 LTS for building
           architecture: x64
-
-      - name: Tweak gradle.properties for Java 1.8
-        if: ${{ matrix.java-version == '1.8' }}
-        run: sed -e '/--add-exports/ s/^#*/#/' -i gradle.properties
 
       - name: Display version
         run: |

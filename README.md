@@ -13,13 +13,10 @@ The official [Stripe][stripe] Java client library.
 
 ### Requirements
 
-We support LTS versions of the JDK. Currently, that's Java versions:
+We support LTS versions of the JDK (17+). Currently, that's Java versions:
 
-- 8 (1.8)
-- 11
 - 17
 - 21
-- 25
 
 ### Gradle users
 

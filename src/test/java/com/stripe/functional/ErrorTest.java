@@ -12,8 +12,8 @@ import com.stripe.net.*;
 import java.io.IOException;
 import java.util.Collections;
 import lombok.Cleanup;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import mockwebserver3.MockResponse;
+import mockwebserver3.MockWebServer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.stubbing.Answer;
@@ -136,9 +136,10 @@ public class ErrorTest extends BaseStripeTest {
       InvalidClientException exception = null;
       @Cleanup MockWebServer server = new MockWebServer();
       server.enqueue(
-          new MockResponse()
-              .setResponseCode(401)
-              .setBody(getResourceAsString("/oauth_fixtures/error_invalid_client.json")));
+          new MockResponse.Builder()
+              .code(401)
+              .body(getResourceAsString("/oauth_fixtures/error_invalid_client.json"))
+              .build());
 
       Stripe.overrideConnectBase(server.url("").toString());
 

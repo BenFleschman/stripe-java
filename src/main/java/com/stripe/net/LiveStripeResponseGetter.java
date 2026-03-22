@@ -17,14 +17,21 @@ import com.stripe.model.oauth.OAuthError;
 import com.stripe.util.Stopwatch;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class LiveStripeResponseGetter implements StripeResponseGetter {
   private final HttpClient httpClient;
   private final StripeResponseGetterOptions options;
+  private final ExecutorService executorService;
 
   private final RequestTelemetry requestTelemetry = new RequestTelemetry();
 
@@ -74,6 +81,7 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
   public LiveStripeResponseGetter(StripeResponseGetterOptions options, HttpClient httpClient) {
     this.options = options != null ? options : GlobalStripeResponseGetterOptions.INSTANCE;
     this.httpClient = (httpClient != null) ? httpClient : buildDefaultHttpClient();
+    this.executorService = createExecutorService();
   }
 
   private StripeRequest toStripeRequest(ApiRequest apiRequest, RequestOptions mergedOptions)
@@ -128,37 +136,45 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
     }
 
     StripeRequest request = toStripeRequest(apiRequest, mergedOptions);
-    StripeResponse response =
-        sendWithTelemetry(request, apiRequest.getUsage(), r -> httpClient.requestWithRetries(r));
+    final StripeRequest finalRequest = request;
+    final List<String> usage = apiRequest.getUsage();
+    final ApiRequest finalApiRequest = apiRequest;
 
-    int responseCode = response.code();
-    String responseBody = response.body();
-    String requestId = response.requestId();
+    return executeOnExecutor(
+        () -> {
+          StripeResponse response =
+              sendWithTelemetry(finalRequest, usage, r -> httpClient.requestWithRetries(r));
 
-    if (responseCode < 200 || responseCode >= 300) {
-      handleError(response, apiRequest.getApiMode());
-    }
+          int responseCode = response.code();
+          String responseBody = response.body();
+          String requestId = response.requestId();
 
-    T resource = null;
-    try {
-      resource = (T) ApiResource.deserializeStripeObject(responseBody, typeToken, this);
-    } catch (JsonSyntaxException e) {
-      throw makeMalformedJsonError(responseBody, responseCode, requestId, e);
-    }
+          if (responseCode < 200 || responseCode >= 300) {
+            handleError(response, finalApiRequest.getApiMode());
+          }
 
-    if (resource instanceof StripeCollectionInterface<?>) {
-      ((StripeCollectionInterface<?>) resource).setRequestOptions(apiRequest.getOptions());
-      ((StripeCollectionInterface<?>) resource).setRequestParams(apiRequest.getParams());
-    }
+          T resource = null;
+          try {
+            resource = (T) ApiResource.deserializeStripeObject(responseBody, typeToken, this);
+          } catch (JsonSyntaxException e) {
+            throw makeMalformedJsonError(responseBody, responseCode, requestId, e);
+          }
 
-    if (resource instanceof com.stripe.model.v2.StripeCollection<?>) {
-      ((com.stripe.model.v2.StripeCollection<?>) resource)
-          .setRequestOptions(apiRequest.getOptions());
-    }
+          if (resource instanceof StripeCollectionInterface<?>) {
+            ((StripeCollectionInterface<?>) resource)
+                .setRequestOptions(finalApiRequest.getOptions());
+            ((StripeCollectionInterface<?>) resource).setRequestParams(finalApiRequest.getParams());
+          }
 
-    resource.setLastResponse(response);
+          if (resource instanceof com.stripe.model.v2.StripeCollection<?>) {
+            ((com.stripe.model.v2.StripeCollection<?>) resource)
+                .setRequestOptions(finalApiRequest.getOptions());
+          }
 
-    return resource;
+          resource.setLastResponse(response);
+
+          return resource;
+        });
   }
 
   @Override
@@ -169,31 +185,37 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
       apiRequest = apiRequest.addUsage("unsafe_stripe_version_override");
     }
 
-    StripeRequest request = toStripeRequest(apiRequest, mergedOptions);
-    StripeResponseStream responseStream =
-        sendWithTelemetry(
-            request, apiRequest.getUsage(), r -> httpClient.requestStreamWithRetries(r));
+    final StripeRequest finalRequest = toStripeRequest(apiRequest, mergedOptions);
+    final List<String> streamUsage = apiRequest.getUsage();
+    final ApiRequest finalApiRequest = apiRequest;
 
-    int responseCode = responseStream.code();
+    return executeOnExecutor(
+        () -> {
+          StripeResponseStream responseStream =
+              sendWithTelemetry(
+                  finalRequest, streamUsage, r -> httpClient.requestStreamWithRetries(r));
 
-    if (responseCode < 200 || responseCode >= 300) {
-      StripeResponse response;
-      try {
-        response = responseStream.unstream();
-      } catch (IOException e) {
-        throw new ApiConnectionException(
-            String.format(
-                "IOException during API request to Stripe (%s): %s "
-                    + "Please check your internet connection and try again. If this problem persists,"
-                    + "you should check Stripe's service status at https://twitter.com/stripestatus,"
-                    + " or let us know at support@stripe.com.",
-                Stripe.getApiBase(), e.getMessage()),
-            e);
-      }
-      handleError(response, apiRequest.getApiMode());
-    }
+          int responseCode = responseStream.code();
 
-    return responseStream.body();
+          if (responseCode < 200 || responseCode >= 300) {
+            StripeResponse response;
+            try {
+              response = responseStream.unstream();
+            } catch (IOException e) {
+              throw new ApiConnectionException(
+                  String.format(
+                      "IOException during API request to Stripe (%s): %s "
+                          + "Please check your internet connection and try again. If this problem persists,"
+                          + "you should check Stripe's service status at https://twitter.com/stripestatus,"
+                          + " or let us know at support@stripe.com.",
+                      Stripe.getApiBase(), e.getMessage()),
+                  e);
+            }
+            handleError(response, finalApiRequest.getApiMode());
+          }
+
+          return responseStream.body();
+        });
   }
 
   @Override
@@ -216,16 +238,23 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
       }
     }
 
-    StripeResponse response =
-        sendWithTelemetry(request, apiRequest.getUsage(), r -> httpClient.requestWithRetries(r));
+    final StripeRequest finalRequest = request;
+    final List<String> rawUsage = apiRequest.getUsage();
+    final RawApiRequest finalApiRequest = apiRequest;
 
-    int responseCode = response.code();
+    return executeOnExecutor(
+        () -> {
+          StripeResponse response =
+              sendWithTelemetry(finalRequest, rawUsage, r -> httpClient.requestWithRetries(r));
 
-    if (responseCode < 200 || responseCode >= 300) {
-      handleError(response, apiRequest.getApiMode());
-    }
+          int responseCode = response.code();
 
-    return response;
+          if (responseCode < 200 || responseCode >= 300) {
+            handleError(response, finalApiRequest.getApiMode());
+          }
+
+          return response;
+        });
   }
 
   @Override
@@ -253,6 +282,42 @@ public class LiveStripeResponseGetter implements StripeResponseGetter {
       ApiMode apiMode)
       throws StripeException {
     return this.requestStream(new ApiRequest(baseAddress, method, path, params, options));
+  }
+
+  /**
+   * Creates an ExecutorService that uses virtual threads on Java 21+ for improved scalability of
+   * blocking I/O operations, falling back to a cached thread pool on Java 17-20.
+   */
+  private static ExecutorService createExecutorService() {
+    try {
+      return (ExecutorService)
+          MethodHandles.lookup()
+              .findStatic(
+                  Executors.class,
+                  "newVirtualThreadPerTaskExecutor",
+                  MethodType.methodType(ExecutorService.class))
+              .invoke();
+    } catch (Throwable e) {
+      return Executors.newCachedThreadPool();
+    }
+  }
+
+  private <T> T executeOnExecutor(Callable<T> task) throws StripeException {
+    try {
+      return executorService.submit(task).get();
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof StripeException) {
+        throw (StripeException) cause;
+      }
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      }
+      throw new ApiConnectionException("Unexpected error during API request", e);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiConnectionException("API request interrupted", e);
+    }
   }
 
   private static HttpClient buildDefaultHttpClient() {
