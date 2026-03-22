@@ -117,7 +117,8 @@ public class RawRequestTest extends BaseStripeTest {
     RecordedRequest request = server.takeRequest();
     assertEquals(null, request.getHeaders().get("Content-Type"));
     assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
-    assertEquals("", request.getBody().utf8());
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());
@@ -254,7 +255,8 @@ public class RawRequestTest extends BaseStripeTest {
     RecordedRequest request = server.takeRequest();
     assertEquals(null, request.getHeaders().get("Content-Type"));
     assertEquals(Stripe.API_VERSION, request.getHeaders().get("Stripe-Version"));
-    assertEquals("", request.getBody().utf8());
+    okio.ByteString body = request.getBody();
+    assertEquals("", body == null ? "" : body.utf8());
 
     assertNotNull(response);
     assertEquals(200, response.code());

@@ -49,6 +49,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     TemporarySessionExpiredException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -78,6 +79,7 @@ public class ErrorTest extends BaseStripeTest {
   public void testV2InvalidErrorEmpty() throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation -> new StripeResponse(404, HttpHeaders.of(Collections.emptyMap()), "{}"))
@@ -104,6 +106,7 @@ public class ErrorTest extends BaseStripeTest {
       throws StripeException, IOException, InterruptedException {
     ApiException exception = null;
     @Cleanup MockWebServer server = new MockWebServer();
+    server.start();
     Mockito.doAnswer(
             (Answer<StripeResponse>)
                 invocation ->
@@ -135,6 +138,7 @@ public class ErrorTest extends BaseStripeTest {
     try {
       InvalidClientException exception = null;
       @Cleanup MockWebServer server = new MockWebServer();
+      server.start();
       server.enqueue(
           new MockResponse.Builder()
               .code(401)
