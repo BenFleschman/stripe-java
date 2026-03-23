@@ -28,14 +28,17 @@ public final class MeterService extends ApiService {
   public StripeCollection<Meter> list(MeterListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Retrieve a list of billing meters. */
   public StripeCollection<Meter> list(RequestOptions options) throws StripeException {
     return list((MeterListParams) null, options);
   }
+
   /** Retrieve a list of billing meters. */
   public StripeCollection<Meter> list() throws StripeException {
     return list((MeterListParams) null, (RequestOptions) null);
   }
+
   /** Retrieve a list of billing meters. */
   public StripeCollection<Meter> list(MeterListParams params, RequestOptions options)
       throws StripeException {
@@ -49,10 +52,12 @@ public final class MeterService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Meter>>() {}.getType());
   }
+
   /** Creates a billing meter. */
   public Meter create(MeterCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a billing meter. */
   public Meter create(MeterCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/billing/meters";
@@ -65,18 +70,22 @@ public final class MeterService extends ApiService {
             options);
     return this.request(request, Meter.class);
   }
+
   /** Retrieves a billing meter given an ID. */
   public Meter retrieve(String id, MeterRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves a billing meter given an ID. */
   public Meter retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (MeterRetrieveParams) null, options);
   }
+
   /** Retrieves a billing meter given an ID. */
   public Meter retrieve(String id) throws StripeException {
     return retrieve(id, (MeterRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a billing meter given an ID. */
   public Meter retrieve(String id, MeterRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -90,18 +99,22 @@ public final class MeterService extends ApiService {
             options);
     return this.request(request, Meter.class);
   }
+
   /** Updates a billing meter. */
   public Meter update(String id, MeterUpdateParams params) throws StripeException {
     return update(id, params, (RequestOptions) null);
   }
+
   /** Updates a billing meter. */
   public Meter update(String id, RequestOptions options) throws StripeException {
     return update(id, (MeterUpdateParams) null, options);
   }
+
   /** Updates a billing meter. */
   public Meter update(String id) throws StripeException {
     return update(id, (MeterUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates a billing meter. */
   public Meter update(String id, MeterUpdateParams params, RequestOptions options)
       throws StripeException {
@@ -115,6 +128,7 @@ public final class MeterService extends ApiService {
             options);
     return this.request(request, Meter.class);
   }
+
   /**
    * When a meter is deactivated, no more meter events will be accepted for this meter. You can’t
    * attach a deactivated meter to a price.
@@ -122,6 +136,7 @@ public final class MeterService extends ApiService {
   public Meter deactivate(String id, MeterDeactivateParams params) throws StripeException {
     return deactivate(id, params, (RequestOptions) null);
   }
+
   /**
    * When a meter is deactivated, no more meter events will be accepted for this meter. You can’t
    * attach a deactivated meter to a price.
@@ -129,6 +144,7 @@ public final class MeterService extends ApiService {
   public Meter deactivate(String id, RequestOptions options) throws StripeException {
     return deactivate(id, (MeterDeactivateParams) null, options);
   }
+
   /**
    * When a meter is deactivated, no more meter events will be accepted for this meter. You can’t
    * attach a deactivated meter to a price.
@@ -136,6 +152,7 @@ public final class MeterService extends ApiService {
   public Meter deactivate(String id) throws StripeException {
     return deactivate(id, (MeterDeactivateParams) null, (RequestOptions) null);
   }
+
   /**
    * When a meter is deactivated, no more meter events will be accepted for this meter. You can’t
    * attach a deactivated meter to a price.
@@ -152,6 +169,7 @@ public final class MeterService extends ApiService {
             options);
     return this.request(request, Meter.class);
   }
+
   /**
    * When a meter is reactivated, events for this meter can be accepted and you can attach the meter
    * to a price.
@@ -159,6 +177,7 @@ public final class MeterService extends ApiService {
   public Meter reactivate(String id, MeterReactivateParams params) throws StripeException {
     return reactivate(id, params, (RequestOptions) null);
   }
+
   /**
    * When a meter is reactivated, events for this meter can be accepted and you can attach the meter
    * to a price.
@@ -166,6 +185,7 @@ public final class MeterService extends ApiService {
   public Meter reactivate(String id, RequestOptions options) throws StripeException {
     return reactivate(id, (MeterReactivateParams) null, options);
   }
+
   /**
    * When a meter is reactivated, events for this meter can be accepted and you can attach the meter
    * to a price.
@@ -173,6 +193,7 @@ public final class MeterService extends ApiService {
   public Meter reactivate(String id) throws StripeException {
     return reactivate(id, (MeterReactivateParams) null, (RequestOptions) null);
   }
+
   /**
    * When a meter is reactivated, events for this meter can be accepted and you can attach the meter
    * to a price.

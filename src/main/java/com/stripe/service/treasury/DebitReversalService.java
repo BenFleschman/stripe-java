@@ -26,6 +26,7 @@ public final class DebitReversalService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of DebitReversals. */
   public StripeCollection<DebitReversal> list(
       DebitReversalListParams params, RequestOptions options) throws StripeException {
@@ -39,10 +40,12 @@ public final class DebitReversalService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<DebitReversal>>() {}.getType());
   }
+
   /** Reverses a ReceivedDebit and creates a DebitReversal object. */
   public DebitReversal create(DebitReversalCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Reverses a ReceivedDebit and creates a DebitReversal object. */
   public DebitReversal create(DebitReversalCreateParams params, RequestOptions options)
       throws StripeException {
@@ -56,20 +59,24 @@ public final class DebitReversalService extends ApiService {
             options);
     return this.request(request, DebitReversal.class);
   }
+
   /** Retrieves a DebitReversal object. */
   public DebitReversal retrieve(String debitReversal, DebitReversalRetrieveParams params)
       throws StripeException {
     return retrieve(debitReversal, params, (RequestOptions) null);
   }
+
   /** Retrieves a DebitReversal object. */
   public DebitReversal retrieve(String debitReversal, RequestOptions options)
       throws StripeException {
     return retrieve(debitReversal, (DebitReversalRetrieveParams) null, options);
   }
+
   /** Retrieves a DebitReversal object. */
   public DebitReversal retrieve(String debitReversal) throws StripeException {
     return retrieve(debitReversal, (DebitReversalRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a DebitReversal object. */
   public DebitReversal retrieve(
       String debitReversal, DebitReversalRetrieveParams params, RequestOptions options)

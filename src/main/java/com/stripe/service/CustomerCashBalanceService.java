@@ -23,14 +23,17 @@ public final class CustomerCashBalanceService extends ApiService {
       throws StripeException {
     return retrieve(customer, params, (RequestOptions) null);
   }
+
   /** Retrieves a customer’s cash balance. */
   public CashBalance retrieve(String customer, RequestOptions options) throws StripeException {
     return retrieve(customer, (CustomerCashBalanceRetrieveParams) null, options);
   }
+
   /** Retrieves a customer’s cash balance. */
   public CashBalance retrieve(String customer) throws StripeException {
     return retrieve(customer, (CustomerCashBalanceRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a customer’s cash balance. */
   public CashBalance retrieve(
       String customer, CustomerCashBalanceRetrieveParams params, RequestOptions options)
@@ -45,19 +48,23 @@ public final class CustomerCashBalanceService extends ApiService {
             options);
     return this.request(request, CashBalance.class);
   }
+
   /** Changes the settings on a customer’s cash balance. */
   public CashBalance update(String customer, CustomerCashBalanceUpdateParams params)
       throws StripeException {
     return update(customer, params, (RequestOptions) null);
   }
+
   /** Changes the settings on a customer’s cash balance. */
   public CashBalance update(String customer, RequestOptions options) throws StripeException {
     return update(customer, (CustomerCashBalanceUpdateParams) null, options);
   }
+
   /** Changes the settings on a customer’s cash balance. */
   public CashBalance update(String customer) throws StripeException {
     return update(customer, (CustomerCashBalanceUpdateParams) null, (RequestOptions) null);
   }
+
   /** Changes the settings on a customer’s cash balance. */
   public CashBalance update(
       String customer, CustomerCashBalanceUpdateParams params, RequestOptions options)

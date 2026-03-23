@@ -25,6 +25,7 @@ public final class ReceivedCreditService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of ReceivedCredits. */
   public StripeCollection<ReceivedCredit> list(
       ReceivedCreditListParams params, RequestOptions options) throws StripeException {
@@ -38,6 +39,7 @@ public final class ReceivedCreditService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ReceivedCredit>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID
    * from the ReceivedCredit list.
@@ -46,6 +48,7 @@ public final class ReceivedCreditService extends ApiService {
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID
    * from the ReceivedCredit list.
@@ -53,6 +56,7 @@ public final class ReceivedCreditService extends ApiService {
   public ReceivedCredit retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (ReceivedCreditRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID
    * from the ReceivedCredit list.
@@ -60,6 +64,7 @@ public final class ReceivedCreditService extends ApiService {
   public ReceivedCredit retrieve(String id) throws StripeException {
     return retrieve(id, (ReceivedCreditRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID
    * from the ReceivedCredit list.

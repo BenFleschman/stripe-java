@@ -28,6 +28,7 @@ public final class CreditNotePreviewLinesService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a credit note preview, you’ll get a <strong>lines</strong> property containing
    * the first handful of those items. This URL you can retrieve the full (paginated) list of line

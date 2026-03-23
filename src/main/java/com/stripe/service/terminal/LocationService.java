@@ -26,6 +26,7 @@ public final class LocationService extends ApiService {
   public Location delete(String location) throws StripeException {
     return delete(location, (RequestOptions) null);
   }
+
   /** Deletes a {@code Location} object. */
   public Location delete(String location, RequestOptions options) throws StripeException {
     String path = String.format("/v1/terminal/locations/%s", ApiResource.urlEncodeId(location));
@@ -33,18 +34,22 @@ public final class LocationService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Location.class);
   }
+
   /** Retrieves a {@code Location} object. */
   public Location retrieve(String location, LocationRetrieveParams params) throws StripeException {
     return retrieve(location, params, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Location} object. */
   public Location retrieve(String location, RequestOptions options) throws StripeException {
     return retrieve(location, (LocationRetrieveParams) null, options);
   }
+
   /** Retrieves a {@code Location} object. */
   public Location retrieve(String location) throws StripeException {
     return retrieve(location, (LocationRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a {@code Location} object. */
   public Location retrieve(String location, LocationRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -58,6 +63,7 @@ public final class LocationService extends ApiService {
             options);
     return this.request(request, Location.class);
   }
+
   /**
    * Updates a {@code Location} object by setting the values of the parameters passed. Any
    * parameters not provided will be left unchanged.
@@ -65,6 +71,7 @@ public final class LocationService extends ApiService {
   public Location update(String location, LocationUpdateParams params) throws StripeException {
     return update(location, params, (RequestOptions) null);
   }
+
   /**
    * Updates a {@code Location} object by setting the values of the parameters passed. Any
    * parameters not provided will be left unchanged.
@@ -72,6 +79,7 @@ public final class LocationService extends ApiService {
   public Location update(String location, RequestOptions options) throws StripeException {
     return update(location, (LocationUpdateParams) null, options);
   }
+
   /**
    * Updates a {@code Location} object by setting the values of the parameters passed. Any
    * parameters not provided will be left unchanged.
@@ -79,6 +87,7 @@ public final class LocationService extends ApiService {
   public Location update(String location) throws StripeException {
     return update(location, (LocationUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a {@code Location} object by setting the values of the parameters passed. Any
    * parameters not provided will be left unchanged.
@@ -95,18 +104,22 @@ public final class LocationService extends ApiService {
             options);
     return this.request(request, Location.class);
   }
+
   /** Returns a list of {@code Location} objects. */
   public StripeCollection<Location> list(LocationListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of {@code Location} objects. */
   public StripeCollection<Location> list(RequestOptions options) throws StripeException {
     return list((LocationListParams) null, options);
   }
+
   /** Returns a list of {@code Location} objects. */
   public StripeCollection<Location> list() throws StripeException {
     return list((LocationListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of {@code Location} objects. */
   public StripeCollection<Location> list(LocationListParams params, RequestOptions options)
       throws StripeException {
@@ -120,6 +133,7 @@ public final class LocationService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Location>>() {}.getType());
   }
+
   /**
    * Creates a new {@code Location} object. For further details, including which address fields are
    * required in each country, see the <a
@@ -128,6 +142,7 @@ public final class LocationService extends ApiService {
   public Location create(LocationCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new {@code Location} object. For further details, including which address fields are
    * required in each country, see the <a
@@ -136,6 +151,7 @@ public final class LocationService extends ApiService {
   public Location create(RequestOptions options) throws StripeException {
     return create((LocationCreateParams) null, options);
   }
+
   /**
    * Creates a new {@code Location} object. For further details, including which address fields are
    * required in each country, see the <a
@@ -144,6 +160,7 @@ public final class LocationService extends ApiService {
   public Location create() throws StripeException {
     return create((LocationCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a new {@code Location} object. For further details, including which address fields are
    * required in each country, see the <a

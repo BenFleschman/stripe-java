@@ -23,14 +23,17 @@ public final class AccountTokenService extends ApiService {
       throws StripeException, RateLimitException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates an Account Token. */
   public AccountToken create(RequestOptions options) throws StripeException, RateLimitException {
     return create((AccountTokenCreateParams) null, options);
   }
+
   /** Creates an Account Token. */
   public AccountToken create() throws StripeException, RateLimitException {
     return create((AccountTokenCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates an Account Token. */
   public AccountToken create(AccountTokenCreateParams params, RequestOptions options)
       throws StripeException, RateLimitException {
@@ -44,10 +47,12 @@ public final class AccountTokenService extends ApiService {
             options);
     return this.request(request, AccountToken.class);
   }
+
   /** Retrieves an Account Token. */
   public AccountToken retrieve(String id) throws StripeException, RateLimitException {
     return retrieve(id, (RequestOptions) null);
   }
+
   /** Retrieves an Account Token. */
   public AccountToken retrieve(String id, RequestOptions options)
       throws StripeException, RateLimitException {

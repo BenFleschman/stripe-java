@@ -25,6 +25,7 @@ public final class CustomerTaxIdService extends ApiService {
   public TaxId delete(String customer, String id) throws StripeException {
     return delete(customer, id, (RequestOptions) null);
   }
+
   /** Deletes an existing {@code tax_id} object. */
   public TaxId delete(String customer, String id, RequestOptions options) throws StripeException {
     String path =
@@ -35,19 +36,23 @@ public final class CustomerTaxIdService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, TaxId.class);
   }
+
   /** Retrieves the {@code tax_id} object with the given identifier. */
   public TaxId retrieve(String customer, String id, CustomerTaxIdRetrieveParams params)
       throws StripeException {
     return retrieve(customer, id, params, (RequestOptions) null);
   }
+
   /** Retrieves the {@code tax_id} object with the given identifier. */
   public TaxId retrieve(String customer, String id, RequestOptions options) throws StripeException {
     return retrieve(customer, id, (CustomerTaxIdRetrieveParams) null, options);
   }
+
   /** Retrieves the {@code tax_id} object with the given identifier. */
   public TaxId retrieve(String customer, String id) throws StripeException {
     return retrieve(customer, id, (CustomerTaxIdRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the {@code tax_id} object with the given identifier. */
   public TaxId retrieve(
       String customer, String id, CustomerTaxIdRetrieveParams params, RequestOptions options)
@@ -65,20 +70,24 @@ public final class CustomerTaxIdService extends ApiService {
             options);
     return this.request(request, TaxId.class);
   }
+
   /** Returns a list of tax IDs for a customer. */
   public StripeCollection<TaxId> list(String customer, CustomerTaxIdListParams params)
       throws StripeException {
     return list(customer, params, (RequestOptions) null);
   }
+
   /** Returns a list of tax IDs for a customer. */
   public StripeCollection<TaxId> list(String customer, RequestOptions options)
       throws StripeException {
     return list(customer, (CustomerTaxIdListParams) null, options);
   }
+
   /** Returns a list of tax IDs for a customer. */
   public StripeCollection<TaxId> list(String customer) throws StripeException {
     return list(customer, (CustomerTaxIdListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of tax IDs for a customer. */
   public StripeCollection<TaxId> list(
       String customer, CustomerTaxIdListParams params, RequestOptions options)
@@ -93,10 +102,12 @@ public final class CustomerTaxIdService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<TaxId>>() {}.getType());
   }
+
   /** Creates a new {@code tax_id} object for a customer. */
   public TaxId create(String customer, CustomerTaxIdCreateParams params) throws StripeException {
     return create(customer, params, (RequestOptions) null);
   }
+
   /** Creates a new {@code tax_id} object for a customer. */
   public TaxId create(String customer, CustomerTaxIdCreateParams params, RequestOptions options)
       throws StripeException {

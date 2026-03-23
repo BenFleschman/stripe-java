@@ -16,8 +16,8 @@ import com.stripe.net.RequestOptions.RequestOptionsBuilder;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Cleanup;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import mockwebserver3.MockResponse;
+import mockwebserver3.MockWebServer;
 import org.junit.jupiter.api.Test;
 
 public class RequestOptionsTest extends BaseStripeTest {
@@ -71,16 +71,16 @@ public class RequestOptionsTest extends BaseStripeTest {
   public void testBaseUrl() throws Exception {
     @Cleanup MockWebServer serverDefault = new MockWebServer();
 
-    serverDefault.enqueue(new MockResponse().setBody("{\"id\": \"default\"}"));
+    serverDefault.enqueue(new MockResponse.Builder().body("{\"id\": \"default\"}").build());
     serverDefault.start();
     Stripe.overrideUploadBase(serverDefault.url("").toString());
     MyResource r1 = MyResource.myMethod(new HashMap<>(), RequestOptions.builder().build());
     serverDefault.takeRequest();
     assertEquals("default", r1.id);
-    serverDefault.shutdown();
+    serverDefault.close();
 
     @Cleanup MockWebServer serverOverride = new MockWebServer();
-    serverOverride.enqueue(new MockResponse().setBody("{\"id\": \"override\"}"));
+    serverOverride.enqueue(new MockResponse.Builder().body("{\"id\": \"override\"}").build());
     serverOverride.start();
     MyResource r2 =
         MyResource.myMethod(
@@ -88,7 +88,7 @@ public class RequestOptionsTest extends BaseStripeTest {
             RequestOptions.builder().setBaseUrl(serverOverride.url("").toString()).build());
     serverOverride.takeRequest();
     assertEquals("override", r2.id);
-    serverOverride.shutdown();
+    serverOverride.close();
   }
 
   @Test

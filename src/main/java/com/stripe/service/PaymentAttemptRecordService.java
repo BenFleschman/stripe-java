@@ -25,6 +25,7 @@ public final class PaymentAttemptRecordService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** List all the Payment Attempt Records attached to the specified Payment Record. */
   public StripeCollection<PaymentAttemptRecord> list(
       PaymentAttemptRecordListParams params, RequestOptions options) throws StripeException {
@@ -39,19 +40,23 @@ public final class PaymentAttemptRecordService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<PaymentAttemptRecord>>() {}.getType());
   }
+
   /** Retrieves a Payment Attempt Record with the given ID. */
   public PaymentAttemptRecord retrieve(String id, PaymentAttemptRecordRetrieveParams params)
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves a Payment Attempt Record with the given ID. */
   public PaymentAttemptRecord retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (PaymentAttemptRecordRetrieveParams) null, options);
   }
+
   /** Retrieves a Payment Attempt Record with the given ID. */
   public PaymentAttemptRecord retrieve(String id) throws StripeException {
     return retrieve(id, (PaymentAttemptRecordRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Payment Attempt Record with the given ID. */
   public PaymentAttemptRecord retrieve(
       String id, PaymentAttemptRecordRetrieveParams params, RequestOptions options)

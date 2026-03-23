@@ -32,6 +32,7 @@ public final class CustomerService extends ApiService {
   public Customer delete(String customer) throws StripeException {
     return delete(customer, (RequestOptions) null);
   }
+
   /**
    * Permanently deletes a customer. It cannot be undone. Also immediately cancels any active
    * subscriptions on the customer.
@@ -42,18 +43,22 @@ public final class CustomerService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Customer.class);
   }
+
   /** Retrieves a Customer object. */
   public Customer retrieve(String customer, CustomerRetrieveParams params) throws StripeException {
     return retrieve(customer, params, (RequestOptions) null);
   }
+
   /** Retrieves a Customer object. */
   public Customer retrieve(String customer, RequestOptions options) throws StripeException {
     return retrieve(customer, (CustomerRetrieveParams) null, options);
   }
+
   /** Retrieves a Customer object. */
   public Customer retrieve(String customer) throws StripeException {
     return retrieve(customer, (CustomerRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Customer object. */
   public Customer retrieve(String customer, CustomerRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -67,6 +72,7 @@ public final class CustomerService extends ApiService {
             options);
     return this.request(request, Customer.class);
   }
+
   /**
    * Updates the specified customer by setting the values of the parameters passed. Any parameters
    * not provided are left unchanged. For example, if you pass the <strong>source</strong>
@@ -84,6 +90,7 @@ public final class CustomerService extends ApiService {
   public Customer update(String customer, CustomerUpdateParams params) throws StripeException {
     return update(customer, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified customer by setting the values of the parameters passed. Any parameters
    * not provided are left unchanged. For example, if you pass the <strong>source</strong>
@@ -101,6 +108,7 @@ public final class CustomerService extends ApiService {
   public Customer update(String customer, RequestOptions options) throws StripeException {
     return update(customer, (CustomerUpdateParams) null, options);
   }
+
   /**
    * Updates the specified customer by setting the values of the parameters passed. Any parameters
    * not provided are left unchanged. For example, if you pass the <strong>source</strong>
@@ -118,6 +126,7 @@ public final class CustomerService extends ApiService {
   public Customer update(String customer) throws StripeException {
     return update(customer, (CustomerUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified customer by setting the values of the parameters passed. Any parameters
    * not provided are left unchanged. For example, if you pass the <strong>source</strong>
@@ -144,10 +153,12 @@ public final class CustomerService extends ApiService {
             options);
     return this.request(request, Customer.class);
   }
+
   /** Removes the currently applied discount on a customer. */
   public Discount deleteDiscount(String customer) throws StripeException {
     return deleteDiscount(customer, (RequestOptions) null);
   }
+
   /** Removes the currently applied discount on a customer. */
   public Discount deleteDiscount(String customer, RequestOptions options) throws StripeException {
     String path = String.format("/v1/customers/%s/discount", ApiResource.urlEncodeId(customer));
@@ -155,6 +166,7 @@ public final class CustomerService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Discount.class);
   }
+
   /**
    * Returns a list of your customers. The customers are returned sorted by creation date, with the
    * most recent customers appearing first.
@@ -162,6 +174,7 @@ public final class CustomerService extends ApiService {
   public StripeCollection<Customer> list(CustomerListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your customers. The customers are returned sorted by creation date, with the
    * most recent customers appearing first.
@@ -169,6 +182,7 @@ public final class CustomerService extends ApiService {
   public StripeCollection<Customer> list(RequestOptions options) throws StripeException {
     return list((CustomerListParams) null, options);
   }
+
   /**
    * Returns a list of your customers. The customers are returned sorted by creation date, with the
    * most recent customers appearing first.
@@ -176,6 +190,7 @@ public final class CustomerService extends ApiService {
   public StripeCollection<Customer> list() throws StripeException {
     return list((CustomerListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of your customers. The customers are returned sorted by creation date, with the
    * most recent customers appearing first.
@@ -192,18 +207,22 @@ public final class CustomerService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Customer>>() {}.getType());
   }
+
   /** Creates a new customer object. */
   public Customer create(CustomerCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new customer object. */
   public Customer create(RequestOptions options) throws StripeException {
     return create((CustomerCreateParams) null, options);
   }
+
   /** Creates a new customer object. */
   public Customer create() throws StripeException {
     return create((CustomerCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates a new customer object. */
   public Customer create(CustomerCreateParams params, RequestOptions options)
       throws StripeException {
@@ -217,6 +236,7 @@ public final class CustomerService extends ApiService {
             options);
     return this.request(request, Customer.class);
   }
+
   /**
    * Search for customers you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -228,6 +248,7 @@ public final class CustomerService extends ApiService {
   public StripeSearchResult<Customer> search(CustomerSearchParams params) throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for customers you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t

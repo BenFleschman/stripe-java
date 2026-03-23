@@ -23,14 +23,17 @@ public final class EventService extends ApiService {
   public StripeCollection<Event> list(EventListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** List events, going back up to 30 days. */
   public StripeCollection<Event> list(RequestOptions options) throws StripeException {
     return list((EventListParams) null, options);
   }
+
   /** List events, going back up to 30 days. */
   public StripeCollection<Event> list() throws StripeException {
     return list((EventListParams) null, (RequestOptions) null);
   }
+
   /** List events, going back up to 30 days. */
   public StripeCollection<Event> list(EventListParams params, RequestOptions options)
       throws StripeException {
@@ -44,10 +47,12 @@ public final class EventService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Event>>() {}.getType());
   }
+
   /** Retrieves the details of an event. */
   public Event retrieve(String id) throws StripeException {
     return retrieve(id, (RequestOptions) null);
   }
+
   /** Retrieves the details of an event. */
   public Event retrieve(String id, RequestOptions options) throws StripeException {
     String path = String.format("/v2/core/events/%s", ApiResource.urlEncodeId(id));

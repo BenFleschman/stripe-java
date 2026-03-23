@@ -23,16 +23,19 @@ public final class FinancialAccountFeaturesService extends ApiService {
       String financialAccount, FinancialAccountFeaturesUpdateParams params) throws StripeException {
     return update(financialAccount, params, (RequestOptions) null);
   }
+
   /** Updates the Features associated with a FinancialAccount. */
   public FinancialAccountFeatures update(String financialAccount, RequestOptions options)
       throws StripeException {
     return update(financialAccount, (FinancialAccountFeaturesUpdateParams) null, options);
   }
+
   /** Updates the Features associated with a FinancialAccount. */
   public FinancialAccountFeatures update(String financialAccount) throws StripeException {
     return update(
         financialAccount, (FinancialAccountFeaturesUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates the Features associated with a FinancialAccount. */
   public FinancialAccountFeatures update(
       String financialAccount, FinancialAccountFeaturesUpdateParams params, RequestOptions options)
@@ -50,22 +53,26 @@ public final class FinancialAccountFeaturesService extends ApiService {
             options);
     return this.request(request, FinancialAccountFeatures.class);
   }
+
   /** Retrieves Features information associated with the FinancialAccount. */
   public FinancialAccountFeatures retrieve(
       String financialAccount, FinancialAccountFeaturesRetrieveParams params)
       throws StripeException {
     return retrieve(financialAccount, params, (RequestOptions) null);
   }
+
   /** Retrieves Features information associated with the FinancialAccount. */
   public FinancialAccountFeatures retrieve(String financialAccount, RequestOptions options)
       throws StripeException {
     return retrieve(financialAccount, (FinancialAccountFeaturesRetrieveParams) null, options);
   }
+
   /** Retrieves Features information associated with the FinancialAccount. */
   public FinancialAccountFeatures retrieve(String financialAccount) throws StripeException {
     return retrieve(
         financialAccount, (FinancialAccountFeaturesRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves Features information associated with the FinancialAccount. */
   public FinancialAccountFeatures retrieve(
       String financialAccount,

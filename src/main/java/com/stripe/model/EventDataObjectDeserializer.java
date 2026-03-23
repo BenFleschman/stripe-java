@@ -53,10 +53,13 @@ import lombok.EqualsAndHashCode;
 public class EventDataObjectDeserializer {
   /** API version of the event data object. */
   String apiVersion;
+
   /** Event type to which this event data object belongs to. */
   String eventType;
+
   /** Raw JSON response to be deserialized into {@code StripeObject}. */
   JsonObject rawJsonObject;
+
   /** Deserialized {@code StripeObject} set during successful/safe deserialization. */
   private StripeObject object;
 

@@ -28,6 +28,7 @@ public final class TransactionService extends ApiService {
   public StripeCollection<Transaction> list(TransactionListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Transaction} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -35,6 +36,7 @@ public final class TransactionService extends ApiService {
   public StripeCollection<Transaction> list(RequestOptions options) throws StripeException {
     return list((TransactionListParams) null, options);
   }
+
   /**
    * Returns a list of Issuing {@code Transaction} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -42,6 +44,7 @@ public final class TransactionService extends ApiService {
   public StripeCollection<Transaction> list() throws StripeException {
     return list((TransactionListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Transaction} objects. The objects are sorted in descending
    * order by creation date, with the most recently created object appearing first.
@@ -58,19 +61,23 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Transaction>>() {}.getType());
   }
+
   /** Retrieves an Issuing {@code Transaction} object. */
   public Transaction retrieve(String transaction, TransactionRetrieveParams params)
       throws StripeException {
     return retrieve(transaction, params, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Transaction} object. */
   public Transaction retrieve(String transaction, RequestOptions options) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, options);
   }
+
   /** Retrieves an Issuing {@code Transaction} object. */
   public Transaction retrieve(String transaction) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Transaction} object. */
   public Transaction retrieve(
       String transaction, TransactionRetrieveParams params, RequestOptions options)
@@ -86,6 +93,7 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, Transaction.class);
   }
+
   /**
    * Updates the specified Issuing {@code Transaction} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -94,6 +102,7 @@ public final class TransactionService extends ApiService {
       throws StripeException {
     return update(transaction, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Transaction} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -101,6 +110,7 @@ public final class TransactionService extends ApiService {
   public Transaction update(String transaction, RequestOptions options) throws StripeException {
     return update(transaction, (TransactionUpdateParams) null, options);
   }
+
   /**
    * Updates the specified Issuing {@code Transaction} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.
@@ -108,6 +118,7 @@ public final class TransactionService extends ApiService {
   public Transaction update(String transaction) throws StripeException {
     return update(transaction, (TransactionUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Transaction} object by setting the values of the
    * parameters passed. Any parameters not provided will be left unchanged.

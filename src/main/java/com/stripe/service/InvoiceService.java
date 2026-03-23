@@ -43,6 +43,7 @@ public final class InvoiceService extends ApiService {
   public Invoice delete(String invoice) throws StripeException {
     return delete(invoice, (RequestOptions) null);
   }
+
   /**
    * Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices
    * that are no longer in a draft state will fail; once an invoice has been finalized or if an
@@ -55,18 +56,22 @@ public final class InvoiceService extends ApiService {
         new ApiRequest(BaseAddress.API, ApiResource.RequestMethod.DELETE, path, null, options);
     return this.request(request, Invoice.class);
   }
+
   /** Retrieves the invoice with the given ID. */
   public Invoice retrieve(String invoice, InvoiceRetrieveParams params) throws StripeException {
     return retrieve(invoice, params, (RequestOptions) null);
   }
+
   /** Retrieves the invoice with the given ID. */
   public Invoice retrieve(String invoice, RequestOptions options) throws StripeException {
     return retrieve(invoice, (InvoiceRetrieveParams) null, options);
   }
+
   /** Retrieves the invoice with the given ID. */
   public Invoice retrieve(String invoice) throws StripeException {
     return retrieve(invoice, (InvoiceRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the invoice with the given ID. */
   public Invoice retrieve(String invoice, InvoiceRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -80,6 +85,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Draft invoices are fully editable. Once an invoice is <a
    * href="https://stripe.com/docs/billing/invoices/workflow#finalized">finalized</a>, monetary
@@ -93,6 +99,7 @@ public final class InvoiceService extends ApiService {
   public Invoice update(String invoice, InvoiceUpdateParams params) throws StripeException {
     return update(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Draft invoices are fully editable. Once an invoice is <a
    * href="https://stripe.com/docs/billing/invoices/workflow#finalized">finalized</a>, monetary
@@ -106,6 +113,7 @@ public final class InvoiceService extends ApiService {
   public Invoice update(String invoice, RequestOptions options) throws StripeException {
     return update(invoice, (InvoiceUpdateParams) null, options);
   }
+
   /**
    * Draft invoices are fully editable. Once an invoice is <a
    * href="https://stripe.com/docs/billing/invoices/workflow#finalized">finalized</a>, monetary
@@ -119,6 +127,7 @@ public final class InvoiceService extends ApiService {
   public Invoice update(String invoice) throws StripeException {
     return update(invoice, (InvoiceUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Draft invoices are fully editable. Once an invoice is <a
    * href="https://stripe.com/docs/billing/invoices/workflow#finalized">finalized</a>, monetary
@@ -141,6 +150,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * You can list all invoices, or list the invoices for a specific customer. The invoices are
    * returned sorted by creation date, with the most recently created invoices appearing first.
@@ -148,6 +158,7 @@ public final class InvoiceService extends ApiService {
   public StripeCollection<Invoice> list(InvoiceListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * You can list all invoices, or list the invoices for a specific customer. The invoices are
    * returned sorted by creation date, with the most recently created invoices appearing first.
@@ -155,6 +166,7 @@ public final class InvoiceService extends ApiService {
   public StripeCollection<Invoice> list(RequestOptions options) throws StripeException {
     return list((InvoiceListParams) null, options);
   }
+
   /**
    * You can list all invoices, or list the invoices for a specific customer. The invoices are
    * returned sorted by creation date, with the most recently created invoices appearing first.
@@ -162,6 +174,7 @@ public final class InvoiceService extends ApiService {
   public StripeCollection<Invoice> list() throws StripeException {
     return list((InvoiceListParams) null, (RequestOptions) null);
   }
+
   /**
    * You can list all invoices, or list the invoices for a specific customer. The invoices are
    * returned sorted by creation date, with the most recently created invoices appearing first.
@@ -178,6 +191,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Invoice>>() {}.getType());
   }
+
   /**
    * This endpoint creates a draft invoice for a given customer. The invoice remains a draft until
    * you <a href="https://stripe.com/api/invoices/finalize">finalize</a> the invoice, which allows
@@ -187,6 +201,7 @@ public final class InvoiceService extends ApiService {
   public Invoice create(InvoiceCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * This endpoint creates a draft invoice for a given customer. The invoice remains a draft until
    * you <a href="https://stripe.com/api/invoices/finalize">finalize</a> the invoice, which allows
@@ -196,6 +211,7 @@ public final class InvoiceService extends ApiService {
   public Invoice create(RequestOptions options) throws StripeException {
     return create((InvoiceCreateParams) null, options);
   }
+
   /**
    * This endpoint creates a draft invoice for a given customer. The invoice remains a draft until
    * you <a href="https://stripe.com/api/invoices/finalize">finalize</a> the invoice, which allows
@@ -205,6 +221,7 @@ public final class InvoiceService extends ApiService {
   public Invoice create() throws StripeException {
     return create((InvoiceCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * This endpoint creates a draft invoice for a given customer. The invoice remains a draft until
    * you <a href="https://stripe.com/api/invoices/finalize">finalize</a> the invoice, which allows
@@ -222,6 +239,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Search for invoices you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -233,6 +251,7 @@ public final class InvoiceService extends ApiService {
   public StripeSearchResult<Invoice> search(InvoiceSearchParams params) throws StripeException {
     return search(params, (RequestOptions) null);
   }
+
   /**
    * Search for invoices you’ve previously created using Stripe’s <a
    * href="https://stripe.com/docs/search#search-query-language">Search Query Language</a>. Don’t
@@ -253,12 +272,14 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeSearchResult<Invoice>>() {}.getType());
   }
+
   /**
    * Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.
    */
   public Invoice addLines(String invoice, InvoiceAddLinesParams params) throws StripeException {
     return addLines(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.
    */
@@ -274,6 +295,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of
    * {@code payments}.
@@ -292,6 +314,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return attachPayment(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of
    * {@code payments}.
@@ -309,6 +332,7 @@ public final class InvoiceService extends ApiService {
   public Invoice attachPayment(String invoice, RequestOptions options) throws StripeException {
     return attachPayment(invoice, (InvoiceAttachPaymentParams) null, options);
   }
+
   /**
    * Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of
    * {@code payments}.
@@ -326,6 +350,7 @@ public final class InvoiceService extends ApiService {
   public Invoice attachPayment(String invoice) throws StripeException {
     return attachPayment(invoice, (InvoiceAttachPaymentParams) null, (RequestOptions) null);
   }
+
   /**
    * Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of
    * {@code payments}.
@@ -353,6 +378,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Stripe automatically finalizes drafts before sending and attempting payment on invoices.
    * However, if you’d like to finalize a draft invoice manually, you can do so using this method.
@@ -361,6 +387,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return finalizeInvoice(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Stripe automatically finalizes drafts before sending and attempting payment on invoices.
    * However, if you’d like to finalize a draft invoice manually, you can do so using this method.
@@ -368,6 +395,7 @@ public final class InvoiceService extends ApiService {
   public Invoice finalizeInvoice(String invoice, RequestOptions options) throws StripeException {
     return finalizeInvoice(invoice, (InvoiceFinalizeInvoiceParams) null, options);
   }
+
   /**
    * Stripe automatically finalizes drafts before sending and attempting payment on invoices.
    * However, if you’d like to finalize a draft invoice manually, you can do so using this method.
@@ -375,6 +403,7 @@ public final class InvoiceService extends ApiService {
   public Invoice finalizeInvoice(String invoice) throws StripeException {
     return finalizeInvoice(invoice, (InvoiceFinalizeInvoiceParams) null, (RequestOptions) null);
   }
+
   /**
    * Stripe automatically finalizes drafts before sending and attempting payment on invoices.
    * However, if you’d like to finalize a draft invoice manually, you can do so using this method.
@@ -392,6 +421,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Marking an invoice as uncollectible is useful for keeping track of bad debts that can be
    * written off for accounting purposes.
@@ -400,6 +430,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return markUncollectible(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Marking an invoice as uncollectible is useful for keeping track of bad debts that can be
    * written off for accounting purposes.
@@ -407,6 +438,7 @@ public final class InvoiceService extends ApiService {
   public Invoice markUncollectible(String invoice, RequestOptions options) throws StripeException {
     return markUncollectible(invoice, (InvoiceMarkUncollectibleParams) null, options);
   }
+
   /**
    * Marking an invoice as uncollectible is useful for keeping track of bad debts that can be
    * written off for accounting purposes.
@@ -414,6 +446,7 @@ public final class InvoiceService extends ApiService {
   public Invoice markUncollectible(String invoice) throws StripeException {
     return markUncollectible(invoice, (InvoiceMarkUncollectibleParams) null, (RequestOptions) null);
   }
+
   /**
    * Marking an invoice as uncollectible is useful for keeping track of bad debts that can be
    * written off for accounting purposes.
@@ -432,6 +465,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Stripe automatically creates and then attempts to collect payment on invoices for customers on
    * subscriptions according to your <a
@@ -442,6 +476,7 @@ public final class InvoiceService extends ApiService {
   public Invoice pay(String invoice, InvoicePayParams params) throws StripeException {
     return pay(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Stripe automatically creates and then attempts to collect payment on invoices for customers on
    * subscriptions according to your <a
@@ -452,6 +487,7 @@ public final class InvoiceService extends ApiService {
   public Invoice pay(String invoice, RequestOptions options) throws StripeException {
     return pay(invoice, (InvoicePayParams) null, options);
   }
+
   /**
    * Stripe automatically creates and then attempts to collect payment on invoices for customers on
    * subscriptions according to your <a
@@ -462,6 +498,7 @@ public final class InvoiceService extends ApiService {
   public Invoice pay(String invoice) throws StripeException {
     return pay(invoice, (InvoicePayParams) null, (RequestOptions) null);
   }
+
   /**
    * Stripe automatically creates and then attempts to collect payment on invoices for customers on
    * subscriptions according to your <a
@@ -481,6 +518,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Removes multiple line items from an invoice. This is only possible when an invoice is still a
    * draft.
@@ -489,6 +527,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return removeLines(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Removes multiple line items from an invoice. This is only possible when an invoice is still a
    * draft.
@@ -506,6 +545,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Stripe will automatically send invoices to customers according to your <a
    * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions settings</a>.
@@ -520,6 +560,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return sendInvoice(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Stripe will automatically send invoices to customers according to your <a
    * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions settings</a>.
@@ -533,6 +574,7 @@ public final class InvoiceService extends ApiService {
   public Invoice sendInvoice(String invoice, RequestOptions options) throws StripeException {
     return sendInvoice(invoice, (InvoiceSendInvoiceParams) null, options);
   }
+
   /**
    * Stripe will automatically send invoices to customers according to your <a
    * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions settings</a>.
@@ -546,6 +588,7 @@ public final class InvoiceService extends ApiService {
   public Invoice sendInvoice(String invoice) throws StripeException {
     return sendInvoice(invoice, (InvoiceSendInvoiceParams) null, (RequestOptions) null);
   }
+
   /**
    * Stripe will automatically send invoices to customers according to your <a
    * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions settings</a>.
@@ -569,6 +612,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Updates multiple line items on an invoice. This is only possible when an invoice is still a
    * draft.
@@ -577,6 +621,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return updateLines(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Updates multiple line items on an invoice. This is only possible when an invoice is still a
    * draft.
@@ -594,6 +639,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a
    * href="https://stripe.com/api/invoices/delete">deletion</a>, however it only applies to
@@ -609,6 +655,7 @@ public final class InvoiceService extends ApiService {
       throws StripeException {
     return voidInvoice(invoice, params, (RequestOptions) null);
   }
+
   /**
    * Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a
    * href="https://stripe.com/api/invoices/delete">deletion</a>, however it only applies to
@@ -623,6 +670,7 @@ public final class InvoiceService extends ApiService {
   public Invoice voidInvoice(String invoice, RequestOptions options) throws StripeException {
     return voidInvoice(invoice, (InvoiceVoidInvoiceParams) null, options);
   }
+
   /**
    * Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a
    * href="https://stripe.com/api/invoices/delete">deletion</a>, however it only applies to
@@ -637,6 +685,7 @@ public final class InvoiceService extends ApiService {
   public Invoice voidInvoice(String invoice) throws StripeException {
     return voidInvoice(invoice, (InvoiceVoidInvoiceParams) null, (RequestOptions) null);
   }
+
   /**
    * Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a
    * href="https://stripe.com/api/invoices/delete">deletion</a>, however it only applies to
@@ -661,6 +710,7 @@ public final class InvoiceService extends ApiService {
             options);
     return this.request(request, Invoice.class);
   }
+
   /**
    * At any time, you can preview the upcoming invoice for a subscription or subscription schedule.
    * This will show you all the charges that are pending, including subscription renewal charges,
@@ -688,6 +738,7 @@ public final class InvoiceService extends ApiService {
   public Invoice createPreview(InvoiceCreatePreviewParams params) throws StripeException {
     return createPreview(params, (RequestOptions) null);
   }
+
   /**
    * At any time, you can preview the upcoming invoice for a subscription or subscription schedule.
    * This will show you all the charges that are pending, including subscription renewal charges,
@@ -715,6 +766,7 @@ public final class InvoiceService extends ApiService {
   public Invoice createPreview(RequestOptions options) throws StripeException {
     return createPreview((InvoiceCreatePreviewParams) null, options);
   }
+
   /**
    * At any time, you can preview the upcoming invoice for a subscription or subscription schedule.
    * This will show you all the charges that are pending, including subscription renewal charges,
@@ -742,6 +794,7 @@ public final class InvoiceService extends ApiService {
   public Invoice createPreview() throws StripeException {
     return createPreview((InvoiceCreatePreviewParams) null, (RequestOptions) null);
   }
+
   /**
    * At any time, you can preview the upcoming invoice for a subscription or subscription schedule.
    * This will show you all the charges that are pending, including subscription renewal charges,

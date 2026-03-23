@@ -21,6 +21,7 @@ public final class AssociationService extends ApiService {
   public Association find(AssociationFindParams params) throws StripeException {
     return find(params, (RequestOptions) null);
   }
+
   /** Finds a tax association object by PaymentIntent id. */
   public Association find(AssociationFindParams params, RequestOptions options)
       throws StripeException {

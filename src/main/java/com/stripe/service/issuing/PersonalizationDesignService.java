@@ -30,6 +30,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of personalization design objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -38,6 +39,7 @@ public final class PersonalizationDesignService extends ApiService {
       throws StripeException {
     return list((PersonalizationDesignListParams) null, options);
   }
+
   /**
    * Returns a list of personalization design objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -45,6 +47,7 @@ public final class PersonalizationDesignService extends ApiService {
   public StripeCollection<PersonalizationDesign> list() throws StripeException {
     return list((PersonalizationDesignListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of personalization design objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -62,11 +65,13 @@ public final class PersonalizationDesignService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<PersonalizationDesign>>() {}.getType());
   }
+
   /** Creates a personalization design object. */
   public PersonalizationDesign create(PersonalizationDesignCreateParams params)
       throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a personalization design object. */
   public PersonalizationDesign create(
       PersonalizationDesignCreateParams params, RequestOptions options) throws StripeException {
@@ -80,22 +85,26 @@ public final class PersonalizationDesignService extends ApiService {
             options);
     return this.request(request, PersonalizationDesign.class);
   }
+
   /** Retrieves a personalization design object. */
   public PersonalizationDesign retrieve(
       String personalizationDesign, PersonalizationDesignRetrieveParams params)
       throws StripeException {
     return retrieve(personalizationDesign, params, (RequestOptions) null);
   }
+
   /** Retrieves a personalization design object. */
   public PersonalizationDesign retrieve(String personalizationDesign, RequestOptions options)
       throws StripeException {
     return retrieve(personalizationDesign, (PersonalizationDesignRetrieveParams) null, options);
   }
+
   /** Retrieves a personalization design object. */
   public PersonalizationDesign retrieve(String personalizationDesign) throws StripeException {
     return retrieve(
         personalizationDesign, (PersonalizationDesignRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a personalization design object. */
   public PersonalizationDesign retrieve(
       String personalizationDesign,
@@ -115,22 +124,26 @@ public final class PersonalizationDesignService extends ApiService {
             options);
     return this.request(request, PersonalizationDesign.class);
   }
+
   /** Updates a card personalization object. */
   public PersonalizationDesign update(
       String personalizationDesign, PersonalizationDesignUpdateParams params)
       throws StripeException {
     return update(personalizationDesign, params, (RequestOptions) null);
   }
+
   /** Updates a card personalization object. */
   public PersonalizationDesign update(String personalizationDesign, RequestOptions options)
       throws StripeException {
     return update(personalizationDesign, (PersonalizationDesignUpdateParams) null, options);
   }
+
   /** Updates a card personalization object. */
   public PersonalizationDesign update(String personalizationDesign) throws StripeException {
     return update(
         personalizationDesign, (PersonalizationDesignUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates a card personalization object. */
   public PersonalizationDesign update(
       String personalizationDesign,

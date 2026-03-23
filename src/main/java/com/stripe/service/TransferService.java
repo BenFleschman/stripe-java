@@ -29,6 +29,7 @@ public final class TransferService extends ApiService {
   public StripeCollection<Transfer> list(TransferListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of existing transfers sent to connected accounts. The transfers are returned in
    * sorted order, with the most recently created transfers appearing first.
@@ -36,6 +37,7 @@ public final class TransferService extends ApiService {
   public StripeCollection<Transfer> list(RequestOptions options) throws StripeException {
     return list((TransferListParams) null, options);
   }
+
   /**
    * Returns a list of existing transfers sent to connected accounts. The transfers are returned in
    * sorted order, with the most recently created transfers appearing first.
@@ -43,6 +45,7 @@ public final class TransferService extends ApiService {
   public StripeCollection<Transfer> list() throws StripeException {
     return list((TransferListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of existing transfers sent to connected accounts. The transfers are returned in
    * sorted order, with the most recently created transfers appearing first.
@@ -59,6 +62,7 @@ public final class TransferService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Transfer>>() {}.getType());
   }
+
   /**
    * To send funds from your Stripe account to a connected account, you create a new transfer
    * object. Your <a href="https://stripe.com/docs/api#balance">Stripe balance</a> must be able to
@@ -67,6 +71,7 @@ public final class TransferService extends ApiService {
   public Transfer create(TransferCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * To send funds from your Stripe account to a connected account, you create a new transfer
    * object. Your <a href="https://stripe.com/docs/api#balance">Stripe balance</a> must be able to
@@ -84,6 +89,7 @@ public final class TransferService extends ApiService {
             options);
     return this.request(request, Transfer.class);
   }
+
   /**
    * Retrieves the details of an existing transfer. Supply the unique transfer ID from either a
    * transfer creation request or the transfer list, and Stripe will return the corresponding
@@ -92,6 +98,7 @@ public final class TransferService extends ApiService {
   public Transfer retrieve(String transfer, TransferRetrieveParams params) throws StripeException {
     return retrieve(transfer, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing transfer. Supply the unique transfer ID from either a
    * transfer creation request or the transfer list, and Stripe will return the corresponding
@@ -100,6 +107,7 @@ public final class TransferService extends ApiService {
   public Transfer retrieve(String transfer, RequestOptions options) throws StripeException {
     return retrieve(transfer, (TransferRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing transfer. Supply the unique transfer ID from either a
    * transfer creation request or the transfer list, and Stripe will return the corresponding
@@ -108,6 +116,7 @@ public final class TransferService extends ApiService {
   public Transfer retrieve(String transfer) throws StripeException {
     return retrieve(transfer, (TransferRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing transfer. Supply the unique transfer ID from either a
    * transfer creation request or the transfer list, and Stripe will return the corresponding
@@ -125,6 +134,7 @@ public final class TransferService extends ApiService {
             options);
     return this.request(request, Transfer.class);
   }
+
   /**
    * Updates the specified transfer by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -134,6 +144,7 @@ public final class TransferService extends ApiService {
   public Transfer update(String transfer, TransferUpdateParams params) throws StripeException {
     return update(transfer, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified transfer by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -143,6 +154,7 @@ public final class TransferService extends ApiService {
   public Transfer update(String transfer, RequestOptions options) throws StripeException {
     return update(transfer, (TransferUpdateParams) null, options);
   }
+
   /**
    * Updates the specified transfer by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.
@@ -152,6 +164,7 @@ public final class TransferService extends ApiService {
   public Transfer update(String transfer) throws StripeException {
     return update(transfer, (TransferUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified transfer by setting the values of the parameters passed. Any parameters
    * not provided will be left unchanged.

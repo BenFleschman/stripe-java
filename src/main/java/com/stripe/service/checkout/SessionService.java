@@ -27,14 +27,17 @@ public final class SessionService extends ApiService {
   public StripeCollection<Session> list(SessionListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Checkout Sessions. */
   public StripeCollection<Session> list(RequestOptions options) throws StripeException {
     return list((SessionListParams) null, options);
   }
+
   /** Returns a list of Checkout Sessions. */
   public StripeCollection<Session> list() throws StripeException {
     return list((SessionListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of Checkout Sessions. */
   public StripeCollection<Session> list(SessionListParams params, RequestOptions options)
       throws StripeException {
@@ -48,18 +51,22 @@ public final class SessionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Session>>() {}.getType());
   }
+
   /** Creates a Checkout Session object. */
   public Session create(SessionCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a Checkout Session object. */
   public Session create(RequestOptions options) throws StripeException {
     return create((SessionCreateParams) null, options);
   }
+
   /** Creates a Checkout Session object. */
   public Session create() throws StripeException {
     return create((SessionCreateParams) null, (RequestOptions) null);
   }
+
   /** Creates a Checkout Session object. */
   public Session create(SessionCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/checkout/sessions";
@@ -72,18 +79,22 @@ public final class SessionService extends ApiService {
             options);
     return this.request(request, Session.class);
   }
+
   /** Retrieves a Checkout Session object. */
   public Session retrieve(String session, SessionRetrieveParams params) throws StripeException {
     return retrieve(session, params, (RequestOptions) null);
   }
+
   /** Retrieves a Checkout Session object. */
   public Session retrieve(String session, RequestOptions options) throws StripeException {
     return retrieve(session, (SessionRetrieveParams) null, options);
   }
+
   /** Retrieves a Checkout Session object. */
   public Session retrieve(String session) throws StripeException {
     return retrieve(session, (SessionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Checkout Session object. */
   public Session retrieve(String session, SessionRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -97,6 +108,7 @@ public final class SessionService extends ApiService {
             options);
     return this.request(request, Session.class);
   }
+
   /**
    * Updates a Checkout Session object.
    *
@@ -106,6 +118,7 @@ public final class SessionService extends ApiService {
   public Session update(String session, SessionUpdateParams params) throws StripeException {
     return update(session, params, (RequestOptions) null);
   }
+
   /**
    * Updates a Checkout Session object.
    *
@@ -115,6 +128,7 @@ public final class SessionService extends ApiService {
   public Session update(String session, RequestOptions options) throws StripeException {
     return update(session, (SessionUpdateParams) null, options);
   }
+
   /**
    * Updates a Checkout Session object.
    *
@@ -124,6 +138,7 @@ public final class SessionService extends ApiService {
   public Session update(String session) throws StripeException {
     return update(session, (SessionUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates a Checkout Session object.
    *
@@ -142,6 +157,7 @@ public final class SessionService extends ApiService {
             options);
     return this.request(request, Session.class);
   }
+
   /**
    * A Checkout Session can be expired when it is in one of these statuses: {@code open}
    *
@@ -151,6 +167,7 @@ public final class SessionService extends ApiService {
   public Session expire(String session, SessionExpireParams params) throws StripeException {
     return expire(session, params, (RequestOptions) null);
   }
+
   /**
    * A Checkout Session can be expired when it is in one of these statuses: {@code open}
    *
@@ -160,6 +177,7 @@ public final class SessionService extends ApiService {
   public Session expire(String session, RequestOptions options) throws StripeException {
     return expire(session, (SessionExpireParams) null, options);
   }
+
   /**
    * A Checkout Session can be expired when it is in one of these statuses: {@code open}
    *
@@ -169,6 +187,7 @@ public final class SessionService extends ApiService {
   public Session expire(String session) throws StripeException {
     return expire(session, (SessionExpireParams) null, (RequestOptions) null);
   }
+
   /**
    * A Checkout Session can be expired when it is in one of these statuses: {@code open}
    *

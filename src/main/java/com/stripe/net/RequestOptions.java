@@ -17,8 +17,10 @@ public class RequestOptions {
   private final String idempotencyKey;
   private final String stripeAccount;
   private final String baseUrl;
+
   /** Stripe version always set at {@link Stripe#API_VERSION}. */
   private final String stripeVersion = Stripe.API_VERSION;
+
   /**
    * Stripe version override when made on behalf of others. This can be used when the returned
    * response will not be deserialized into the current classes pinned to {@link Stripe#VERSION}.

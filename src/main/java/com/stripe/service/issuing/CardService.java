@@ -29,6 +29,7 @@ public final class CardService extends ApiService {
   public StripeCollection<Card> list(CardListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Card} objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -36,6 +37,7 @@ public final class CardService extends ApiService {
   public StripeCollection<Card> list(RequestOptions options) throws StripeException {
     return list((CardListParams) null, options);
   }
+
   /**
    * Returns a list of Issuing {@code Card} objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -43,6 +45,7 @@ public final class CardService extends ApiService {
   public StripeCollection<Card> list() throws StripeException {
     return list((CardListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of Issuing {@code Card} objects. The objects are sorted in descending order by
    * creation date, with the most recently created object appearing first.
@@ -59,10 +62,12 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Card>>() {}.getType());
   }
+
   /** Creates an Issuing {@code Card} object. */
   public Card create(CardCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates an Issuing {@code Card} object. */
   public Card create(CardCreateParams params, RequestOptions options) throws StripeException {
     String path = "/v1/issuing/cards";
@@ -75,18 +80,22 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /** Retrieves an Issuing {@code Card} object. */
   public Card retrieve(String card, CardRetrieveParams params) throws StripeException {
     return retrieve(card, params, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Card} object. */
   public Card retrieve(String card, RequestOptions options) throws StripeException {
     return retrieve(card, (CardRetrieveParams) null, options);
   }
+
   /** Retrieves an Issuing {@code Card} object. */
   public Card retrieve(String card) throws StripeException {
     return retrieve(card, (CardRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an Issuing {@code Card} object. */
   public Card retrieve(String card, CardRetrieveParams params, RequestOptions options)
       throws StripeException {
@@ -100,6 +109,7 @@ public final class CardService extends ApiService {
             options);
     return this.request(request, Card.class);
   }
+
   /**
    * Updates the specified Issuing {@code Card} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -107,6 +117,7 @@ public final class CardService extends ApiService {
   public Card update(String card, CardUpdateParams params) throws StripeException {
     return update(card, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Card} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -114,6 +125,7 @@ public final class CardService extends ApiService {
   public Card update(String card, RequestOptions options) throws StripeException {
     return update(card, (CardUpdateParams) null, options);
   }
+
   /**
    * Updates the specified Issuing {@code Card} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.
@@ -121,6 +133,7 @@ public final class CardService extends ApiService {
   public Card update(String card) throws StripeException {
     return update(card, (CardUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified Issuing {@code Card} object by setting the values of the parameters
    * passed. Any parameters not provided will be left unchanged.

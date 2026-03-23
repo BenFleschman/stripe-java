@@ -20,12 +20,15 @@ public final class V1BillingMeterNoMeterFoundEvent extends Event {
     /** Extra field included in the event's {@code data} when fetched from /v2/events. */
     @SerializedName("developer_message_summary")
     String developerMessageSummary;
+
     /** This contains information about why meter error happens. */
     @SerializedName("reason")
     Reason reason;
+
     /** The end of the window that is encapsulated by this summary. */
     @SerializedName("validation_end")
     Instant validationEnd;
+
     /** The start of the window that is encapsulated by this summary. */
     @SerializedName("validation_start")
     Instant validationStart;
@@ -34,6 +37,7 @@ public final class V1BillingMeterNoMeterFoundEvent extends Event {
       /** The total error count within this window. */
       @SerializedName("error_count")
       Long errorCount;
+
       /** The error details. */
       @SerializedName("error_types")
       List<V1BillingMeterNoMeterFoundEvent.EventData.Reason.ErrorType> errorTypes;
@@ -49,9 +53,11 @@ public final class V1BillingMeterNoMeterFoundEvent extends Event {
          */
         @SerializedName("code")
         String code;
+
         /** The number of errors of this type. */
         @SerializedName("error_count")
         Long errorCount;
+
         /** A list of sample errors of this type. */
         @SerializedName("sample_errors")
         List<V1BillingMeterNoMeterFoundEvent.EventData.Reason.ErrorType.SampleError> sampleErrors;
@@ -60,6 +66,7 @@ public final class V1BillingMeterNoMeterFoundEvent extends Event {
           /** The error message. */
           @SerializedName("error_message")
           String errorMessage;
+
           /** The request causes the error. */
           @SerializedName("request")
           Request request;

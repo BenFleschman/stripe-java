@@ -28,6 +28,7 @@ public final class PaymentLinkLineItemService extends ApiService {
       throws StripeException {
     return list(paymentLink, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a payment link, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the
@@ -37,6 +38,7 @@ public final class PaymentLinkLineItemService extends ApiService {
       throws StripeException {
     return list(paymentLink, (PaymentLinkLineItemListParams) null, options);
   }
+
   /**
    * When retrieving a payment link, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the
@@ -45,6 +47,7 @@ public final class PaymentLinkLineItemService extends ApiService {
   public StripeCollection<LineItem> list(String paymentLink) throws StripeException {
     return list(paymentLink, (PaymentLinkLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving a payment link, there is an includable <strong>line_items</strong> property
    * containing the first handful of those items. There is also a URL where you can retrieve the

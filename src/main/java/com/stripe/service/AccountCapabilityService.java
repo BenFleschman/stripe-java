@@ -29,6 +29,7 @@ public final class AccountCapabilityService extends ApiService {
       throws StripeException {
     return list(account, params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of capabilities associated with the account. The capabilities are returned
    * sorted by creation date, with the most recent capability appearing first.
@@ -37,6 +38,7 @@ public final class AccountCapabilityService extends ApiService {
       throws StripeException {
     return list(account, (AccountCapabilityListParams) null, options);
   }
+
   /**
    * Returns a list of capabilities associated with the account. The capabilities are returned
    * sorted by creation date, with the most recent capability appearing first.
@@ -44,6 +46,7 @@ public final class AccountCapabilityService extends ApiService {
   public StripeCollection<Capability> list(String account) throws StripeException {
     return list(account, (AccountCapabilityListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of capabilities associated with the account. The capabilities are returned
    * sorted by creation date, with the most recent capability appearing first.
@@ -61,22 +64,26 @@ public final class AccountCapabilityService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Capability>>() {}.getType());
   }
+
   /** Retrieves information about the specified Account Capability. */
   public Capability retrieve(
       String account, String capability, AccountCapabilityRetrieveParams params)
       throws StripeException {
     return retrieve(account, capability, params, (RequestOptions) null);
   }
+
   /** Retrieves information about the specified Account Capability. */
   public Capability retrieve(String account, String capability, RequestOptions options)
       throws StripeException {
     return retrieve(account, capability, (AccountCapabilityRetrieveParams) null, options);
   }
+
   /** Retrieves information about the specified Account Capability. */
   public Capability retrieve(String account, String capability) throws StripeException {
     return retrieve(
         account, capability, (AccountCapabilityRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves information about the specified Account Capability. */
   public Capability retrieve(
       String account,
@@ -97,6 +104,7 @@ public final class AccountCapabilityService extends ApiService {
             options);
     return this.request(request, Capability.class);
   }
+
   /**
    * Updates an existing Account Capability. Request or remove a capability by updating its {@code
    * requested} parameter.
@@ -105,6 +113,7 @@ public final class AccountCapabilityService extends ApiService {
       throws StripeException {
     return update(account, capability, params, (RequestOptions) null);
   }
+
   /**
    * Updates an existing Account Capability. Request or remove a capability by updating its {@code
    * requested} parameter.
@@ -113,6 +122,7 @@ public final class AccountCapabilityService extends ApiService {
       throws StripeException {
     return update(account, capability, (AccountCapabilityUpdateParams) null, options);
   }
+
   /**
    * Updates an existing Account Capability. Request or remove a capability by updating its {@code
    * requested} parameter.
@@ -120,6 +130,7 @@ public final class AccountCapabilityService extends ApiService {
   public Capability update(String account, String capability) throws StripeException {
     return update(account, capability, (AccountCapabilityUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates an existing Account Capability. Request or remove a capability by updating its {@code
    * requested} parameter.

@@ -28,6 +28,7 @@ public final class ApplicationFeeService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of application fees you’ve previously collected. The application fees are
    * returned in sorted order, with the most recent fees appearing first.
@@ -35,6 +36,7 @@ public final class ApplicationFeeService extends ApiService {
   public StripeCollection<ApplicationFee> list(RequestOptions options) throws StripeException {
     return list((ApplicationFeeListParams) null, options);
   }
+
   /**
    * Returns a list of application fees you’ve previously collected. The application fees are
    * returned in sorted order, with the most recent fees appearing first.
@@ -42,6 +44,7 @@ public final class ApplicationFeeService extends ApiService {
   public StripeCollection<ApplicationFee> list() throws StripeException {
     return list((ApplicationFeeListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of application fees you’ve previously collected. The application fees are
    * returned in sorted order, with the most recent fees appearing first.
@@ -58,6 +61,7 @@ public final class ApplicationFeeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ApplicationFee>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an application fee that your account has collected. The same
    * information is returned when refunding the application fee.
@@ -66,6 +70,7 @@ public final class ApplicationFeeService extends ApiService {
       throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an application fee that your account has collected. The same
    * information is returned when refunding the application fee.
@@ -73,6 +78,7 @@ public final class ApplicationFeeService extends ApiService {
   public ApplicationFee retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (ApplicationFeeRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an application fee that your account has collected. The same
    * information is returned when refunding the application fee.
@@ -80,6 +86,7 @@ public final class ApplicationFeeService extends ApiService {
   public ApplicationFee retrieve(String id) throws StripeException {
     return retrieve(id, (ApplicationFeeRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an application fee that your account has collected. The same
    * information is returned when refunding the application fee.

@@ -181,6 +181,7 @@ public class BaseStripeTest {
       throws StripeException {
     verifyRequest(BaseAddress.API, method, path, params, options);
   }
+
   /**
    * Verifies that a request was made with the provided parameters.
    *

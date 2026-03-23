@@ -24,15 +24,18 @@ public final class SourceTransactionService extends ApiService {
       throws StripeException {
     return list(source, params, (RequestOptions) null);
   }
+
   /** List source transactions for a given source. */
   public StripeCollection<SourceTransaction> list(String source, RequestOptions options)
       throws StripeException {
     return list(source, (SourceTransactionListParams) null, options);
   }
+
   /** List source transactions for a given source. */
   public StripeCollection<SourceTransaction> list(String source) throws StripeException {
     return list(source, (SourceTransactionListParams) null, (RequestOptions) null);
   }
+
   /** List source transactions for a given source. */
   public StripeCollection<SourceTransaction> list(
       String source, SourceTransactionListParams params, RequestOptions options)

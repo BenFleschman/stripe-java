@@ -27,6 +27,7 @@ public final class CustomerFundingInstructionsService extends ApiService {
       throws StripeException {
     return create(customer, params, (RequestOptions) null);
   }
+
   /**
    * Retrieve funding instructions for a customer cash balance. If funding instructions do not yet
    * exist for the customer, new funding instructions will be created. If funding instructions have

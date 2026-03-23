@@ -29,6 +29,7 @@ public final class EventService extends ApiService {
   public StripeCollection<Event> list(EventListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * List events, going back up to 30 days. Each event data is rendered according to Stripe API
    * version at its creation time, specified in <a
@@ -38,6 +39,7 @@ public final class EventService extends ApiService {
   public StripeCollection<Event> list(RequestOptions options) throws StripeException {
     return list((EventListParams) null, options);
   }
+
   /**
    * List events, going back up to 30 days. Each event data is rendered according to Stripe API
    * version at its creation time, specified in <a
@@ -47,6 +49,7 @@ public final class EventService extends ApiService {
   public StripeCollection<Event> list() throws StripeException {
     return list((EventListParams) null, (RequestOptions) null);
   }
+
   /**
    * List events, going back up to 30 days. Each event data is rendered according to Stripe API
    * version at its creation time, specified in <a
@@ -65,6 +68,7 @@ public final class EventService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Event>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an event if it was created in the last 30 days. Supply the unique
    * identifier of the event, which you might have received in a webhook.
@@ -72,6 +76,7 @@ public final class EventService extends ApiService {
   public Event retrieve(String id, EventRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an event if it was created in the last 30 days. Supply the unique
    * identifier of the event, which you might have received in a webhook.
@@ -79,6 +84,7 @@ public final class EventService extends ApiService {
   public Event retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (EventRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an event if it was created in the last 30 days. Supply the unique
    * identifier of the event, which you might have received in a webhook.
@@ -86,6 +92,7 @@ public final class EventService extends ApiService {
   public Event retrieve(String id) throws StripeException {
     return retrieve(id, (EventRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an event if it was created in the last 30 days. Supply the unique
    * identifier of the event, which you might have received in a webhook.

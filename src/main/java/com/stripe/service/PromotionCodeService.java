@@ -27,14 +27,17 @@ public final class PromotionCodeService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your promotion codes. */
   public StripeCollection<PromotionCode> list(RequestOptions options) throws StripeException {
     return list((PromotionCodeListParams) null, options);
   }
+
   /** Returns a list of your promotion codes. */
   public StripeCollection<PromotionCode> list() throws StripeException {
     return list((PromotionCodeListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your promotion codes. */
   public StripeCollection<PromotionCode> list(
       PromotionCodeListParams params, RequestOptions options) throws StripeException {
@@ -48,6 +51,7 @@ public final class PromotionCodeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<PromotionCode>>() {}.getType());
   }
+
   /**
    * A promotion code points to an underlying promotion. You can optionally restrict the code to a
    * specific customer, redemption limit, and expiration date.
@@ -55,6 +59,7 @@ public final class PromotionCodeService extends ApiService {
   public PromotionCode create(PromotionCodeCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * A promotion code points to an underlying promotion. You can optionally restrict the code to a
    * specific customer, redemption limit, and expiration date.
@@ -71,6 +76,7 @@ public final class PromotionCodeService extends ApiService {
             options);
     return this.request(request, PromotionCode.class);
   }
+
   /**
    * Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the
    * customer-facing {@code code} use <a
@@ -80,6 +86,7 @@ public final class PromotionCodeService extends ApiService {
       throws StripeException {
     return retrieve(promotionCode, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the
    * customer-facing {@code code} use <a
@@ -89,6 +96,7 @@ public final class PromotionCodeService extends ApiService {
       throws StripeException {
     return retrieve(promotionCode, (PromotionCodeRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the
    * customer-facing {@code code} use <a
@@ -97,6 +105,7 @@ public final class PromotionCodeService extends ApiService {
   public PromotionCode retrieve(String promotionCode) throws StripeException {
     return retrieve(promotionCode, (PromotionCodeRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the
    * customer-facing {@code code} use <a
@@ -115,6 +124,7 @@ public final class PromotionCodeService extends ApiService {
             options);
     return this.request(request, PromotionCode.class);
   }
+
   /**
    * Updates the specified promotion code by setting the values of the parameters passed. Most
    * fields are, by design, not editable.
@@ -123,6 +133,7 @@ public final class PromotionCodeService extends ApiService {
       throws StripeException {
     return update(promotionCode, params, (RequestOptions) null);
   }
+
   /**
    * Updates the specified promotion code by setting the values of the parameters passed. Most
    * fields are, by design, not editable.
@@ -130,6 +141,7 @@ public final class PromotionCodeService extends ApiService {
   public PromotionCode update(String promotionCode, RequestOptions options) throws StripeException {
     return update(promotionCode, (PromotionCodeUpdateParams) null, options);
   }
+
   /**
    * Updates the specified promotion code by setting the values of the parameters passed. Most
    * fields are, by design, not editable.
@@ -137,6 +149,7 @@ public final class PromotionCodeService extends ApiService {
   public PromotionCode update(String promotionCode) throws StripeException {
     return update(promotionCode, (PromotionCodeUpdateParams) null, (RequestOptions) null);
   }
+
   /**
    * Updates the specified promotion code by setting the values of the parameters passed. Most
    * fields are, by design, not editable.

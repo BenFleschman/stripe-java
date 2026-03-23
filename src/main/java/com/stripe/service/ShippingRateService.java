@@ -26,14 +26,17 @@ public final class ShippingRateService extends ApiService {
   public StripeCollection<ShippingRate> list(ShippingRateListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your shipping rates. */
   public StripeCollection<ShippingRate> list(RequestOptions options) throws StripeException {
     return list((ShippingRateListParams) null, options);
   }
+
   /** Returns a list of your shipping rates. */
   public StripeCollection<ShippingRate> list() throws StripeException {
     return list((ShippingRateListParams) null, (RequestOptions) null);
   }
+
   /** Returns a list of your shipping rates. */
   public StripeCollection<ShippingRate> list(ShippingRateListParams params, RequestOptions options)
       throws StripeException {
@@ -47,10 +50,12 @@ public final class ShippingRateService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<ShippingRate>>() {}.getType());
   }
+
   /** Creates a new shipping rate object. */
   public ShippingRate create(ShippingRateCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Creates a new shipping rate object. */
   public ShippingRate create(ShippingRateCreateParams params, RequestOptions options)
       throws StripeException {
@@ -64,20 +69,24 @@ public final class ShippingRateService extends ApiService {
             options);
     return this.request(request, ShippingRate.class);
   }
+
   /** Returns the shipping rate object with the given ID. */
   public ShippingRate retrieve(String shippingRateToken, ShippingRateRetrieveParams params)
       throws StripeException {
     return retrieve(shippingRateToken, params, (RequestOptions) null);
   }
+
   /** Returns the shipping rate object with the given ID. */
   public ShippingRate retrieve(String shippingRateToken, RequestOptions options)
       throws StripeException {
     return retrieve(shippingRateToken, (ShippingRateRetrieveParams) null, options);
   }
+
   /** Returns the shipping rate object with the given ID. */
   public ShippingRate retrieve(String shippingRateToken) throws StripeException {
     return retrieve(shippingRateToken, (ShippingRateRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Returns the shipping rate object with the given ID. */
   public ShippingRate retrieve(
       String shippingRateToken, ShippingRateRetrieveParams params, RequestOptions options)
@@ -93,20 +102,24 @@ public final class ShippingRateService extends ApiService {
             options);
     return this.request(request, ShippingRate.class);
   }
+
   /** Updates an existing shipping rate object. */
   public ShippingRate update(String shippingRateToken, ShippingRateUpdateParams params)
       throws StripeException {
     return update(shippingRateToken, params, (RequestOptions) null);
   }
+
   /** Updates an existing shipping rate object. */
   public ShippingRate update(String shippingRateToken, RequestOptions options)
       throws StripeException {
     return update(shippingRateToken, (ShippingRateUpdateParams) null, options);
   }
+
   /** Updates an existing shipping rate object. */
   public ShippingRate update(String shippingRateToken) throws StripeException {
     return update(shippingRateToken, (ShippingRateUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing shipping rate object. */
   public ShippingRate update(
       String shippingRateToken, ShippingRateUpdateParams params, RequestOptions options)

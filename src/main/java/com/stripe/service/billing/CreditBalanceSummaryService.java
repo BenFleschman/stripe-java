@@ -22,6 +22,7 @@ public final class CreditBalanceSummaryService extends ApiService {
       throws StripeException {
     return retrieve(params, (RequestOptions) null);
   }
+
   /** Retrieves the credit balance summary for a customer. */
   public CreditBalanceSummary retrieve(
       CreditBalanceSummaryRetrieveParams params, RequestOptions options) throws StripeException {

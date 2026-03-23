@@ -24,14 +24,17 @@ public final class CountrySpecService extends ApiService {
   public StripeCollection<CountrySpec> list(CountrySpecListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Lists all Country Spec objects available in the API. */
   public StripeCollection<CountrySpec> list(RequestOptions options) throws StripeException {
     return list((CountrySpecListParams) null, options);
   }
+
   /** Lists all Country Spec objects available in the API. */
   public StripeCollection<CountrySpec> list() throws StripeException {
     return list((CountrySpecListParams) null, (RequestOptions) null);
   }
+
   /** Lists all Country Spec objects available in the API. */
   public StripeCollection<CountrySpec> list(CountrySpecListParams params, RequestOptions options)
       throws StripeException {
@@ -45,19 +48,23 @@ public final class CountrySpecService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<CountrySpec>>() {}.getType());
   }
+
   /** Returns a Country Spec for a given Country code. */
   public CountrySpec retrieve(String country, CountrySpecRetrieveParams params)
       throws StripeException {
     return retrieve(country, params, (RequestOptions) null);
   }
+
   /** Returns a Country Spec for a given Country code. */
   public CountrySpec retrieve(String country, RequestOptions options) throws StripeException {
     return retrieve(country, (CountrySpecRetrieveParams) null, options);
   }
+
   /** Returns a Country Spec for a given Country code. */
   public CountrySpec retrieve(String country) throws StripeException {
     return retrieve(country, (CountrySpecRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Returns a Country Spec for a given Country code. */
   public CountrySpec retrieve(
       String country, CountrySpecRetrieveParams params, RequestOptions options)

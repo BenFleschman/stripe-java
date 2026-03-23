@@ -29,15 +29,18 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Retrieves the list of your subscription schedules. */
   public StripeCollection<SubscriptionSchedule> list(RequestOptions options)
       throws StripeException {
     return list((SubscriptionScheduleListParams) null, options);
   }
+
   /** Retrieves the list of your subscription schedules. */
   public StripeCollection<SubscriptionSchedule> list() throws StripeException {
     return list((SubscriptionScheduleListParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the list of your subscription schedules. */
   public StripeCollection<SubscriptionSchedule> list(
       SubscriptionScheduleListParams params, RequestOptions options) throws StripeException {
@@ -52,6 +55,7 @@ public final class SubscriptionScheduleService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<SubscriptionSchedule>>() {}.getType());
   }
+
   /**
    * Creates a new subscription schedule object. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -60,6 +64,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new subscription schedule object. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -67,6 +72,7 @@ public final class SubscriptionScheduleService extends ApiService {
   public SubscriptionSchedule create(RequestOptions options) throws StripeException {
     return create((SubscriptionScheduleCreateParams) null, options);
   }
+
   /**
    * Creates a new subscription schedule object. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -74,6 +80,7 @@ public final class SubscriptionScheduleService extends ApiService {
   public SubscriptionSchedule create() throws StripeException {
     return create((SubscriptionScheduleCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * Creates a new subscription schedule object. Each customer can have up to 500 active or
    * scheduled subscriptions.
@@ -90,6 +97,7 @@ public final class SubscriptionScheduleService extends ApiService {
             options);
     return this.request(request, SubscriptionSchedule.class);
   }
+
   /**
    * Retrieves the details of an existing subscription schedule. You only need to supply the unique
    * subscription schedule identifier that was returned upon subscription schedule creation.
@@ -98,6 +106,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return retrieve(schedule, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing subscription schedule. You only need to supply the unique
    * subscription schedule identifier that was returned upon subscription schedule creation.
@@ -106,6 +115,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return retrieve(schedule, (SubscriptionScheduleRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing subscription schedule. You only need to supply the unique
    * subscription schedule identifier that was returned upon subscription schedule creation.
@@ -113,6 +123,7 @@ public final class SubscriptionScheduleService extends ApiService {
   public SubscriptionSchedule retrieve(String schedule) throws StripeException {
     return retrieve(schedule, (SubscriptionScheduleRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing subscription schedule. You only need to supply the unique
    * subscription schedule identifier that was returned upon subscription schedule creation.
@@ -130,20 +141,24 @@ public final class SubscriptionScheduleService extends ApiService {
             options);
     return this.request(request, SubscriptionSchedule.class);
   }
+
   /** Updates an existing subscription schedule. */
   public SubscriptionSchedule update(String schedule, SubscriptionScheduleUpdateParams params)
       throws StripeException {
     return update(schedule, params, (RequestOptions) null);
   }
+
   /** Updates an existing subscription schedule. */
   public SubscriptionSchedule update(String schedule, RequestOptions options)
       throws StripeException {
     return update(schedule, (SubscriptionScheduleUpdateParams) null, options);
   }
+
   /** Updates an existing subscription schedule. */
   public SubscriptionSchedule update(String schedule) throws StripeException {
     return update(schedule, (SubscriptionScheduleUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates an existing subscription schedule. */
   public SubscriptionSchedule update(
       String schedule, SubscriptionScheduleUpdateParams params, RequestOptions options)
@@ -158,6 +173,7 @@ public final class SubscriptionScheduleService extends ApiService {
             options);
     return this.request(request, SubscriptionSchedule.class);
   }
+
   /**
    * Cancels a subscription schedule and its associated subscription immediately (if the
    * subscription schedule has an active subscription). A subscription schedule can only be canceled
@@ -167,6 +183,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return cancel(schedule, params, (RequestOptions) null);
   }
+
   /**
    * Cancels a subscription schedule and its associated subscription immediately (if the
    * subscription schedule has an active subscription). A subscription schedule can only be canceled
@@ -176,6 +193,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return cancel(schedule, (SubscriptionScheduleCancelParams) null, options);
   }
+
   /**
    * Cancels a subscription schedule and its associated subscription immediately (if the
    * subscription schedule has an active subscription). A subscription schedule can only be canceled
@@ -184,6 +202,7 @@ public final class SubscriptionScheduleService extends ApiService {
   public SubscriptionSchedule cancel(String schedule) throws StripeException {
     return cancel(schedule, (SubscriptionScheduleCancelParams) null, (RequestOptions) null);
   }
+
   /**
    * Cancels a subscription schedule and its associated subscription immediately (if the
    * subscription schedule has an active subscription). A subscription schedule can only be canceled
@@ -203,6 +222,7 @@ public final class SubscriptionScheduleService extends ApiService {
             options);
     return this.request(request, SubscriptionSchedule.class);
   }
+
   /**
    * Releases the subscription schedule immediately, which will stop scheduling of its phases, but
    * leave any existing subscription in place. A schedule can only be released if its status is
@@ -214,6 +234,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return release(schedule, params, (RequestOptions) null);
   }
+
   /**
    * Releases the subscription schedule immediately, which will stop scheduling of its phases, but
    * leave any existing subscription in place. A schedule can only be released if its status is
@@ -225,6 +246,7 @@ public final class SubscriptionScheduleService extends ApiService {
       throws StripeException {
     return release(schedule, (SubscriptionScheduleReleaseParams) null, options);
   }
+
   /**
    * Releases the subscription schedule immediately, which will stop scheduling of its phases, but
    * leave any existing subscription in place. A schedule can only be released if its status is
@@ -235,6 +257,7 @@ public final class SubscriptionScheduleService extends ApiService {
   public SubscriptionSchedule release(String schedule) throws StripeException {
     return release(schedule, (SubscriptionScheduleReleaseParams) null, (RequestOptions) null);
   }
+
   /**
    * Releases the subscription schedule immediately, which will stop scheduling of its phases, but
    * leave any existing subscription in place. A schedule can only be released if its status is

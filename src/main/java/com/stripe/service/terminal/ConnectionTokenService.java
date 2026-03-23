@@ -25,6 +25,7 @@ public final class ConnectionTokenService extends ApiService {
   public ConnectionToken create(ConnectionTokenCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token
    * from Stripe, proxied through your server. On your backend, add an endpoint that creates and
@@ -33,6 +34,7 @@ public final class ConnectionTokenService extends ApiService {
   public ConnectionToken create(RequestOptions options) throws StripeException {
     return create((ConnectionTokenCreateParams) null, options);
   }
+
   /**
    * To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token
    * from Stripe, proxied through your server. On your backend, add an endpoint that creates and
@@ -41,6 +43,7 @@ public final class ConnectionTokenService extends ApiService {
   public ConnectionToken create() throws StripeException {
     return create((ConnectionTokenCreateParams) null, (RequestOptions) null);
   }
+
   /**
    * To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token
    * from Stripe, proxied through your server. On your backend, add an endpoint that creates and

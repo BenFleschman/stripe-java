@@ -21,14 +21,17 @@ public final class MandateService extends ApiService {
   public Mandate retrieve(String mandate, MandateRetrieveParams params) throws StripeException {
     return retrieve(mandate, params, (RequestOptions) null);
   }
+
   /** Retrieves a Mandate object. */
   public Mandate retrieve(String mandate, RequestOptions options) throws StripeException {
     return retrieve(mandate, (MandateRetrieveParams) null, options);
   }
+
   /** Retrieves a Mandate object. */
   public Mandate retrieve(String mandate) throws StripeException {
     return retrieve(mandate, (MandateRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Mandate object. */
   public Mandate retrieve(String mandate, MandateRetrieveParams params, RequestOptions options)
       throws StripeException {

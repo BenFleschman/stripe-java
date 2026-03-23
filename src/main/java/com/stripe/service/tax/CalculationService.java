@@ -23,14 +23,17 @@ public final class CalculationService extends ApiService {
       throws StripeException {
     return retrieve(calculation, params, (RequestOptions) null);
   }
+
   /** Retrieves a Tax {@code Calculation} object, if the calculation hasn’t expired. */
   public Calculation retrieve(String calculation, RequestOptions options) throws StripeException {
     return retrieve(calculation, (CalculationRetrieveParams) null, options);
   }
+
   /** Retrieves a Tax {@code Calculation} object, if the calculation hasn’t expired. */
   public Calculation retrieve(String calculation) throws StripeException {
     return retrieve(calculation, (CalculationRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves a Tax {@code Calculation} object, if the calculation hasn’t expired. */
   public Calculation retrieve(
       String calculation, CalculationRetrieveParams params, RequestOptions options)
@@ -45,10 +48,12 @@ public final class CalculationService extends ApiService {
             options);
     return this.request(request, Calculation.class);
   }
+
   /** Calculates tax based on the input and returns a Tax {@code Calculation} object. */
   public Calculation create(CalculationCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Calculates tax based on the input and returns a Tax {@code Calculation} object. */
   public Calculation create(CalculationCreateParams params, RequestOptions options)
       throws StripeException {

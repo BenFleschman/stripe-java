@@ -24,6 +24,7 @@ public final class TransactionService extends ApiService {
   public StripeCollection<Transaction> list(TransactionListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of Financial Connections {@code Transaction} objects. */
   public StripeCollection<Transaction> list(TransactionListParams params, RequestOptions options)
       throws StripeException {
@@ -37,19 +38,23 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Transaction>>() {}.getType());
   }
+
   /** Retrieves the details of a Financial Connections {@code Transaction}. */
   public Transaction retrieve(String transaction, TransactionRetrieveParams params)
       throws StripeException {
     return retrieve(transaction, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of a Financial Connections {@code Transaction}. */
   public Transaction retrieve(String transaction, RequestOptions options) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, options);
   }
+
   /** Retrieves the details of a Financial Connections {@code Transaction}. */
   public Transaction retrieve(String transaction) throws StripeException {
     return retrieve(transaction, (TransactionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of a Financial Connections {@code Transaction}. */
   public Transaction retrieve(
       String transaction, TransactionRetrieveParams params, RequestOptions options)

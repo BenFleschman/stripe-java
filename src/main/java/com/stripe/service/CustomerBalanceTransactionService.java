@@ -30,6 +30,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       String customer, CustomerBalanceTransactionListParams params) throws StripeException {
     return list(customer, params, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -38,6 +39,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       throws StripeException {
     return list(customer, (CustomerBalanceTransactionListParams) null, options);
   }
+
   /**
    * Returns a list of transactions that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -45,6 +47,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
   public StripeCollection<CustomerBalanceTransaction> list(String customer) throws StripeException {
     return list(customer, (CustomerBalanceTransactionListParams) null, (RequestOptions) null);
   }
+
   /**
    * Returns a list of transactions that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -64,6 +67,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
     return this.request(
         request, new TypeToken<StripeCollection<CustomerBalanceTransaction>>() {}.getType());
   }
+
   /**
    * Creates an immutable transaction that updates the customer’s credit <a
    * href="https://stripe.com/docs/billing/customer/balance">balance</a>.
@@ -72,6 +76,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       String customer, CustomerBalanceTransactionCreateParams params) throws StripeException {
     return create(customer, params, (RequestOptions) null);
   }
+
   /**
    * Creates an immutable transaction that updates the customer’s credit <a
    * href="https://stripe.com/docs/billing/customer/balance">balance</a>.
@@ -90,6 +95,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
             options);
     return this.request(request, CustomerBalanceTransaction.class);
   }
+
   /**
    * Retrieves a specific customer balance transaction that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -99,6 +105,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       throws StripeException {
     return retrieve(customer, transaction, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves a specific customer balance transaction that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -108,6 +115,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
     return retrieve(
         customer, transaction, (CustomerBalanceTransactionRetrieveParams) null, options);
   }
+
   /**
    * Retrieves a specific customer balance transaction that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -120,6 +128,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
         (CustomerBalanceTransactionRetrieveParams) null,
         (RequestOptions) null);
   }
+
   /**
    * Retrieves a specific customer balance transaction that updated the customer’s <a
    * href="https://stripe.com/docs/billing/customer/balance">balances</a>.
@@ -143,6 +152,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
             options);
     return this.request(request, CustomerBalanceTransaction.class);
   }
+
   /**
    * Most credit balance transaction fields are immutable, but you may update its {@code
    * description} and {@code metadata}.
@@ -152,6 +162,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       throws StripeException {
     return update(customer, transaction, params, (RequestOptions) null);
   }
+
   /**
    * Most credit balance transaction fields are immutable, but you may update its {@code
    * description} and {@code metadata}.
@@ -160,6 +171,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
       String customer, String transaction, RequestOptions options) throws StripeException {
     return update(customer, transaction, (CustomerBalanceTransactionUpdateParams) null, options);
   }
+
   /**
    * Most credit balance transaction fields are immutable, but you may update its {@code
    * description} and {@code metadata}.
@@ -172,6 +184,7 @@ public final class CustomerBalanceTransactionService extends ApiService {
         (CustomerBalanceTransactionUpdateParams) null,
         (RequestOptions) null);
   }
+
   /**
    * Most credit balance transaction fields are immutable, but you may update its {@code
    * description} and {@code metadata}.

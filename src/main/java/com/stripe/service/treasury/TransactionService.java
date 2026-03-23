@@ -24,6 +24,7 @@ public final class TransactionService extends ApiService {
   public StripeCollection<Transaction> list(TransactionListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Retrieves a list of Transaction objects. */
   public StripeCollection<Transaction> list(TransactionListParams params, RequestOptions options)
       throws StripeException {
@@ -37,18 +38,22 @@ public final class TransactionService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<Transaction>>() {}.getType());
   }
+
   /** Retrieves the details of an existing Transaction. */
   public Transaction retrieve(String id, TransactionRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing Transaction. */
   public Transaction retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (TransactionRetrieveParams) null, options);
   }
+
   /** Retrieves the details of an existing Transaction. */
   public Transaction retrieve(String id) throws StripeException {
     return retrieve(id, (TransactionRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the details of an existing Transaction. */
   public Transaction retrieve(String id, TransactionRetrieveParams params, RequestOptions options)
       throws StripeException {

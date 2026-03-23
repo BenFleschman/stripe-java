@@ -37,7 +37,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "17" # always use 17 LTS for building
+          java-version: "21" # use 21 LTS for building (required for virtual threads)
           architecture: x64
 
       - name: Set Test Java Runtime Environment variable
@@ -64,10 +64,7 @@ jobs:
         # https://www.oracle.com/java/technologies/java-se-support-roadmap.html
         # https://endoflife.date/oracle-jdk
         java-version:
-          # LTS versions
-          - "1.8"
-          - "11"
-          - "17"
+          # LTS versions (minimum Java 21 required for virtual threads)
           - "21"
           - "25"
           # non-LTS versions
@@ -91,12 +88,8 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
-          java-version: "17" # always use 17 LTS for building
+          java-version: "21" # use 21 LTS for building (required for virtual threads)
           architecture: x64
-
-      - name: Tweak gradle.properties for Java 1.8
-        if: ${{ matrix.java-version == '1.8' }}
-        run: sed -e '/--add-exports/ s/^#*/#/' -i gradle.properties
 
       - name: Display version
         run: |
@@ -121,7 +114,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "17" # always use 17 LTS for building
+          java-version: "21" # use 21 LTS for building (required for virtual threads)
           architecture: x64
       - name: Set Test Java Runtime Environment variable
         run: echo "JAVA_TEST_HOME=${{ steps.setup-jre.outputs.path }}" >> $GITHUB_ENV
@@ -163,7 +156,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "17" # always use 17 TLS for building
+          java-version: "21" # use 21 LTS for building (required for virtual threads)
           architecture: x64
       - name: Set Test Java Runtime Environment variable
         run: echo "JAVA_TEST_HOME=${{ steps.setup-jre.outputs.path }}" >> $GITHUB_ENV
@@ -189,7 +182,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "17" # always use 17 TLS for building
+          java-version: "21" # use 21 LTS for building (required for virtual threads)
           architecture: x64
 
       - name: Set Test Java Runtime Environment variable

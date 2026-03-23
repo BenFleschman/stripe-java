@@ -24,6 +24,7 @@ public final class OnboardingLinkService extends ApiService {
   public OnboardingLink create(OnboardingLinkCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /**
    * Creates a new {@code OnboardingLink} object that contains a redirect_url used for onboarding
    * onto Tap to Pay on iPhone.

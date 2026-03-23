@@ -28,6 +28,7 @@ public final class CreditNoteLineItemService extends ApiService {
       String creditNote, CreditNoteLineItemListParams params) throws StripeException {
     return list(creditNote, params, (RequestOptions) null);
   }
+
   /**
    * When retrieving a credit note, you’ll get a <strong>lines</strong> property containing the
    * first handful of those items. There is also a URL where you can retrieve the full (paginated)
@@ -37,6 +38,7 @@ public final class CreditNoteLineItemService extends ApiService {
       throws StripeException {
     return list(creditNote, (CreditNoteLineItemListParams) null, options);
   }
+
   /**
    * When retrieving a credit note, you’ll get a <strong>lines</strong> property containing the
    * first handful of those items. There is also a URL where you can retrieve the full (paginated)
@@ -45,6 +47,7 @@ public final class CreditNoteLineItemService extends ApiService {
   public StripeCollection<CreditNoteLineItem> list(String creditNote) throws StripeException {
     return list(creditNote, (CreditNoteLineItemListParams) null, (RequestOptions) null);
   }
+
   /**
    * When retrieving a credit note, you’ll get a <strong>lines</strong> property containing the
    * first handful of those items. There is also a URL where you can retrieve the full (paginated)

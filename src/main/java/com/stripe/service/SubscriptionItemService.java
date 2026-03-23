@@ -31,6 +31,7 @@ public final class SubscriptionItemService extends ApiService {
       throws StripeException {
     return delete(item, params, (RequestOptions) null);
   }
+
   /**
    * Deletes an item from the subscription. Removing a subscription item from a subscription will
    * not cancel the subscription.
@@ -38,6 +39,7 @@ public final class SubscriptionItemService extends ApiService {
   public SubscriptionItem delete(String item, RequestOptions options) throws StripeException {
     return delete(item, (SubscriptionItemDeleteParams) null, options);
   }
+
   /**
    * Deletes an item from the subscription. Removing a subscription item from a subscription will
    * not cancel the subscription.
@@ -45,6 +47,7 @@ public final class SubscriptionItemService extends ApiService {
   public SubscriptionItem delete(String item) throws StripeException {
     return delete(item, (SubscriptionItemDeleteParams) null, (RequestOptions) null);
   }
+
   /**
    * Deletes an item from the subscription. Removing a subscription item from a subscription will
    * not cancel the subscription.
@@ -62,19 +65,23 @@ public final class SubscriptionItemService extends ApiService {
             options);
     return this.request(request, SubscriptionItem.class);
   }
+
   /** Retrieves the subscription item with the given ID. */
   public SubscriptionItem retrieve(String item, SubscriptionItemRetrieveParams params)
       throws StripeException {
     return retrieve(item, params, (RequestOptions) null);
   }
+
   /** Retrieves the subscription item with the given ID. */
   public SubscriptionItem retrieve(String item, RequestOptions options) throws StripeException {
     return retrieve(item, (SubscriptionItemRetrieveParams) null, options);
   }
+
   /** Retrieves the subscription item with the given ID. */
   public SubscriptionItem retrieve(String item) throws StripeException {
     return retrieve(item, (SubscriptionItemRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves the subscription item with the given ID. */
   public SubscriptionItem retrieve(
       String item, SubscriptionItemRetrieveParams params, RequestOptions options)
@@ -89,19 +96,23 @@ public final class SubscriptionItemService extends ApiService {
             options);
     return this.request(request, SubscriptionItem.class);
   }
+
   /** Updates the plan or quantity of an item on a current subscription. */
   public SubscriptionItem update(String item, SubscriptionItemUpdateParams params)
       throws StripeException {
     return update(item, params, (RequestOptions) null);
   }
+
   /** Updates the plan or quantity of an item on a current subscription. */
   public SubscriptionItem update(String item, RequestOptions options) throws StripeException {
     return update(item, (SubscriptionItemUpdateParams) null, options);
   }
+
   /** Updates the plan or quantity of an item on a current subscription. */
   public SubscriptionItem update(String item) throws StripeException {
     return update(item, (SubscriptionItemUpdateParams) null, (RequestOptions) null);
   }
+
   /** Updates the plan or quantity of an item on a current subscription. */
   public SubscriptionItem update(
       String item, SubscriptionItemUpdateParams params, RequestOptions options)
@@ -116,11 +127,13 @@ public final class SubscriptionItemService extends ApiService {
             options);
     return this.request(request, SubscriptionItem.class);
   }
+
   /** Returns a list of your subscription items for a given subscription. */
   public StripeCollection<SubscriptionItem> list(SubscriptionItemListParams params)
       throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /** Returns a list of your subscription items for a given subscription. */
   public StripeCollection<SubscriptionItem> list(
       SubscriptionItemListParams params, RequestOptions options) throws StripeException {
@@ -134,10 +147,12 @@ public final class SubscriptionItemService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<SubscriptionItem>>() {}.getType());
   }
+
   /** Adds a new item to an existing subscription. No existing items will be changed or replaced. */
   public SubscriptionItem create(SubscriptionItemCreateParams params) throws StripeException {
     return create(params, (RequestOptions) null);
   }
+
   /** Adds a new item to an existing subscription. No existing items will be changed or replaced. */
   public SubscriptionItem create(SubscriptionItemCreateParams params, RequestOptions options)
       throws StripeException {

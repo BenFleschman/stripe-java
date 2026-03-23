@@ -22,16 +22,19 @@ public final class ConfirmationTokenService extends ApiService {
       String confirmationToken, ConfirmationTokenRetrieveParams params) throws StripeException {
     return retrieve(confirmationToken, params, (RequestOptions) null);
   }
+
   /** Retrieves an existing ConfirmationToken object. */
   public ConfirmationToken retrieve(String confirmationToken, RequestOptions options)
       throws StripeException {
     return retrieve(confirmationToken, (ConfirmationTokenRetrieveParams) null, options);
   }
+
   /** Retrieves an existing ConfirmationToken object. */
   public ConfirmationToken retrieve(String confirmationToken) throws StripeException {
     return retrieve(
         confirmationToken, (ConfirmationTokenRetrieveParams) null, (RequestOptions) null);
   }
+
   /** Retrieves an existing ConfirmationToken object. */
   public ConfirmationToken retrieve(
       String confirmationToken, ConfirmationTokenRetrieveParams params, RequestOptions options)

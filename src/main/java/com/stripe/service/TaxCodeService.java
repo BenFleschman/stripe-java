@@ -27,6 +27,7 @@ public final class TaxCodeService extends ApiService {
   public StripeCollection<TaxCode> list(TaxCodeListParams params) throws StripeException {
     return list(params, (RequestOptions) null);
   }
+
   /**
    * A list of <a href="https://stripe.com/docs/tax/tax-categories">all tax codes available</a> to
    * add to Products in order to allow specific tax calculations.
@@ -34,6 +35,7 @@ public final class TaxCodeService extends ApiService {
   public StripeCollection<TaxCode> list(RequestOptions options) throws StripeException {
     return list((TaxCodeListParams) null, options);
   }
+
   /**
    * A list of <a href="https://stripe.com/docs/tax/tax-categories">all tax codes available</a> to
    * add to Products in order to allow specific tax calculations.
@@ -41,6 +43,7 @@ public final class TaxCodeService extends ApiService {
   public StripeCollection<TaxCode> list() throws StripeException {
     return list((TaxCodeListParams) null, (RequestOptions) null);
   }
+
   /**
    * A list of <a href="https://stripe.com/docs/tax/tax-categories">all tax codes available</a> to
    * add to Products in order to allow specific tax calculations.
@@ -57,6 +60,7 @@ public final class TaxCodeService extends ApiService {
             options);
     return this.request(request, new TypeToken<StripeCollection<TaxCode>>() {}.getType());
   }
+
   /**
    * Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will
    * return the corresponding tax code information.
@@ -64,6 +68,7 @@ public final class TaxCodeService extends ApiService {
   public TaxCode retrieve(String id, TaxCodeRetrieveParams params) throws StripeException {
     return retrieve(id, params, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will
    * return the corresponding tax code information.
@@ -71,6 +76,7 @@ public final class TaxCodeService extends ApiService {
   public TaxCode retrieve(String id, RequestOptions options) throws StripeException {
     return retrieve(id, (TaxCodeRetrieveParams) null, options);
   }
+
   /**
    * Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will
    * return the corresponding tax code information.
@@ -78,6 +84,7 @@ public final class TaxCodeService extends ApiService {
   public TaxCode retrieve(String id) throws StripeException {
     return retrieve(id, (TaxCodeRetrieveParams) null, (RequestOptions) null);
   }
+
   /**
    * Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will
    * return the corresponding tax code information.
