@@ -37,7 +37,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "21" # use 21 LTS for building (required for virtual threads)
+          java-version: "21" # always use 21 LTS for building
           architecture: x64
 
       - name: Set Test Java Runtime Environment variable
@@ -64,7 +64,7 @@ jobs:
         # https://www.oracle.com/java/technologies/java-se-support-roadmap.html
         # https://endoflife.date/oracle-jdk
         java-version:
-          # LTS versions (minimum Java 21 required for virtual threads)
+          # LTS versions (minimum Java 21 required)
           - "21"
           - "25"
           # non-LTS versions
@@ -88,7 +88,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
-          java-version: "21" # use 21 LTS for building (required for virtual threads)
+          java-version: "21" # always use 21 LTS for building
           architecture: x64
 
       - name: Display version
@@ -114,7 +114,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "21" # use 21 LTS for building (required for virtual threads)
+          java-version: "21" # always use 21 LTS for building
           architecture: x64
       - name: Set Test Java Runtime Environment variable
         run: echo "JAVA_TEST_HOME=${{ steps.setup-jre.outputs.path }}" >> $GITHUB_ENV
@@ -156,7 +156,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "21" # use 21 LTS for building (required for virtual threads)
+          java-version: "21" # always use 21 LTS for building
           architecture: x64
       - name: Set Test Java Runtime Environment variable
         run: echo "JAVA_TEST_HOME=${{ steps.setup-jre.outputs.path }}" >> $GITHUB_ENV
@@ -182,7 +182,7 @@ jobs:
         id: setup-jre
         uses: actions/setup-java@v1
         with:
-          java-version: "21" # use 21 LTS for building (required for virtual threads)
+          java-version: "21" # always use 21 LTS for building
           architecture: x64
 
       - name: Set Test Java Runtime Environment variable
