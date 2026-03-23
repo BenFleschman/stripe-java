@@ -53,6 +53,12 @@ public class LiveStripeResponseGetter implements StripeResponseGetter, AutoClose
       if (cause instanceof StripeException) {
         throw (StripeException) cause;
       }
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      }
+      if (cause instanceof Error) {
+        throw (Error) cause;
+      }
       throw new ApiConnectionException("Unexpected error executing request on virtual thread", e);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
